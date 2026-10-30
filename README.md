@@ -1,5 +1,7 @@
 # VERDANT — Pixel character demo & procedural workshop
 
+**[Baixar demo para Windows 64 bits](https://github.com/Gui571/Teste-game/raw/refs/heads/verdant-demo/downloads/Verdant-Windows.zip)** — extraia todo o ZIP e abra `Verdant.exe`. Godot e .NET já estão incluídos no pacote. A execução no Windows ainda não foi testada.
+
 **Current roster:** seven visually distinct adventurers built on the approved Bram / Nix / Rowan style. Those three native sprites and all 15 of their animation atlases remain pixel-identical to the approved version.
 
 ![Expanded roster](docs/roster/lineup.gif)
