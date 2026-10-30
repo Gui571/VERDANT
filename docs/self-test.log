@@ -1,0 +1,47 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  Verdant -> /workspace/Teste-game/.godot/mono/temp/bin/Debug/Verdant.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:03.28
+Godot Engine v4.5.2.stable.mono.official.6ce3de25a - https://godotengine.org
+
+{
+  "checks": 10039,
+  "passed": 10039,
+  "failures": [],
+  "metrics": [
+    {
+      "population": 1,
+      "coldMs": 1.9312,
+      "p50Ms": 0.5151,
+      "p95Ms": 5.7758,
+      "p99Ms": 6.3055,
+      "allocatedBytes": 48360,
+      "workingSet": 177152000
+    },
+    {
+      "population": 25,
+      "coldMs": 2.5352,
+      "p50Ms": 27.8702,
+      "p95Ms": 47.1648,
+      "p99Ms": 51.4394,
+      "allocatedBytes": 2372016,
+      "workingSet": 178352128
+    },
+    {
+      "population": 100,
+      "coldMs": 10.5449,
+      "p50Ms": 75.5575,
+      "p95Ms": 118.2909,
+      "p99Ms": 439.196,
+      "allocatedBytes": 9344016,
+      "workingSet": 197980160
+    }
+  ],
+  "scope": "CPU raster only; no GPU texture upload or desktop FPS claim"
+}
+Artifacts: /workspace/.local/share/godot/app_userdata/Verdant — Procedural Creature Workshop/verification

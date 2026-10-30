@@ -1,0 +1,102 @@
+{
+  "version": 1,
+  "cell": 32,
+  "origin": [
+    16,
+    29
+  ],
+  "maxColors": 16,
+  "characters": [
+    {
+      "Kind": "Duck",
+      "Id": "bram",
+      "Name": "Bram",
+      "Class": "Guerreiro",
+      "Description": "Capacete de gelo, machado e escudo. Guarda firme e silhueta compacta.",
+      "Silhouette": "Coroa ramificada \u002B escudo",
+      "Colors": [
+        "5098ef",
+        "c1dceb",
+        "dfce80"
+      ]
+    },
+    {
+      "Kind": "Rabbit",
+      "Id": "nix",
+      "Name": "Nix",
+      "Class": "Batedora",
+      "Description": "Orelhas longas, len\u00E7o cobre e espada curta. Leve e alerta.",
+      "Silhouette": "Orelhas verticais \u002B espada",
+      "Colors": [
+        "f0f0e5",
+        "5098ef",
+        "e5953d"
+      ]
+    },
+    {
+      "Kind": "Knight",
+      "Id": "rowan",
+      "Name": "Rowan",
+      "Class": "Arqueiro",
+      "Description": "Capuz verde, arco e aljava. Couro e tecido em blocos simples.",
+      "Silhouette": "Capuz inclinado \u002B arco",
+      "Colors": [
+        "849967",
+        "4e6754",
+        "947052"
+      ]
+    },
+    {
+      "Kind": "Mage",
+      "Id": "iria",
+      "Name": "Iria",
+      "Class": "Maga astral",
+      "Description": "Chap\u00E9u violeta, grim\u00F3rio e cristal suspenso. Curiosa e met\u00F3dica.",
+      "Silhouette": "Tri\u00E2ngulo alto \u002B cristal",
+      "Colors": [
+        "9678cf",
+        "514777",
+        "edacd3"
+      ]
+    },
+    {
+      "Kind": "Guardian",
+      "Id": "boro",
+      "Name": "Boro",
+      "Class": "Guardi\u00E3o",
+      "Description": "Carapa\u00E7a de bronze, escudo-torre e martelo. Calmo e inabal\u00E1vel.",
+      "Silhouette": "Massa larga \u002B ret\u00E2ngulos",
+      "Colors": [
+        "c29454",
+        "765740",
+        "a6b477"
+      ]
+    },
+    {
+      "Kind": "Duelist",
+      "Id": "suri",
+      "Name": "Suri",
+      "Class": "Duelista",
+      "Description": "Raposa de len\u00E7o vinho, cauda clara e duas adagas. \u00C1gil e provocadora.",
+      "Silhouette": "Orelhas triangulares \u002B cauda",
+      "Colors": [
+        "df9855",
+        "8c4665",
+        "f0e6cd"
+      ]
+    },
+    {
+      "Kind": "Healer",
+      "Id": "mira",
+      "Name": "Mira",
+      "Class": "Curandeira",
+      "Description": "Coruja de manto jade e b\u00E1culo circular. Atenta e acolhedora.",
+      "Silhouette": "Capuz redondo \u002B aro",
+      "Colors": [
+        "57afa4",
+        "356e78",
+        "e5dcc2"
+      ]
+    }
+  ]
+}

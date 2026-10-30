@@ -1,0 +1,5 @@
+Reference review: inspected frames from all four uploaded recordings, including an eight-frame motion comparison.
+Native assets: 32x32, three character silhouettes, binary alpha and at most 16 visible colors each.
+Pixel tests passed for three characters and three head widths, fixed idle feet, determinism, looping, both facings and idle/walk image bounds.
+Godot C# build and actual OpenGL scene capture passed.
+Animated lineup: 32 frames at 8 FPS, four-second loop.

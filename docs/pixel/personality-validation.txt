@@ -1,0 +1,4 @@
+All three characters verified: deterministic 32x32 frames, at most 16 visible colors per character, binary alpha, bounds for front/back and idle/walk, fixed idle feet.
+Each idle loop has at least four distinct poses and returns exactly to its starting image at four seconds.
+Native PNGs match the first frames of their exported atlases.
+Godot 4.5.2 .NET build and custom pixel test passed.

@@ -1,0 +1,4 @@
+Godot 4.5.2 .NET build passed.
+Pixel validation passed: deterministic 48x48 output, binary alpha, limited palette, unclipped frames, planted idle feet and seamless 4-second loop.
+Export verified: 32-frame GIF, fully opaque white preview, native transparent PNG.
+Workshop navigation and UI tests passed from the new default scene (17 assertions).
