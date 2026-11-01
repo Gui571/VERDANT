@@ -1,6 +1,10 @@
 # VERDANT — Pixel character demo & procedural workshop
 
-**[Baixar demo para Windows 64 bits](https://github.com/Gui571/Teste-game/raw/refs/heads/verdant-demo/downloads/Verdant-Windows.zip)** — extraia todo o ZIP e abra `Verdant.exe`. Godot e .NET já estão incluídos no pacote. A execução no Windows ainda não foi testada.
+**[Baixar demo para Windows 64 bits](https://github.com/Gui571/VERDANT/raw/refs/heads/melhorias-pixel-art/downloads/Verdant-Windows.zip)** — extraia todo o ZIP e abra `Verdant.exe`. Godot e .NET já estão incluídos no pacote. A execução no Windows ainda não foi testada.
+
+**[Baixar Linux x86_64](https://github.com/Gui571/VERDANT/raw/refs/heads/melhorias-pixel-art/downloads/Verdant-Linux.zip)** — extraia e execute `Verdant.x86_64` (se necessário: `chmod +x Verdant.x86_64`).
+
+Validação real em Godot 4.5.2 .NET / SDK 8.0.408: build sem avisos; 110.252 verificações no PixelPreview e no Godot; 36 verificações de interface no editor e no executável Linux. Windows não executado. [Relatório e prévias](docs/FORGE.md#revisão-validada-no-godot).
 
 **Current roster:** seven visually distinct adventurers, now all drawn by the **Forge** pixel-art engine — chunky big-head chibi proportions, a continuous one-pixel navy outline, a contact shadow, a shared blue-team accent (headbands, scarves, capes) and hue-shifted shading — plus an unlimited **seeded generator** that produces new adventurers in exactly the same style (see [docs/FORGE.md](docs/FORGE.md)).
 
