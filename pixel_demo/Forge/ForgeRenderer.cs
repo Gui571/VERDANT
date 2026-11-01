@@ -153,8 +153,8 @@ public sealed class ForgeRenderer
         if (p.Atk is 2 or 3 && s.Weapon is Weapon.Staff or Weapon.Crook) Sparks(p);
 
         // 8 — contorno externo contínuo (1 px) e sombra de contato
-        OutlinePass();
-        if (GroundShadow) { for (int x = 9; x <= 23; x++) if (L.Get(x, 29) == Tone.None) L.Set(x, 29, Tone.Ink); for (int x = 11; x <= 21; x++) if (L.Get(x, 30) == Tone.None) L.Set(x, 30, Tone.Ink); }
+        ForgeFinish.Outline(L);
+        if (GroundShadow) ForgeFinish.Shadow(L,16,29,7);
 
         var pal = s.Palette;
         for (int y = 0; y < Size; y++) for (int x = 0; x < Size; x++)
