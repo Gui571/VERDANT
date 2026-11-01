@@ -1,6 +1,6 @@
 # VERDANT — sistema visual para expansão do elenco
 
-O elenco se apoia nos três sprites aprovados: **Bram, Nix e Rowan**. Eles são a referência de proporção, acabamento e escala. A expansão acrescenta quatro classes visuais selecionáveis na demo; não acrescenta habilidades, balanceamento ou sistemas de combate.
+O elenco tem sete identidades fixas (**Bram, Nix, Rowan, Iria, Boro, Suri e Mira**) e um gerador por semente. Todos são desenhados pelo motor **Forge** ([docs/FORGE.md](FORGE.md)), que aplica a mesma grade, contorno, luz e paleta a qualquer receita. A direção visual vem de referências em vídeo: cabeças grandes e arredondadas, contorno azul-noite contínuo, faixa/lenço azul como motivo comum, animais e humanos com a mesma anatomia mínima, armas com realce branco-gelo e sombra de contato escura sob os pés. Não há habilidades, balanceamento ou sistemas de combate.
 
 ![Prancha do elenco](roster/board.png)
 
@@ -71,27 +71,11 @@ Essas perguntas exigem inspeção visual. Os testes automatizados verificam prop
 
 ## Implementação e uso
 
-- `RosterCatalog.cs`: catálogo tipado de identidade, classe, silhueta, descrição e cores; regras compartilhadas em `RosterVisualRules`.
-- `ExpandedAdventurer.cs`: quatro construções próprias usando as mesmas primitivas de rasterização e contratos de pose.
-- `CompactAdventurer.cs`: preserva a renderização aprovada e encaminha os novos identificadores para a expansão. Os valores anteriores do enum permanecem estáveis.
-- `RosterBoard.cs` / `.tscn`: prancha Godot com sprite 4×, silhueta 2×, versão nativa 1×, paleta e botão de seleção.
-- `PixelDemo.cs`: seleção dos sete personagens, exportação e testes ampliados. O botão **Guia do elenco** abre a prancha; **Selecionar** retorna à demo com aquele personagem.
-- `docs/roster/catalog.json`: catálogo exportado e versionado; os assets PNG e JSON de animação ficam na mesma pasta.
+- `pixel_demo/Forge/`: o motor. `ForgeCore` (papéis de cor, paleta, camada, primitivas), `ForgeParts` (cabeças por espécie, chapéus, tronco, costas), `ForgeGear` (armas e itens paramétricos por ângulo), `ForgeRenderer` (poses e composição), `ForgeRoster` (as sete receitas), `ForgeGenerator` (semente → receita) e `ForgeValidation` (regras objetivas).
+- `RosterCatalog.cs`: catálogo tipado derivado das receitas; regras compartilhadas em `RosterVisualRules`.
+- `CompactAdventurer.cs`: fachada estável (`Render(tempo, movimento, costas)`); os valores do enum `AdventurerKind` permanecem.
+- `RosterBoard.cs` / `.tscn`: prancha Godot com sprite 4×, silhueta (sem sombra), versão nativa 1×, paleta e botão de seleção.
+- `PixelDemo.cs`: seleção do elenco, geração por semente, espelhar, sombra, exportação e testes. O botão **Guia do elenco** abre a prancha.
+- `docs/roster/`: PNGs, atlases, JSONs de animação, `catalog.json` (inclui a receita de cada personagem) e a galeria procedural (`generated.png/gif`, `generated-catalog.json`).
 
-Os novos integrantes possuem idle, caminhada, corrida, ação de classe e reação de dano, além da vista simplificada de costas já utilizada na demo. As ações são demonstrações visuais. A origem é (16,29), e o tamanho do quadro é 32×32 em todas as folhas.
-
-## Validação realizada
-
-- Build Godot .NET sem avisos ou erros C#.
-- Sete personagens, três variações de cabeça, cinco estados e duas vistas: determinismo, paleta, alfa binário, limites de quadro, pés fixos e fechamento dos ciclos verificados.
-- Silhuetas alfa diferentes entre os sete integrantes; inspeção visual na prancha e em tamanho nativo.
-- Os três PNGs aprovados foram comparados pixel a pixel com as referências preservadas, sem diferenças. As folhas de animação antigas também são comparadas na entrega.
-- Teste de interface com renderização real: seleção dos sete, pausa, mudança de vista, ataque/dano e recuperação; 13 verificações aprovadas.
-
-```bash
-./scripts/run.sh --headless -- --pixel-test
-./scripts/run.sh --headless -- --pixel-frames
-# Display gráfico real ou virtual necessário:
-./scripts/run.sh --audio-driver Dummy -- --pixel-ui-test
-./scripts/run.sh --audio-driver Dummy res://pixel_demo/RosterBoard.tscn -- --roster-capture
-```
+---

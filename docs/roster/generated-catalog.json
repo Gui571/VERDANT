@@ -1,0 +1,246 @@
+{
+  "version": 1,
+  "generator": "VERDANT Forge",
+  "characters": [
+    {
+      "seed": 1,
+      "Id": "g1",
+      "Name": "Bosa",
+      "Class": "Duelista",
+      "Species": "Cat",
+      "Headwear": "None",
+      "Weapon": "Daggers",
+      "Description": "Gato duelista: duas adagas, cabe\u00E7a descoberta. Gerado pela semente 1."
+    },
+    {
+      "seed": 2,
+      "Id": "g2",
+      "Name": "Fakiki",
+      "Class": "Lanceiro",
+      "Species": "Elf",
+      "Headwear": "Crown",
+      "Weapon": "Spear",
+      "Description": "Elfo lanceiro: lan\u00E7a, coroa pequena. Gerado pela semente 2."
+    },
+    {
+      "seed": 3,
+      "Id": "g3",
+      "Name": "Zeluni",
+      "Class": "Batedor",
+      "Species": "Mouse",
+      "Headwear": "Headband",
+      "Weapon": "Axe",
+      "Description": "Rato batedor: machado, faixa de tecido. Gerado pela semente 3."
+    },
+    {
+      "seed": 4,
+      "Id": "g4",
+      "Name": "Pene",
+      "Class": "Lanceiro",
+      "Species": "Turtle",
+      "Headwear": "IceHelm",
+      "Weapon": "Spear",
+      "Description": "Tartaruga lanceiro: lan\u00E7a, elmo de gelo. Gerado pela semente 4."
+    },
+    {
+      "seed": 5,
+      "Id": "g5",
+      "Name": "Vigruto",
+      "Class": "Lanceiro",
+      "Species": "Duck",
+      "Headwear": "IceHelm",
+      "Weapon": "Spear",
+      "Description": "Pato lanceiro: lan\u00E7a, elmo de gelo. Gerado pela semente 5."
+    },
+    {
+      "seed": 6,
+      "Id": "g6",
+      "Name": "Zedoto",
+      "Class": "Duelista",
+      "Species": "Duck",
+      "Headwear": "None",
+      "Weapon": "Daggers",
+      "Description": "Pato duelista: duas adagas, cabe\u00E7a descoberta. Gerado pela semente 6."
+    },
+    {
+      "seed": 7,
+      "Id": "g7",
+      "Name": "Netuto",
+      "Class": "Arqueiro",
+      "Species": "Duck",
+      "Headwear": "Headband",
+      "Weapon": "Bow",
+      "Description": "Pato arqueiro: arco, faixa de tecido. Gerado pela semente 7."
+    },
+    {
+      "seed": 8,
+      "Id": "g8",
+      "Name": "Zegruki",
+      "Class": "Batedor",
+      "Species": "Bear",
+      "Headwear": "WideHat",
+      "Weapon": "Sword",
+      "Description": "Urso batedor: espada curta, chap\u00E9u de aba larga. Gerado pela semente 8."
+    },
+    {
+      "seed": 9,
+      "Id": "g9",
+      "Name": "Grupe",
+      "Class": "Duelista",
+      "Species": "Fox",
+      "Headwear": "None",
+      "Weapon": "Daggers",
+      "Description": "Raposa duelista: duas adagas, cabe\u00E7a descoberta. Gerado pela semente 9."
+    },
+    {
+      "seed": 10,
+      "Id": "g10",
+      "Name": "Peluto",
+      "Class": "Guardi\u00E3o",
+      "Species": "Cat",
+      "Headwear": "Headband",
+      "Weapon": "Hammer",
+      "Description": "Gato guardi\u00E3o: martelo, faixa de tecido. Gerado pela semente 10."
+    },
+    {
+      "seed": 11,
+      "Id": "g11",
+      "Name": "Vilu",
+      "Class": "Guardi\u00E3o",
+      "Species": "Mouse",
+      "Headwear": "Headband",
+      "Weapon": "Hammer",
+      "Description": "Rato guardi\u00E3o: martelo, faixa de tecido. Gerado pela semente 11."
+    },
+    {
+      "seed": 12,
+      "Id": "g12",
+      "Name": "Tivito",
+      "Class": "Duelista",
+      "Species": "Rabbit",
+      "Headwear": "Headband",
+      "Weapon": "Daggers",
+      "Description": "Coelho duelista: duas adagas, faixa de tecido. Gerado pela semente 12."
+    },
+    {
+      "seed": 13,
+      "Id": "g13",
+      "Name": "Perala",
+      "Class": "Guerreiro",
+      "Species": "Turtle",
+      "Headwear": "IceHelm",
+      "Weapon": "Hammer",
+      "Description": "Tartaruga guerreiro: martelo, elmo de gelo. Gerado pela semente 13."
+    },
+    {
+      "seed": 14,
+      "Id": "g14",
+      "Name": "Fasaki",
+      "Class": "Arqueiro",
+      "Species": "Fox",
+      "Headwear": "Headband",
+      "Weapon": "Bow",
+      "Description": "Raposa arqueiro: arco, faixa de tecido. Gerado pela semente 14."
+    },
+    {
+      "seed": 15,
+      "Id": "g15",
+      "Name": "Kize",
+      "Class": "Mago",
+      "Species": "Turtle",
+      "Headwear": "WizardHat",
+      "Weapon": "Staff",
+      "Description": "Tartaruga mago: cajado de cristal, chap\u00E9u pontudo. Gerado pela semente 15."
+    },
+    {
+      "seed": 16,
+      "Id": "g16",
+      "Name": "Fazeki",
+      "Class": "Curandeiro",
+      "Species": "Bear",
+      "Headwear": "Hood",
+      "Weapon": "Crook",
+      "Description": "Urso curandeiro: b\u00E1culo circular, capuz. Gerado pela semente 16."
+    },
+    {
+      "seed": 17,
+      "Id": "g17",
+      "Name": "Motila",
+      "Class": "Curandeiro",
+      "Species": "Duck",
+      "Headwear": "Hood",
+      "Weapon": "Crook",
+      "Description": "Pato curandeiro: b\u00E1culo circular, capuz. Gerado pela semente 17."
+    },
+    {
+      "seed": 18,
+      "Id": "g18",
+      "Name": "Olamola",
+      "Class": "Arqueiro",
+      "Species": "Rabbit",
+      "Headwear": "Headband",
+      "Weapon": "Bow",
+      "Description": "Coelho arqueiro: arco, faixa de tecido. Gerado pela semente 18."
+    },
+    {
+      "seed": 19,
+      "Id": "g19",
+      "Name": "Grupen",
+      "Class": "Guardi\u00E3o",
+      "Species": "Frog",
+      "Headwear": "WideHat",
+      "Weapon": "Axe",
+      "Description": "Sapo guardi\u00E3o: machado, chap\u00E9u de aba larga. Gerado pela semente 19."
+    },
+    {
+      "seed": 20,
+      "Id": "g20",
+      "Name": "Fafaro",
+      "Class": "Lanceiro",
+      "Species": "Frog",
+      "Headwear": "IceHelm",
+      "Weapon": "Spear",
+      "Description": "Sapo lanceiro: lan\u00E7a, elmo de gelo. Gerado pela semente 20."
+    },
+    {
+      "seed": 21,
+      "Id": "g21",
+      "Name": "Viki",
+      "Class": "Lanceiro",
+      "Species": "Mouse",
+      "Headwear": "Crown",
+      "Weapon": "Spear",
+      "Description": "Rato lanceiro: lan\u00E7a, coroa pequena. Gerado pela semente 21."
+    },
+    {
+      "seed": 22,
+      "Id": "g22",
+      "Name": "Rafato",
+      "Class": "Mago",
+      "Species": "Mouse",
+      "Headwear": "Headband",
+      "Weapon": "Staff",
+      "Description": "Rato mago: cajado de cristal, faixa de tecido. Gerado pela semente 22."
+    },
+    {
+      "seed": 23,
+      "Id": "g23",
+      "Name": "Viola",
+      "Class": "Duelista",
+      "Species": "Human",
+      "Headwear": "Headband",
+      "Weapon": "Daggers",
+      "Description": "Humano duelista: duas adagas, faixa de tecido. Gerado pela semente 23."
+    },
+    {
+      "seed": 24,
+      "Id": "g24",
+      "Name": "Botin",
+      "Class": "Duelista",
+      "Species": "Elf",
+      "Headwear": "Headband",
+      "Weapon": "Daggers",
+      "Description": "Elfo duelista: duas adagas, faixa de tecido. Gerado pela semente 24."
+    }
+  ]
+}

@@ -1,20 +1,26 @@
 # VERDANT — Pixel character demo & procedural workshop
 
-**[Baixar demo para Windows 64 bits](https://github.com/Gui571/Teste-game/raw/refs/heads/verdant-demo/downloads/Verdant-Windows.zip)** — extraia todo o ZIP e abra `Verdant.exe`. Godot e .NET já estão incluídos no pacote. A execução no Windows ainda não foi testada.
+**[Baixar demo para Windows 64 bits](https://github.com/Gui571/VERDANT/raw/refs/heads/melhorias-pixel-art/downloads/Verdant-Windows.zip)** — extraia todo o ZIP e abra `Verdant.exe`. Godot e .NET já estão incluídos no pacote. A execução no Windows ainda não foi testada.
 
-**Current roster:** seven visually distinct adventurers built on the approved Bram / Nix / Rowan style. Those three native sprites and all 15 of their animation atlases remain pixel-identical to the approved version.
+**[Baixar Linux x86_64](https://github.com/Gui571/VERDANT/raw/refs/heads/melhorias-pixel-art/downloads/Verdant-Linux.zip)** — extraia e execute `Verdant.x86_64` (se necessário: `chmod +x Verdant.x86_64`).
+
+Validação real em Godot 4.5.2 .NET / SDK 8.0.408: build sem avisos; 110.252 verificações no PixelPreview e no Godot; 36 verificações de interface no editor e no executável Linux. Windows não executado. [Relatório e prévias](docs/FORGE.md#revisão-validada-no-godot).
+
+**Current roster:** seven visually distinct adventurers, now all drawn by the **Forge** pixel-art engine — chunky big-head chibi proportions, a continuous one-pixel navy outline, a contact shadow, a shared blue-team accent (headbands, scarves, capes) and hue-shifted shading — plus an unlimited **seeded generator** that produces new adventurers in exactly the same style (see [docs/FORGE.md](docs/FORGE.md)).
+
+![Procedural gallery](docs/roster/generated.gif)
 
 ![Expanded roster](docs/roster/lineup.gif)
 
 [Visual direction guide (Portuguese)](docs/DIRECAO-ELENCO.md) · [Roster board](docs/roster/board.png) · [Versioned catalog](docs/roster/catalog.json)
 
-New characters: **Iria** (violet astral mage, pointed hat, crystal and tome), **Boro** (bronze guardian, shell, tower shield and hammer), **Suri** (orange fox duelist, wine scarf, tail and twin daggers), and **Mira** (jade/ivory owl healer, round hood and circular crook).
+Characters: **Bram** (blue duck warrior, ice helm, axe and round shield), **Nix** (rabbit scout, headband, short sword), **Rowan** (hooded archer), **Iria** (violet astral mage, pointed hat, crystal and tome), **Boro** (bronze guardian, shell, tower shield and hammer), **Suri** (orange fox duelist, wine scarf, tail and twin daggers), and **Mira** (jade/ivory owl healer, round hood and circular crook).
 
-Shared rules: 32×32 cells, origin (16,29), a roughly 14px head, 5px torso, 2px feet, dark one-pixel outline, upper-left light, at most 16 visible colors and integer nearest-neighbor scaling. Each class has a different silhouette and equipment grammar; these are separate constructions, not recolors.
+Shared rules: 32×32 cells, origin (16,29), a 14px head, 5px torso, 2px feet, dark one-pixel outline, upper-left light, at most 16 visible colors and integer nearest-neighbor scaling. Every character is a *recipe* (species + headwear + weapon + off-hand + back gear + palette) rendered by the same code, so the whole cast and every generated character share one finish. Idle, walk, run, attack and hurt animations are produced from poses, with anticipation, impact smears, spell sparks and a white hit flash.
 
-F5 launches the demo. Select any character from the dropdown or open **Guia do elenco**, inspect the 4× rendering / silhouette / native sprite, then press **Selecionar**. Existing pause, walking, front/back, zoom, backdrop, PNG export and workshop navigation remain. **Ações** offers run, class action and hurt; these are visual demonstrations, without new combat rules.
+F5 launches the demo. Select any character from the dropdown or open **Guia do elenco**, inspect the 4× rendering / silhouette / native sprite, then press **Selecionar**. Type a number in the seed box and press **Gerar** (or **Sortear** for a random one) to generate a new adventurer; **Espelhar** flips the facing and **Sombra** toggles the contact shadow. Pause, walking, front/back, zoom, backdrop, PNG export and workshop navigation remain. **Ações** offers run, class action and hurt; these are visual demonstrations, without new combat rules.
 
-`docs/roster/` contains seven native PNGs and 35 atlases with JSON timing, origin and loop metadata. `RosterCatalog.cs` defines class identities and shared constraints; `ExpandedAdventurer.cs` implements the four additions. The approved renderer is retained in `CompactAdventurer.cs`.
+`docs/roster/` contains seven native PNGs and 35 atlases with JSON timing, origin and loop metadata, the versioned catalog (with each character's recipe) and a gallery of 24 generated characters. `pixel_demo/Forge/` holds the engine; `RosterCatalog.cs` derives the catalog from `ForgeRoster`; `CompactAdventurer.cs` is the stable facade used by the demo, tests and exporters.
 
 ```bash
 ./scripts/run.sh --headless -- --pixel-test
@@ -23,6 +29,8 @@ F5 launches the demo. Select any character from the dropdown or open **Guia do e
 ./scripts/run.sh --audio-driver Dummy -- --pixel-ui-test
 ./scripts/run.sh --audio-driver Dummy res://pixel_demo/RosterBoard.tscn -- --roster-capture
 ```
+
+No Godot at hand? `tools/PixelPreview` compiles the same sprite code without the engine and can render contact sheets, run the full style/validation suite (`check`) and regenerate `docs/roster` (`export`); see its README.
 
 
 A working **Godot 4.5.2 .NET / C# .NET 8 demo** of procedural pixel creatures, genetics and animation. This is an original implementation based on the supplied written art brief. The linked reference sites returned HTTP 403 in the development environment; their contents were not inspected or copied.
