@@ -1,10 +1,16 @@
 # VERDANT — Pixel character demo & procedural workshop
 
-**[Baixar demo para Windows 64 bits](https://github.com/Gui571/VERDANT/raw/refs/heads/melhorias-pixel-art/downloads/Verdant-Windows.zip)** — extraia todo o ZIP e abra `Verdant.exe`. Godot e .NET já estão incluídos no pacote. A execução no Windows ainda não foi testada.
+**Novo: [oficina de monstros Forge](docs/MONSTROS.md) e [arena automática](docs/BATALHA.md).** Na demo, abra Oficina procedural para editar nove famílias no mesmo estilo do elenco, ou Arena para montar dois times e assistir à luta. Pausa, passo, velocidade, repetição por semente e exportação de sprites estão disponíveis. O renderer antigo fica separado em Modo legado.
 
-**[Baixar Linux x86_64](https://github.com/Gui571/VERDANT/raw/refs/heads/melhorias-pixel-art/downloads/Verdant-Linux.zip)** — extraia e execute `Verdant.x86_64` (se necessário: `chmod +x Verdant.x86_64`).
+![Monstros Forge](docs/monsters/families.png)
 
-Validação real em Godot 4.5.2 .NET / SDK 8.0.408: build sem avisos; 110.252 verificações no PixelPreview e no Godot; 36 verificações de interface no editor e no executável Linux. Windows não executado. [Relatório e prévias](docs/FORGE.md#revisão-validada-no-godot).
+![Arena automática](docs/battle/battle.gif)
+
+**[Baixar demo para Windows 64 bits](https://github.com/Gui571/VERDANT/raw/refs/heads/monstros-e-arena/downloads/Verdant-Windows.zip)** — extraia todo o ZIP e abra `Verdant.exe`. Godot e .NET já estão incluídos no pacote. A execução no Windows ainda não foi testada.
+
+**[Baixar Linux x86_64](https://github.com/Gui571/VERDANT/raw/refs/heads/monstros-e-arena/downloads/Verdant-Linux.zip)** — extraia e execute `Verdant.x86_64` (se necessário: `chmod +x Verdant.x86_64`).
+
+Validação real em Godot 4.5.2 .NET / SDK 8.0.408: build sem avisos; 166.626 verificações de arte no PixelPreview e no Godot; testes separados para oficina, arena e elenco. Veja os novos relatórios de monstros e batalha. Windows não executado. [Relatório e prévias](docs/FORGE.md#revisão-validada-no-godot).
 
 **Current roster:** seven visually distinct adventurers, now all drawn by the **Forge** pixel-art engine — chunky big-head chibi proportions, a continuous one-pixel navy outline, a contact shadow, a shared blue-team accent (headbands, scarves, capes) and hue-shifted shading — plus an unlimited **seeded generator** that produces new adventurers in exactly the same style (see [docs/FORGE.md](docs/FORGE.md)).
 
@@ -18,7 +24,7 @@ Characters: **Bram** (blue duck warrior, ice helm, axe and round shield), **Nix*
 
 Shared rules: 32×32 cells, origin (16,29), a 14px head, 5px torso, 2px feet, dark one-pixel outline, upper-left light, at most 16 visible colors and integer nearest-neighbor scaling. Every character is a *recipe* (species + headwear + weapon + off-hand + back gear + palette) rendered by the same code, so the whole cast and every generated character share one finish. Idle, walk, run, attack and hurt animations are produced from poses, with anticipation, impact smears, spell sparks and a white hit flash.
 
-F5 launches the demo. Select any character from the dropdown or open **Guia do elenco**, inspect the 4× rendering / silhouette / native sprite, then press **Selecionar**. Type a number in the seed box and press **Gerar** (or **Sortear** for a random one) to generate a new adventurer; **Espelhar** flips the facing and **Sombra** toggles the contact shadow. Pause, walking, front/back, zoom, backdrop, PNG export and workshop navigation remain. **Ações** offers run, class action and hurt; these are visual demonstrations, without new combat rules.
+F5 launches the demo. Select any character from the dropdown or open **Guia do elenco**, inspect the 4× rendering / silhouette / native sprite, then press **Selecionar**. Type a number in the seed box and press **Gerar** (or **Sortear** for a random one) to generate a new adventurer; **Espelhar** flips the facing and **Sombra** toggles the contact shadow. Pause, walking, front/back, zoom, backdrop, PNG export and workshop navigation remain. **Ações** offers run, class action and hurt; these are visual demonstrations in the roster preview. Automatic combat is available separately in Arena.
 
 `docs/roster/` contains seven native PNGs and 35 atlases with JSON timing, origin and loop metadata, the versioned catalog (with each character's recipe) and a gallery of 24 generated characters. `pixel_demo/Forge/` holds the engine; `RosterCatalog.cs` derives the catalog from `ForgeRoster`; `CompactAdventurer.cs` is the stable facade used by the demo, tests and exporters.
 
@@ -62,7 +68,7 @@ Linux cloud environment:
 
 `setup.sh` defaults to `/workspace/toolchains` and verifies the Godot archive with the official SHA512 manifest. Set `CREATURE_TOOLS` to change the installation directory. For subsequent runs set `DOTNET_ROOT` and `GODOT_BIN` accordingly. Set `XDG_DATA_HOME`, `XDG_CONFIG_HOME`, `XDG_CACHE_HOME`, `DOTNET_CLI_HOME`, `NUGET_PACKAGES` to writable paths outside `/workspace` on another Linux machine. The cloud scripts use `/workspace` for these directories. On a machine with no audio device, add `--audio-driver Dummy`.
 
-## Using the workshop
+## Modo legado (192×160)
 
 - Enter a uint32 seed and Generate, or choose New creature. Nine family selectors change anatomy; the field guide cycles through six fixed specimens per family.
 - Sliders edit anatomy, palette, markings and tempo live. Anatomy/color/marking locks apply to regeneration. Undo/redo covers slider dragging and genome actions; Reset restores the last saved or loaded genome.
