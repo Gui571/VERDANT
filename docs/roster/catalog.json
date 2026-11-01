@@ -1,11 +1,12 @@
 {
-  "version": 1,
+  "version": 2,
   "cell": 32,
   "origin": [
     16,
     29
   ],
   "maxColors": 16,
+  "engine": "VERDANT Forge",
   "characters": [
     {
       "Kind": "Duck",
@@ -13,12 +14,20 @@
       "Name": "Bram",
       "Class": "Guerreiro",
       "Description": "Capacete de gelo, machado e escudo. Guarda firme e silhueta compacta.",
-      "Silhouette": "Coroa ramificada \u002B escudo",
+      "Silhouette": "Crista de espinhos \u002B escudo redondo",
       "Colors": [
         "5098ef",
-        "c1dceb",
-        "dfce80"
-      ]
+        "dfce80",
+        "e5953d"
+      ],
+      "Recipe": {
+        "Species": "Duck",
+        "Headwear": "IceHelm",
+        "Weapon": "Axe",
+        "Offhand": "RoundShield",
+        "Back": "Cape",
+        "Outfit": "Tunic"
+      }
     },
     {
       "Kind": "Rabbit",
@@ -28,10 +37,18 @@
       "Description": "Orelhas longas, len\u00E7o cobre e espada curta. Leve e alerta.",
       "Silhouette": "Orelhas verticais \u002B espada",
       "Colors": [
-        "f0f0e5",
         "5098ef",
+        "f0f0e5",
         "e5953d"
-      ]
+      ],
+      "Recipe": {
+        "Species": "Rabbit",
+        "Headwear": "Headband",
+        "Weapon": "Sword",
+        "Offhand": "None",
+        "Back": "Cape",
+        "Outfit": "Tunic"
+      }
     },
     {
       "Kind": "Knight",
@@ -42,9 +59,17 @@
       "Silhouette": "Capuz inclinado \u002B arco",
       "Colors": [
         "849967",
-        "4e6754",
-        "947052"
-      ]
+        "edc297",
+        "b5a15d"
+      ],
+      "Recipe": {
+        "Species": "Human",
+        "Headwear": "Hood",
+        "Weapon": "Bow",
+        "Offhand": "None",
+        "Back": "Quiver",
+        "Outfit": "Plain"
+      }
     },
     {
       "Kind": "Mage",
@@ -55,9 +80,17 @@
       "Silhouette": "Tri\u00E2ngulo alto \u002B cristal",
       "Colors": [
         "9678cf",
-        "514777",
+        "edc297",
         "edacd3"
-      ]
+      ],
+      "Recipe": {
+        "Species": "Human",
+        "Headwear": "WizardHat",
+        "Weapon": "Staff",
+        "Offhand": "Tome",
+        "Back": "None",
+        "Outfit": "Robe"
+      }
     },
     {
       "Kind": "Guardian",
@@ -65,12 +98,20 @@
       "Name": "Boro",
       "Class": "Guardi\u00E3o",
       "Description": "Carapa\u00E7a de bronze, escudo-torre e martelo. Calmo e inabal\u00E1vel.",
-      "Silhouette": "Massa larga \u002B ret\u00E2ngulos",
+      "Silhouette": "Aba larga \u002B carapa\u00E7a \u002B martelo",
       "Colors": [
         "c29454",
-        "765740",
-        "a6b477"
-      ]
+        "a6b477",
+        "dfce80"
+      ],
+      "Recipe": {
+        "Species": "Turtle",
+        "Headwear": "WideHat",
+        "Weapon": "Hammer",
+        "Offhand": "TowerShield",
+        "Back": "Shell",
+        "Outfit": "Plate"
+      }
     },
     {
       "Kind": "Duelist",
@@ -80,10 +121,18 @@
       "Description": "Raposa de len\u00E7o vinho, cauda clara e duas adagas. \u00C1gil e provocadora.",
       "Silhouette": "Orelhas triangulares \u002B cauda",
       "Colors": [
-        "df9855",
         "8c4665",
+        "df9855",
         "f0e6cd"
-      ]
+      ],
+      "Recipe": {
+        "Species": "Fox",
+        "Headwear": "None",
+        "Weapon": "Daggers",
+        "Offhand": "None",
+        "Back": "Tail",
+        "Outfit": "Plain"
+      }
     },
     {
       "Kind": "Healer",
@@ -94,9 +143,17 @@
       "Silhouette": "Capuz redondo \u002B aro",
       "Colors": [
         "57afa4",
-        "356e78",
+        "e5dcc2",
         "e5dcc2"
-      ]
+      ],
+      "Recipe": {
+        "Species": "Owl",
+        "Headwear": "Cowl",
+        "Weapon": "Crook",
+        "Offhand": "None",
+        "Back": "None",
+        "Outfit": "Robe"
+      }
     }
   ]
 }
