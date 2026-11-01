@@ -1,8 +1,8 @@
 using Godot;
 namespace Verdant.Forge;
 
-public enum Species { Duck, Rabbit, Human, Turtle, Fox, Owl, Mouse, Cat, Frog, Elf }
-public enum Headwear { None, Headband, IceHelm, Hood, WizardHat, WideHat, Cowl, Crown }
+public enum Species { Duck, Rabbit, Human, Turtle, Fox, Owl, Mouse, Cat, Frog, Elf, Bear }
+public enum Headwear { None, Headband, IceHelm, Hood, WizardHat, WideHat, Cowl, Crown, Beret }
 public enum Weapon { None, Axe, Sword, Staff, Bow, Hammer, Daggers, Crook, Spear }
 public enum Offhand { None, RoundShield, TowerShield, Tome }
 public enum BackGear { None, Cape, Shell, Quiver, Tail }
@@ -32,6 +32,7 @@ public static class ForgeLook
         Species.Mouse => Ramp.Of("6f5d58", "9b8478", "c7b3a6"),
         Species.Cat => Ramp.Of("7f8596", "b0b5ba", "e4e7ea"),
         Species.Frog => Ramp.Of("4e7a45", "7fa65a", "b4cf7c"),
+        Species.Bear => Ramp.Of("69483c", "aa7950", "d6ac78"),
         Species.Elf => Ramp.Of("5c8a4a", "8fb162", "bed58c"),
         _ => Ramp.Of("c99a76", "edc297", "f7dcbc")
     };

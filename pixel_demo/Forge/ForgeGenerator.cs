@@ -11,11 +11,11 @@ public static class ForgeGenerator
     static readonly Archetype[] Classes =
     {
         new("Guerreiro", new[] { Headwear.IceHelm, Headwear.Headband, Headwear.WideHat }, new[] { Weapon.Axe, Weapon.Sword, Weapon.Hammer }, new[] { Offhand.RoundShield, Offhand.TowerShield }, new[] { BackGear.Cape, BackGear.None }, new[] { Outfit.Tunic, Outfit.Plate }, false),
-        new("Batedor", new[] { Headwear.Headband, Headwear.Hood, Headwear.WideHat }, new[] { Weapon.Sword, Weapon.Daggers, Weapon.Spear }, new[] { Offhand.None }, new[] { BackGear.Cape, BackGear.Tail, BackGear.None }, new[] { Outfit.Tunic, Outfit.Plain }, true),
+        new("Batedor", new[] { Headwear.Headband, Headwear.Hood, Headwear.WideHat, Headwear.Beret }, new[] { Weapon.Sword, Weapon.Axe, Weapon.Daggers }, new[] { Offhand.None }, new[] { BackGear.Cape, BackGear.Tail, BackGear.None }, new[] { Outfit.Tunic, Outfit.Plain }, true),
         new("Arqueiro", new[] { Headwear.Hood, Headwear.Headband, Headwear.WideHat }, new[] { Weapon.Bow }, new[] { Offhand.None }, new[] { BackGear.Quiver }, new[] { Outfit.Plain }, false),
         new("Mago", new[] { Headwear.WizardHat, Headwear.WideHat }, new[] { Weapon.Staff }, new[] { Offhand.Tome, Offhand.None }, new[] { BackGear.None, BackGear.Cape }, new[] { Outfit.Robe }, false),
         new("Curandeiro", new[] { Headwear.Cowl, Headwear.Hood, Headwear.Crown }, new[] { Weapon.Crook, Weapon.Staff }, new[] { Offhand.Tome, Offhand.None }, new[] { BackGear.None, BackGear.Cape }, new[] { Outfit.Robe }, false),
-        new("Guardião", new[] { Headwear.WideHat, Headwear.IceHelm }, new[] { Weapon.Hammer, Weapon.Spear }, new[] { Offhand.TowerShield, Offhand.RoundShield }, new[] { BackGear.Shell, BackGear.Cape }, new[] { Outfit.Plate }, false),
+        new("Guardião", new[] { Headwear.WideHat, Headwear.IceHelm }, new[] { Weapon.Hammer, Weapon.Axe }, new[] { Offhand.TowerShield, Offhand.RoundShield }, new[] { BackGear.Shell, BackGear.Cape }, new[] { Outfit.Plate }, false),
         new("Duelista", new[] { Headwear.Headband, Headwear.None }, new[] { Weapon.Daggers, Weapon.Sword }, new[] { Offhand.None }, new[] { BackGear.Tail, BackGear.Cape }, new[] { Outfit.Plain, Outfit.Tunic }, true),
         new("Lanceiro", new[] { Headwear.Headband, Headwear.IceHelm, Headwear.Crown }, new[] { Weapon.Spear }, new[] { Offhand.RoundShield, Offhand.None }, new[] { BackGear.Cape, BackGear.Tail, BackGear.None }, new[] { Outfit.Tunic, Outfit.Plain }, true),
     };
@@ -50,16 +50,16 @@ public static class ForgeGenerator
     static readonly string[] Syl = { "Bo", "Ki", "Ra", "Lu", "Ze", "Mo", "Ti", "Fa", "Ne", "Do", "Sa", "Vi", "Pe", "Gru", "Ola", "Tu" };
     static readonly string[] End = { "", "", "n", "ro", "ni", "la", "ki", "to" };
 
-    public static readonly string[] SpeciesPt = { "Pato", "Coelho", "Humano", "Tartaruga", "Raposa", "Coruja", "Rato", "Gato", "Sapo", "Elfo" };
+    public static readonly string[] SpeciesPt = { "Pato", "Coelho", "Humano", "Tartaruga", "Raposa", "Coruja", "Rato", "Gato", "Sapo", "Elfo", "Urso" };
     static readonly Dictionary<Weapon, string> WeaponPt = new() { [Weapon.Axe] = "machado", [Weapon.Sword] = "espada curta", [Weapon.Staff] = "cajado de cristal", [Weapon.Bow] = "arco", [Weapon.Hammer] = "martelo", [Weapon.Daggers] = "duas adagas", [Weapon.Crook] = "báculo circular", [Weapon.Spear] = "lança" };
-    static readonly Dictionary<Headwear, string> HatPt = new() { [Headwear.None] = "cabeça descoberta", [Headwear.Headband] = "faixa de tecido", [Headwear.IceHelm] = "elmo de gelo", [Headwear.Hood] = "capuz", [Headwear.WizardHat] = "chapéu pontudo", [Headwear.WideHat] = "chapéu de aba larga", [Headwear.Cowl] = "capuz claro", [Headwear.Crown] = "coroa pequena" };
+    static readonly Dictionary<Headwear, string> HatPt = new() { [Headwear.Beret] = "boina de explorador", [Headwear.None] = "cabeça descoberta", [Headwear.Headband] = "faixa de tecido", [Headwear.IceHelm] = "elmo de gelo", [Headwear.Hood] = "capuz", [Headwear.WizardHat] = "chapéu pontudo", [Headwear.WideHat] = "chapéu de aba larga", [Headwear.Cowl] = "capuz claro", [Headwear.Crown] = "coroa pequena" };
 
     public static ForgeSpec Generate(ulong seed)
     {
         var r = new Rng(seed);
         var cls = r.Pick(Classes);
         // 1) espécie sorteada; 2) chapéu escolhido entre os da classe que a espécie aceita.
-        var sp = (Species)r.Int(0, 10);
+        var sp = (Species)r.Int(0, Enum.GetValues<Species>().Length);
         var hat = r.Pick(Allowed(sp, cls.Hats));
         var weapon = r.Pick(cls.Weapons); var off = r.Pick(cls.Offhands); var back = r.Pick(cls.Backs); var outfit = r.Pick(cls.Outfits);
         if (weapon is Weapon.Bow or Weapon.Daggers) off = Offhand.None;                 // mãos ocupadas

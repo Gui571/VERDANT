@@ -26,7 +26,7 @@ public partial class PixelDemo : Control
         var title=new Label{Text="VERDANT  /  PEQUENOS VIAJANTES"};title.AddThemeColorOverride("font_color",new Color("ede5cb"));title.AddThemeFontSizeOverride("font_size",26);var titleRow=new HBoxContainer();root.AddChild(titleRow);title.SizeFlagsHorizontal=SizeFlags.ExpandFill;titleRow.AddChild(title);AddButton(titleRow,"Guia do elenco",()=>GetTree().ChangeSceneToFile("res://pixel_demo/RosterBoard.tscn"));
         var desc=new Label{Text="Patrulha do vale     •     32 × 32 pixels     •     animação em camadas"};desc.AddThemeColorOverride("font_color",new Color("a2b3cc"));root.AddChild(desc);
         var spacer=new Control{SizeFlagsVertical=SizeFlags.ExpandFill};root.AddChild(spacer);
-        var actions=new HBoxContainer{Alignment=BoxContainer.AlignmentMode.Center};actions.AddThemeConstantOverride("separation",12);root.AddChild(actions);
+        var actions=new HFlowContainer{};actions.AddThemeConstantOverride("h_separation",12);actions.AddThemeConstantOverride("v_separation",8);root.AddChild(actions);
         var choose=new OptionButton{FitToLongestItem=false,CustomMinimumSize=new Vector2(170,0)};choose.AddThemeFontSizeOverride("font_size",14);foreach(var entry in RosterCatalog.All)choose.AddItem(entry.Name+" · "+entry.Class,(int)entry.Kind);choose.Select(choose.GetItemIndex((int)InitialCharacter));choose.ItemSelected+=i=>{InitialCharacter=(AdventurerKind)choose.GetItemId((int)i);sprite=new CompactAdventurer(1,InitialCharacter);Use(new CompactAdventurer(1,InitialCharacter));};actions.AddChild(choose);
         AddButton(actions,"Pausar / animar",()=>paused=!paused);
         AddButton(actions,"Parado / caminhar",()=>PlayMotion(motion==AdventurerMotion.Walk?AdventurerMotion.Idle:AdventurerMotion.Walk));
@@ -64,6 +64,16 @@ public partial class PixelDemo : Control
             seedBox.Value=42;buttons.Single(x=>x.Text=="Gerar").EmitSignal(Button.SignalName.Pressed);Check(sprite.Spec.Id=="g42","seed generation");
             using var gen42=sprite.Render(0).Image();buttons.Single(x=>x.Text=="Gerar").EmitSignal(Button.SignalName.Pressed);using var again=sprite.Render(0).Image();Check(gen42.GetData().SequenceEqual(again.GetData()),"seed determinism in UI");
             buttons.Single(x=>x.Text=="Sombra").EmitSignal(Button.SignalName.Pressed);Check(!sprite.GroundShadow,"shadow toggle");
+            buttons.Single(x=>x.Text=="Sortear").EmitSignal(Button.SignalName.Pressed);Check(sprite.Spec.Id=="g"+(ulong)seedBox.Value,"random generation");
+            actions.GetPopup().EmitSignal(PopupMenu.SignalName.IdPressed,0L);Check(motion==AdventurerMotion.Run,"run menu");
+            buttons.Single(x=>x.Text=="Parado / caminhar").EmitSignal(Button.SignalName.Pressed);Check(motion==AdventurerMotion.Walk,"walk toggle");
+            buttons.Single(x=>x.Text=="Espelhar").EmitSignal(Button.SignalName.Pressed);Check(flip,"mirror toggle");
+            int oldZoom=zoom;buttons.Single(x=>x.Text=="Ampliar").EmitSignal(Button.SignalName.Pressed);Check(zoom!=oldZoom,"zoom");
+            paused=true;buttons.Single(x=>x.Text=="Exportar PNG").EmitSignal(Button.SignalName.Pressed);
+            using var saved=Image.LoadFromFile(ProjectSettings.GlobalizePath("user://compact-"+sprite.Spec.Id+".png"));
+            using var expected=sprite.Render(PoseTime,motion,back).Image();expected.FlipX();Check(saved.GetData().SequenceEqual(expected.GetData()),"export matches mirrored pose");
+            await ToSignal(GetTree(),SceneTree.SignalName.ProcessFrame);
+            foreach(var button in buttons.Where(b=>b.IsVisibleInTree()))Check(GetViewportRect().Encloses(button.GetGlobalRect()),"button outside viewport: "+button.Text);
             GD.Print("PIXEL_UI_PASS checks="+checks);GetTree().Quit();
         }catch(Exception e){GD.PrintErr(e);GetTree().Quit(1);}
     }
@@ -83,7 +93,7 @@ public partial class PixelDemo : Control
     void Refresh(){using var img=sprite.Render(PoseTime,motion,back).Image();if(texture==null)texture=ImageTexture.CreateFromImage(img);else texture.Update(img);QueueRedraw();}
     public override void _Process(double delta){if(texture==null||paused)return;time+=delta;if((motion==AdventurerMotion.Attack&&PoseTime>=.75)||(motion==AdventurerMotion.Hurt&&PoseTime>=.5))motion=AdventurerMotion.Idle;accumulator+=delta;if(accumulator>=.125){accumulator%=.125;Refresh();}}
     public override void _Draw(){DrawRect(new Rect2(Vector2.Zero,Size),new Color("1c2031"));if(texture==null)return;var rect=new Rect2(new Vector2(80,135),new Vector2(1280,640));DrawStyleBox(new StyleBoxFlat{BgColor=Colors.White,CornerRadiusTopLeft=16,CornerRadiusTopRight=16,CornerRadiusBottomLeft=16,CornerRadiusBottomRight=16},rect);if(landscape&&terrain!=null){if(zoom>=4)DrawTextureRectRegion(terrain,rect,new Rect2(160-640/zoom,120-480/zoom,1280/zoom,640/zoom));else DrawTextureRect(terrain,new Rect2(rect.Position+new Vector2(640-160*zoom,480-120*zoom),new Vector2(320,160)*zoom),false);}var size=new Vector2(32,32)*zoom;var origin=landscape?new Vector2(rect.GetCenter().X-16*zoom,rect.Position.Y+480-29*zoom):rect.GetCenter()-size/2;DrawTextureRect(texture,flip?new Rect2(origin+new Vector2(size.X,0),new Vector2(-size.X,size.Y)):new Rect2(origin,size),false);}
-    void Export(){string path=ProjectSettings.GlobalizePath("user://compact-"+sprite.Spec.Id+".png");using var img=sprite.Render(PoseTime,motion,back).Image();var error=img.SavePng(path);status.Text=error==Error.Ok?"PNG transparente salvo em: "+path:"Falha ao exportar: "+error;}
+    void Export(){string path=ProjectSettings.GlobalizePath("user://compact-"+sprite.Spec.Id+".png");using var img=sprite.Render(PoseTime,motion,back).Image();if(flip)img.FlipX();var error=img.SavePng(path);status.Text=error==Error.Ok?"PNG transparente salvo em: "+path:"Falha ao exportar: "+error;}
     async void Capture(){await ToSignal(GetTree().CreateTimer(.2),SceneTreeTimer.SignalName.Timeout);using var img=GetViewport().GetTexture().GetImage();img.SavePng("user://pixel-demo.png");GetTree().Quit();}
     void ExportFrames(){string path=ProjectSettings.GlobalizePath("user://pixel-frames");Directory.CreateDirectory(path);for(int i=0;i<32;i++){using var img=sprite.Render(i/8.0).Image();using var frame=Image.CreateEmpty(64,64,false,Image.Format.Rgba8);frame.Fill(Colors.White);frame.BlendRect(img,new Rect2I(0,0,32,32),new Vector2I(16,16));frame.Resize(512,512,Image.Interpolation.Nearest);frame.SavePng(Path.Combine(path,$"frame-{i:D2}.png"));}
         using var sheet=Image.CreateEmpty(32*8,32*4,false,Image.Format.Rgba8);

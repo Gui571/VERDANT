@@ -53,6 +53,10 @@ public static class Parts
                     L.Stamp(new[] { "..f.", ".ff.", "fppf", "fpff", "ffff" }, hx + 10, hy - 5, false);
                     break;
                 }
+            case Species.Bear:
+                L.Stamp(new[] { ".fff.", "fFFff", "fffff", ".fff." }, hx, hy - 3, false);
+                L.Stamp(new[] { ".fff.", "ffFFf", "fffff", ".fff." }, hx + 9, hy - 3, false);
+                break;
             case Species.Mouse:
                 L.Stamp(new[] { ".fff.", "fpppf", "fpppf", ".fff." }, hx - 1, hy - 3, false);
                 L.Stamp(new[] { ".fff.", "fpppf", "fpppf", ".fff." }, hx + 10, hy - 3, false);
@@ -88,6 +92,7 @@ public static class Parts
                 Eyes(7, 11);
                 L.Set(hx + 12, hy + 8, Tone.Pink); L.HLine(hx + 9, hx + 12, hy + 9, Tone.FurL);
                 break;
+            case Species.Bear:
             case Species.Human:
             case Species.Elf:
                 Eyes(7, 11);
@@ -180,7 +185,11 @@ public static class Parts
                 tmp.HLine(hx + 2, hx + 13, hy + 1, Dm(Tone.ClothD)); tmp.HLine(hx + 3, hx + 12, hy + 2, Dm(Tone.ClothD));
                 if (cowl) { tmp.HLine(hx + 1, hx + 13, hy + 1, Tone.ClothM); tmp.Set(hx + 6, hy + 1, Tone.White); tmp.Set(hx + 7, hy + 1, Tone.ClothL); }
                 else { tmp.Stamp(new[] { "w", "i" }, hx - 2, hy - 5); tmp.Set(hx - 2, hy - 3, Tone.LeatherM); tmp.Rect(hx + 3, hy + 2, 3, 1, Tone.LeatherM); }
-                if (back) for (int y = 2; y <= 10; y++) tmp.HLine(hx + 2, hx + 12, hy + y, Dm(y > 7 ? Tone.ClothD : Tone.ClothM));
+                if (back) {
+                    for (int y = 2; y <= 10; y++) tmp.HLine(hx + 2, hx + 12, hy + y, Dm(y > 7 ? Tone.ClothD : Tone.ClothM));
+                    tmp.Line(hx + 6, hy + 3, hx + 8, hy + 8, Dm(Tone.ClothD));
+                    tmp.Line(hx + 3, hy + 3, hx + 3, hy + 6, Dm(Tone.ClothL));
+                }
                 L.Composite(tmp, !cowl);
                 break;
             }
@@ -208,6 +217,10 @@ public static class Parts
                 L.Composite(tmp, true);
                 break;
             }
+            case Headwear.Beret:
+                L.Stamp(new[] { "...ccccccc...", ".ckkkkkccccc.", "cccccccccccCC", ".CCCCCCCCCCC." }, hx, hy - 3, true);
+                L.HLine(hx + 2, hx + 11, hy + 1, Tone.ClothD);
+                break;
             case Headwear.Crown:
             {
                 L.Stamp(new[] { "a.a.a", "aaaaa", "aiaia" }, hx + 4, hy - 2, true);

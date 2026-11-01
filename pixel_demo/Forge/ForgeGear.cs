@@ -86,6 +86,7 @@ public static class Gear
                 break;
             case Weapon.Axe:
                 Ln(T, gx, gy, deg, -3, 12, 0, Tone.LeatherM);
+                Ln(T, gx, gy, deg, -2, 5, -.7f, Tone.AccM);
                 Pl(T, gx, gy, deg, Tone.MetalM, (6f, 0), (5.4f, side * 3f), (7.5f, side * 5.6f), (11.2f, side * 4.6f), (11.8f, side * 1.4f), (10.2f, 0));
                 Pl(T, gx, gy, deg, Tone.MetalL, (6.4f, 0), (5.9f, side * 2.8f), (7.7f, side * 4.8f), (9.2f, side * 3.6f), (8.6f, 0));
                 { var s2 = Ri(Pt(gx, gy, deg, 7.4f, side * 4.4f)); T.Set(s2.x, s2.y, Tone.White); }
@@ -94,7 +95,10 @@ public static class Gear
                 Ln(T, gx, gy, deg, -2, 12, 0, Tone.LeatherM);
                 Pl(T, gx, gy, deg, Tone.ClothD, (9f, -4.6f), (9f, 4.6f), (13.6f, 4.6f), (13.6f, -4.6f));
                 Pl(T, gx, gy, deg, Tone.ClothM, (9.4f, -4.1f), (9.4f, 3.6f), (13.2f, 3.6f), (13.2f, -4.1f));
-                Ln(T, gx, gy, deg, 9.4f, 9.6f, -4f, Tone.ClothL); Ln(T, gx, gy, deg, 9.4f, 13.2f, -3.6f, Tone.ClothL);
+                // Top bevel and recessed side give the head three readable planes.
+                Pl(T, gx, gy, deg, Tone.MetalL, (12f,-4.1f),(12f,3.6f),(13.2f,3.6f),(13.2f,-4.1f));
+                Pl(T, gx, gy, deg, Tone.MetalD, (9.4f,2f),(9.4f,3.6f),(12f,3.6f),(12f,2f));
+                Ln(T, gx, gy, deg, 10, 12, -3.6f, Tone.White);
                 Ln(T, gx, gy, deg, 10.5f, 12.5f, 0f, Tone.AccM);
                 break;
             case Weapon.Staff:
