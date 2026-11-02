@@ -6,7 +6,7 @@ public sealed class MonsterRenderer
     readonly Layer layer;
     public bool GroundShadow {get;set;}=true;
     public MonsterRenderer(MonsterSpec spec){spec.Validate();Spec=spec;layer=new(spec.Size);Buffer=new(spec.Size,spec.Size);}
-    public static int Frames(MonsterMotion m)=>m switch{MonsterMotion.Idle=>16,MonsterMotion.Walk or MonsterMotion.Run=>8,MonsterMotion.Hurt=>4,_=>6};
+    public static int Frames(MonsterMotion m)=>m switch{MonsterMotion.Idle=>16,MonsterMotion.Walk or MonsterMotion.Run=>8,MonsterMotion.Hurt=>4,MonsterMotion.Special or MonsterMotion.Cast=>8,_=>6};
     public static int Fps(MonsterMotion m)=>m==MonsterMotion.Run?12:8;
     int ox,oy;
     void Rect(int x,int y,int w,int h,Tone t)=>layer.Rect(x+ox,y+oy,w,h,t);
@@ -19,6 +19,7 @@ public sealed class MonsterRenderer
     }
     public Raster Render(double time,MonsterMotion motion=MonsterMotion.Idle,bool back=false)
     {
+        if(motion is MonsterMotion.Special or MonsterMotion.Cast){int frame=Math.Clamp((int)(time*8),0,7);Render(Math.Min(5,Math.Max(0,frame-1))/8.0,MonsterMotion.Attack,back);ForgeEffects.Special(Buffer,MonsterGenerator.Palette(Spec),frame,motion==MonsterMotion.Cast);return Buffer;}
         layer.Clear();Buffer.Clear();int size=Spec.Size,c=size/2,g=size-3;
         int f=(int)(Math.Max(0,time)*Fps(motion));bool loop=motion<=MonsterMotion.Run;f=loop?f%Frames(motion):Math.Min(f,Frames(motion)-1);
         if(motion==MonsterMotion.Death&&f==5)return Buffer;

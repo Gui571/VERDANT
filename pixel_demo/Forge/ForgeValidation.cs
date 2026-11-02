@@ -9,7 +9,7 @@ public static class ForgeValidation
 
     static readonly (AdventurerMotion m, int frames, double fps)[] Motions =
     {
-        (AdventurerMotion.Idle, 32, 8), (AdventurerMotion.Walk, 8, 8), (AdventurerMotion.Run, 8, 12), (AdventurerMotion.Attack, 6, 8), (AdventurerMotion.Hurt, 4, 8)
+        (AdventurerMotion.Idle, 32, 8), (AdventurerMotion.Walk, 8, 8), (AdventurerMotion.Run, 8, 12), (AdventurerMotion.Attack, 6, 8), (AdventurerMotion.Hurt, 4, 8), (AdventurerMotion.Special, 8, 8), (AdventurerMotion.Cast, 8, 8)
     };
 
     public static Result Run(int generatedSeeds = 200)

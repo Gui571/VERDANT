@@ -95,6 +95,7 @@ public sealed class ForgeRenderer
 
     public Raster Render(double seconds, AdventurerMotion motion = AdventurerMotion.Idle, bool back = false)
     {
+        if(motion is AdventurerMotion.Special or AdventurerMotion.Cast){int frame=Math.Clamp((int)(seconds*8),0,7);Render(Math.Min(5,Math.Max(0,frame-1))/8.0,AdventurerMotion.Attack,back);ForgeEffects.Special(Buffer,Spec.Palette,frame,motion==AdventurerMotion.Cast);return Buffer;}
         var p = Compute(seconds, motion);
         L.Clear(); Buffer.Clear();
         var s = Spec; int bx = p.Dx, by = p.Dy;
