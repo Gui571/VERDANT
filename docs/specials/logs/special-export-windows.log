@@ -1,0 +1,360 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  Verdant -> /workspace/VERDANT/.godot/mono/temp/bin/Debug/Verdant.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:01.18
+Godot Engine v4.5.2.stable.mono.official.6ce3de25a - https://godotengine.org
+
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Started Project initialization (5 steps)[39m[0m
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Scanning file structure...[39m[0m
+[  16% ] [90m[1mfirst_scan_filesystem[22m | Loading global class names...[39m[0m
+[  33% ] [90m[1mfirst_scan_filesystem[22m | Verifying GDExtensions...[39m[0m
+[  50% ] [90m[1mfirst_scan_filesystem[22m | Creating autoload scripts...[39m[0m
+[  66% ] [90m[1mfirst_scan_filesystem[22m | Initializing plugins...[39m[0m
+[  83% ] [90m[1mfirst_scan_filesystem[22m | Starting file scan...[39m[0m
+[92m[ DONE ][39m [1mfirst_scan_filesystem[22m
+[0m
+[   0% ] [90m[1mupdate_scripts_classes[22m | Started Registering global classes... (14 steps)[39m[0m
+[   0% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[   6% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  13% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  20% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  26% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  33% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  40% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  46% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  53% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  60% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  66% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  73% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  80% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  86% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[92m[ DONE ][39m [1mupdate_scripts_classes[22m
+[0m
+[   0% ] [90m[1m_update_scan_actions[22m | Started Scanning actions... (81 steps)[39m[0m
+[   0% ] [90m[1m_update_scan_actions[22m | acid-icon.png[39m[0m
+[   1% ] [90m[1m_update_scan_actions[22m | aquatic-cast-review.png[39m[0m
+[   2% ] [90m[1m_update_scan_actions[22m | aquatic-cast.png[39m[0m
+[   3% ] [90m[1m_update_scan_actions[22m | aquatic-special-review.png[39m[0m
+[   4% ] [90m[1m_update_scan_actions[22m | aquatic-special.png[39m[0m
+[   6% ] [90m[1m_update_scan_actions[22m | arrow-rain-icon.png[39m[0m
+[   7% ] [90m[1m_update_scan_actions[22m | arthropod-cast-review.png[39m[0m
+[   8% ] [90m[1m_update_scan_actions[22m | arthropod-cast.png[39m[0m
+[   9% ] [90m[1m_update_scan_actions[22m | arthropod-special-review.png[39m[0m
+[  10% ] [90m[1m_update_scan_actions[22m | arthropod-special.png[39m[0m
+[  12% ] [90m[1m_update_scan_actions[22m | beast-cast-review.png[39m[0m
+[  13% ] [90m[1m_update_scan_actions[22m | beast-cast.png[39m[0m
+[  14% ] [90m[1m_update_scan_actions[22m | beast-special-review.png[39m[0m
+[  15% ] [90m[1m_update_scan_actions[22m | beast-special.png[39m[0m
+[  17% ] [90m[1m_update_scan_actions[22m | blessing-icon.png[39m[0m
+[  18% ] [90m[1m_update_scan_actions[22m | boro-cast-review.png[39m[0m
+[  19% ] [90m[1m_update_scan_actions[22m | boro-cast.png[39m[0m
+[  20% ] [90m[1m_update_scan_actions[22m | boro-special-review.png[39m[0m
+[  21% ] [90m[1m_update_scan_actions[22m | boro-special.png[39m[0m
+[  23% ] [90m[1m_update_scan_actions[22m | bram-cast-review.png[39m[0m
+[  24% ] [90m[1m_update_scan_actions[22m | bram-cast.png[39m[0m
+[  25% ] [90m[1m_update_scan_actions[22m | bram-special-review.png[39m[0m
+[  26% ] [90m[1m_update_scan_actions[22m | bram-special.png[39m[0m
+[  28% ] [90m[1m_update_scan_actions[22m | breath-icon.png[39m[0m
+[  29% ] [90m[1m_update_scan_actions[22m | constrict-icon.png[39m[0m
+[  30% ] [90m[1m_update_scan_actions[22m | dagger-dance-icon.png[39m[0m
+[  31% ] [90m[1m_update_scan_actions[22m | dive-icon.png[39m[0m
+[  32% ] [90m[1m_update_scan_actions[22m | dragon-cast-review.png[39m[0m
+[  34% ] [90m[1m_update_scan_actions[22m | dragon-cast.png[39m[0m
+[  35% ] [90m[1m_update_scan_actions[22m | dragon-special-review.png[39m[0m
+[  36% ] [90m[1m_update_scan_actions[22m | dragon-special.png[39m[0m
+[  37% ] [90m[1m_update_scan_actions[22m | golem-cast-review.png[39m[0m
+[  39% ] [90m[1m_update_scan_actions[22m | golem-cast.png[39m[0m
+[  40% ] [90m[1m_update_scan_actions[22m | golem-special-review.png[39m[0m
+[  41% ] [90m[1m_update_scan_actions[22m | golem-special.png[39m[0m
+[  42% ] [90m[1m_update_scan_actions[22m | ice-wall-icon.png[39m[0m
+[  43% ] [90m[1m_update_scan_actions[22m | icons-review.png[39m[0m
+[  45% ] [90m[1m_update_scan_actions[22m | iria-cast-review.png[39m[0m
+[  46% ] [90m[1m_update_scan_actions[22m | iria-cast.png[39m[0m
+[  47% ] [90m[1m_update_scan_actions[22m | iria-special-review.png[39m[0m
+[  48% ] [90m[1m_update_scan_actions[22m | iria-special.png[39m[0m
+[  50% ] [90m[1m_update_scan_actions[22m | lightning-cut-icon.png[39m[0m
+[  51% ] [90m[1m_update_scan_actions[22m | mira-cast-review.png[39m[0m
+[  52% ] [90m[1m_update_scan_actions[22m | mira-cast.png[39m[0m
+[  53% ] [90m[1m_update_scan_actions[22m | mira-special-review.png[39m[0m
+[  54% ] [90m[1m_update_scan_actions[22m | mira-special.png[39m[0m
+[  56% ] [90m[1m_update_scan_actions[22m | nix-cast-review.png[39m[0m
+[  57% ] [90m[1m_update_scan_actions[22m | nix-cast.png[39m[0m
+[  58% ] [90m[1m_update_scan_actions[22m | nix-special-review.png[39m[0m
+[  59% ] [90m[1m_update_scan_actions[22m | nix-special.png[39m[0m
+[  60% ] [90m[1m_update_scan_actions[22m | nova-icon.png[39m[0m
+[  62% ] [90m[1m_update_scan_actions[22m | plant-cast-review.png[39m[0m
+[  63% ] [90m[1m_update_scan_actions[22m | plant-cast.png[39m[0m
+[  64% ] [90m[1m_update_scan_actions[22m | plant-special-review.png[39m[0m
+[  65% ] [90m[1m_update_scan_actions[22m | plant-special.png[39m[0m
+[  67% ] [90m[1m_update_scan_actions[22m | quake-icon.png[39m[0m
+[  68% ] [90m[1m_update_scan_actions[22m | rally-icon.png[39m[0m
+[  69% ] [90m[1m_update_scan_actions[22m | roar-icon.png[39m[0m
+[  70% ] [90m[1m_update_scan_actions[22m | roots-icon.png[39m[0m
+[  71% ] [90m[1m_update_scan_actions[22m | rowan-cast-review.png[39m[0m
+[  73% ] [90m[1m_update_scan_actions[22m | rowan-cast.png[39m[0m
+[  74% ] [90m[1m_update_scan_actions[22m | rowan-special-review.png[39m[0m
+[  75% ] [90m[1m_update_scan_actions[22m | rowan-special.png[39m[0m
+[  76% ] [90m[1m_update_scan_actions[22m | serpent-cast-review.png[39m[0m
+[  78% ] [90m[1m_update_scan_actions[22m | serpent-cast.png[39m[0m
+[  79% ] [90m[1m_update_scan_actions[22m | serpent-special-review.png[39m[0m
+[  80% ] [90m[1m_update_scan_actions[22m | serpent-special.png[39m[0m
+[  81% ] [90m[1m_update_scan_actions[22m | slime-cast-review.png[39m[0m
+[  82% ] [90m[1m_update_scan_actions[22m | slime-cast.png[39m[0m
+[  84% ] [90m[1m_update_scan_actions[22m | slime-special-review.png[39m[0m
+[  85% ] [90m[1m_update_scan_actions[22m | slime-special.png[39m[0m
+[  86% ] [90m[1m_update_scan_actions[22m | suri-cast-review.png[39m[0m
+[  87% ] [90m[1m_update_scan_actions[22m | suri-cast.png[39m[0m
+[  89% ] [90m[1m_update_scan_actions[22m | suri-special-review.png[39m[0m
+[  90% ] [90m[1m_update_scan_actions[22m | suri-special.png[39m[0m
+[  91% ] [90m[1m_update_scan_actions[22m | water-jet-icon.png[39m[0m
+[  92% ] [90m[1m_update_scan_actions[22m | web-icon.png[39m[0m
+[  93% ] [90m[1m_update_scan_actions[22m | winged-cast-review.png[39m[0m
+[  95% ] [90m[1m_update_scan_actions[22m | winged-cast.png[39m[0m
+[  96% ] [90m[1m_update_scan_actions[22m | winged-special-review.png[39m[0m
+[  97% ] [90m[1m_update_scan_actions[22m | winged-special.png[39m[0m
+[92m[ DONE ][39m [1m_update_scan_actions[22m
+[0m
+[   0% ] [90m[1mreimport[22m | Started (Re)Importing Assets (81 steps)[39m[0m
+[   0% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[   1% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[   2% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[   3% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[   4% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[   6% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[   7% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[   8% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[   9% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  10% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  12% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  13% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  14% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  15% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  17% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  18% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  19% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  20% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  21% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  23% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  24% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  25% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  26% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  28% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  29% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  30% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  31% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  32% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  34% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  35% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  36% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  37% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  39% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  40% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  41% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  42% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  43% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  45% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  46% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  47% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  48% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  50% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  51% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  52% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  53% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  54% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  56% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  57% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  58% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  59% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  60% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  62% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  63% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  64% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  65% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  67% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  68% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  69% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  70% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  71% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  73% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  74% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  75% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  76% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  78% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  79% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  80% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  81% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  82% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  84% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  85% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  86% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  87% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  89% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  90% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  91% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  92% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  93% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  95% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  96% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  97% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[   0% ] [90m[1mreimport[22m | Executing pre-reimport operations...[39m[0m
+[   0% ] [90m[1mreimport[22m | rowan-cast.png[39m[0m
+[   1% ] [90m[1mreimport[22m | rowan-cast-review.png[39m[0m
+[   2% ] [90m[1mreimport[22m | roots-icon.png[39m[0m
+[   3% ] [90m[1mreimport[22m | roar-icon.png[39m[0m
+[   4% ] [90m[1mreimport[22m | rally-icon.png[39m[0m
+[   6% ] [90m[1mreimport[22m | quake-icon.png[39m[0m
+[   7% ] [90m[1mreimport[22m | plant-special.png[39m[0m
+[   8% ] [90m[1mreimport[22m | plant-special-review.png[39m[0m
+[   9% ] [90m[1mreimport[22m | plant-cast.png[39m[0m
+[  10% ] [90m[1mreimport[22m | plant-cast-review.png[39m[0m
+[  12% ] [90m[1mreimport[22m | nova-icon.png[39m[0m
+[  13% ] [90m[1mreimport[22m | nix-special.png[39m[0m
+[  14% ] [90m[1mreimport[22m | nix-special-review.png[39m[0m
+[  15% ] [90m[1mreimport[22m | nix-cast.png[39m[0m
+[  17% ] [90m[1mreimport[22m | nix-cast-review.png[39m[0m
+[  18% ] [90m[1mreimport[22m | mira-special.png[39m[0m
+[  19% ] [90m[1mreimport[22m | mira-special-review.png[39m[0m
+[  20% ] [90m[1mreimport[22m | mira-cast.png[39m[0m
+[  21% ] [90m[1mreimport[22m | mira-cast-review.png[39m[0m
+[  23% ] [90m[1mreimport[22m | lightning-cut-icon.png[39m[0m
+[  24% ] [90m[1mreimport[22m | winged-special.png[39m[0m
+[  25% ] [90m[1mreimport[22m | winged-special-review.png[39m[0m
+[  26% ] [90m[1mreimport[22m | winged-cast.png[39m[0m
+[  28% ] [90m[1mreimport[22m | winged-cast-review.png[39m[0m
+[  29% ] [90m[1mreimport[22m | web-icon.png[39m[0m
+[  30% ] [90m[1mreimport[22m | water-jet-icon.png[39m[0m
+[  31% ] [90m[1mreimport[22m | suri-special.png[39m[0m
+[  32% ] [90m[1mreimport[22m | suri-special-review.png[39m[0m
+[  34% ] [90m[1mreimport[22m | suri-cast.png[39m[0m
+[  35% ] [90m[1mreimport[22m | suri-cast-review.png[39m[0m
+[  36% ] [90m[1mreimport[22m | slime-special.png[39m[0m
+[  37% ] [90m[1mreimport[22m | slime-special-review.png[39m[0m
+[  39% ] [90m[1mreimport[22m | slime-cast.png[39m[0m
+[  40% ] [90m[1mreimport[22m | slime-cast-review.png[39m[0m
+[  41% ] [90m[1mreimport[22m | serpent-special.png[39m[0m
+[  42% ] [90m[1mreimport[22m | serpent-special-review.png[39m[0m
+[  43% ] [90m[1mreimport[22m | serpent-cast.png[39m[0m
+[  45% ] [90m[1mreimport[22m | serpent-cast-review.png[39m[0m
+[  46% ] [90m[1mreimport[22m | rowan-special.png[39m[0m
+[  47% ] [90m[1mreimport[22m | rowan-special-review.png[39m[0m
+[  48% ] [90m[1mreimport[22m | bram-cast-review.png[39m[0m
+[  50% ] [90m[1mreimport[22m | boro-special.png[39m[0m
+[  51% ] [90m[1mreimport[22m | boro-special-review.png[39m[0m
+[  52% ] [90m[1mreimport[22m | boro-cast.png[39m[0m
+[  53% ] [90m[1mreimport[22m | boro-cast-review.png[39m[0m
+[  54% ] [90m[1mreimport[22m | blessing-icon.png[39m[0m
+[  56% ] [90m[1mreimport[22m | beast-special.png[39m[0m
+[  57% ] [90m[1mreimport[22m | beast-special-review.png[39m[0m
+[  58% ] [90m[1mreimport[22m | beast-cast.png[39m[0m
+[  59% ] [90m[1mreimport[22m | beast-cast-review.png[39m[0m
+[  60% ] [90m[1mreimport[22m | arthropod-special.png[39m[0m
+[  62% ] [90m[1mreimport[22m | arthropod-special-review.png[39m[0m
+[  63% ] [90m[1mreimport[22m | arthropod-cast.png[39m[0m
+[  64% ] [90m[1mreimport[22m | arthropod-cast-review.png[39m[0m
+[  65% ] [90m[1mreimport[22m | arrow-rain-icon.png[39m[0m
+[  67% ] [90m[1mreimport[22m | aquatic-special.png[39m[0m
+[  68% ] [90m[1mreimport[22m | aquatic-special-review.png[39m[0m
+[  69% ] [90m[1mreimport[22m | aquatic-cast.png[39m[0m
+[  70% ] [90m[1mreimport[22m | aquatic-cast-review.png[39m[0m
+[  71% ] [90m[1mreimport[22m | acid-icon.png[39m[0m
+[  73% ] [90m[1mreimport[22m | iria-special.png[39m[0m
+[  74% ] [90m[1mreimport[22m | iria-special-review.png[39m[0m
+[  75% ] [90m[1mreimport[22m | iria-cast.png[39m[0m
+[  76% ] [90m[1mreimport[22m | iria-cast-review.png[39m[0m
+[  78% ] [90m[1mreimport[22m | icons-review.png[39m[0m
+[  79% ] [90m[1mreimport[22m | ice-wall-icon.png[39m[0m
+[  80% ] [90m[1mreimport[22m | golem-special.png[39m[0m
+[  81% ] [90m[1mreimport[22m | golem-special-review.png[39m[0m
+[  82% ] [90m[1mreimport[22m | golem-cast.png[39m[0m
+[  84% ] [90m[1mreimport[22m | golem-cast-review.png[39m[0m
+[  85% ] [90m[1mreimport[22m | dragon-special.png[39m[0m
+[  86% ] [90m[1mreimport[22m | dragon-special-review.png[39m[0m
+[  87% ] [90m[1mreimport[22m | dragon-cast.png[39m[0m
+[  89% ] [90m[1mreimport[22m | dragon-cast-review.png[39m[0m
+[  90% ] [90m[1mreimport[22m | dive-icon.png[39m[0m
+[  91% ] [90m[1mreimport[22m | dagger-dance-icon.png[39m[0m
+[  92% ] [90m[1mreimport[22m | constrict-icon.png[39m[0m
+[  93% ] [90m[1mreimport[22m | breath-icon.png[39m[0m
+[  95% ] [90m[1mreimport[22m | bram-special.png[39m[0m
+[  96% ] [90m[1mreimport[22m | bram-special-review.png[39m[0m
+[  97% ] [90m[1mreimport[22m | bram-cast.png[39m[0m
+[  98% ] [90m[1mreimport[22m | Finalizing Asset Import...[39m[0m
+[92m[ DONE ][39m [1mreimport[22m
+[0m
+[   0% ] [90m[1mreimport[22m | Started (Re)Importing Assets (81 steps)[39m[0m
+[   0% ] [90m[1mreimport[22m | Executing post-reimport operations...[39m[0m
+[92m[ DONE ][39m [1mreimport[22m
+[0m
+[   0% ] [90m[1mdotnet_publish_project[22m | Started Publishing .NET project... (1 steps)[39m[0m
+[   0% ] [90m[1mdotnet_publish_project[22m | Running dotnet publish[39m[0m
+[92m[ DONE ][39m [1mdotnet_publish_project[22m
+[0m
+[   0% ] [90m[1msavepack[22m | Started Packing (102 steps)[39m[0m
+[   1% ] [90m[1msavepack[22m | Storing File: res://addons/procedural_creatures/CreatureActor.cs[39m[0m
+[   3% ] [90m[1msavepack[22m | Storing File: res://.godot/exported/133200997/export-aa90edb3b523f056b92a063136c7889e-CreatureActor.scn[39m[0m
+[   5% ] [90m[1msavepack[22m | Storing File: res://addons/procedural_creatures/CreatureRenderer.cs[39m[0m
+[   7% ] [90m[1msavepack[22m | Storing File: res://addons/procedural_creatures/Exporter.cs[39m[0m
+[   9% ] [90m[1msavepack[22m | Storing File: res://addons/procedural_creatures/GenerationQueue.cs[39m[0m
+[  11% ] [90m[1msavepack[22m | Storing File: res://addons/procedural_creatures/Genome.cs[39m[0m
+[  13% ] [90m[1msavepack[22m | Storing File: res://addons/procedural_creatures/Raster.cs[39m[0m
+[  15% ] [90m[1msavepack[22m | Storing File: res://battle/Sim/Abilities.cs[39m[0m
+[  17% ] [90m[1msavepack[22m | Storing File: res://battle/Sim/BattleInputs.cs[39m[0m
+[  19% ] [90m[1msavepack[22m | Storing File: res://battle/Sim/BattleSimulation.cs[39m[0m
+[  21% ] [90m[1msavepack[22m | Storing File: res://battle/Sim/BattleValidation.cs[39m[0m
+[  23% ] [90m[1msavepack[22m | Storing File: res://battle/Sim/SpecialCombat.cs[39m[0m
+[  25% ] [90m[1msavepack[22m | Storing File: res://battle/Sim/SpecialValidation.cs[39m[0m
+[  27% ] [90m[1msavepack[22m | Storing File: res://battle/Arena.cs[39m[0m
+[  29% ] [90m[1msavepack[22m | Storing File: res://.godot/exported/133200997/export-812b256883b54a30dd87ea8afa98aade-Arena.scn[39m[0m
+[  31% ] [90m[1msavepack[22m | Storing File: res://battle/BattleRecipes.cs[39m[0m
+[  33% ] [90m[1msavepack[22m | Storing File: res://battle/SpecialGallery.cs[39m[0m
+[  34% ] [90m[1msavepack[22m | Storing File: res://.godot/exported/133200997/export-9d35eab57640b30ab41e5c59951584c6-SpecialGallery.scn[39m[0m
+[  36% ] [90m[1msavepack[22m | Storing File: res://battle/SpriteCache.cs[39m[0m
+[  38% ] [90m[1msavepack[22m | Storing File: res://pixel_demo/Forge/ForgeGenerator.cs[39m[0m
+[  40% ] [90m[1msavepack[22m | Storing File: res://workshop/GalleryCapture.cs[39m[0m
+[  42% ] [90m[1msavepack[22m | Storing File: res://pixel_demo/Forge/Monsters/MonsterSpec.cs[39m[0m
+[  44% ] [90m[1msavepack[22m | Storing File: res://global.json[39m[0m
+[  46% ] [90m[1msavepack[22m | Storing File: res://workshop/Workshop.cs[39m[0m
+[  48% ] [90m[1msavepack[22m | Storing File: res://pixel_demo/FrogSprite.cs[39m[0m
+[  50% ] [90m[1msavepack[22m | Storing File: res://.godot/exported/133200997/export-3cdfc358ac11239ad4ecf0d248f2bd9f-PixelDemo.scn[39m[0m
+[  52% ] [90m[1msavepack[22m | Storing File: res://workshop/WorldView.cs[39m[0m
+[  54% ] [90m[1msavepack[22m | Storing File: res://pixel_demo/Forge/ForgeCore.cs[39m[0m
+[  56% ] [90m[1msavepack[22m | Storing File: res://pixel_demo/Forge/Monsters/MonsterRenderer.cs[39m[0m
+[  58% ] [90m[1msavepack[22m | Storing File: res://pixel_demo/Forge/ForgeValidation.cs[39m[0m
+[  60% ] [90m[1msavepack[22m | Storing File: res://pixel_demo/Forge/ForgeRoster.cs[39m[0m
+[  62% ] [90m[1msavepack[22m | Storing File: res://pixel_demo/Forge/ForgeGear.cs[39m[0m
+[  64% ] [90m[1msavepack[22m | Storing File: res://.godot/exported/133200997/export-f5fd75bd82fc69ab4aa34379bfa80de9-Workshop.scn[39m[0m
+[  66% ] [90m[1msavepack[22m | Storing File: res://.godot/exported/133200997/export-00cd08c228cc75074b660161aa0a285a-RosterBoard.scn[39m[0m
+[  67% ] [90m[1msavepack[22m | Storing File: res://pixel_demo/Forge/ForgeSpec.cs[39m[0m
+[  69% ] [90m[1msavepack[22m | Storing File: res://pixel_demo/Forge/ForgeParts.cs[39m[0m
+[  71% ] [90m[1msavepack[22m | Storing File: res://pixel_demo/CompactAdventurer.cs[39m[0m
+[  73% ] [90m[1msavepack[22m | Storing File: res://pixel_demo/Forge/ForgeEffects.cs[39m[0m
+[  75% ] [90m[1msavepack[22m | Storing File: res://tests/SelfTests.cs[39m[0m
+[  77% ] [90m[1msavepack[22m | Storing File: res://pixel_demo/Forge/ForgeFinish.cs[39m[0m
+[  79% ] [90m[1msavepack[22m | Storing File: res://pixel_demo/RosterBoard.cs[39m[0m
+[  81% ] [90m[1msavepack[22m | Storing File: res://.godot/exported/133200997/export-8a1beb54a6214e158cf77706db5ea095-Minimal.scn[39m[0m
+[  83% ] [90m[1msavepack[22m | Storing File: res://pixel_demo/Forge/ForgeRenderer.cs[39m[0m
+[  85% ] [90m[1msavepack[22m | Storing File: res://workshop/LegacyWorkshop.cs[39m[0m
+[  87% ] [90m[1msavepack[22m | Storing File: res://pixel_demo/AzureSprite.cs[39m[0m
+[  89% ] [90m[1msavepack[22m | Storing File: res://.godot/exported/133200997/export-4547d26cf06932b0b8f6b88e6a2a4bba-LegacyWorkshop.scn[39m[0m
+[  91% ] [90m[1msavepack[22m | Storing File: res://pixel_demo/Forge/Monsters/MonsterValidation.cs[39m[0m
+[  93% ] [90m[1msavepack[22m | Storing File: res://pixel_demo/RosterCatalog.cs[39m[0m
+[  95% ] [90m[1msavepack[22m | Storing File: res://pixel_demo/PixelDemo.cs[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://examples/Minimal.cs[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://addons/procedural_creatures/CreatureActor.tscn.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://battle/Arena.tscn.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://battle/SpecialGallery.tscn.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://pixel_demo/PixelDemo.tscn.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://workshop/Workshop.tscn.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://pixel_demo/RosterBoard.tscn.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://examples/Minimal.tscn.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://workshop/LegacyWorkshop.tscn.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://.godot/global_script_class_cache.cfg[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://.godot/uid_cache.bin[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://project.binary[39m[0m
+[92m[ DONE ][39m [1msavepack[22m
+[0m

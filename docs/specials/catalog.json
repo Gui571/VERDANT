@@ -1,0 +1,405 @@
+{
+  "ice-wall": {
+    "Id": "ice-wall",
+    "Name": "Muralha de gelo",
+    "Cooldown": 210,
+    "CastTicks": 12,
+    "Shape": 4,
+    "Radius": 65,
+    "Effects": [
+      {
+        "Kind": 2,
+        "Power": 28,
+        "Duration": 120
+      },
+      {
+        "Kind": 7,
+        "Power": 1,
+        "Duration": 90
+      }
+    ],
+    "Trigger": "enemy",
+    "InterruptPercent": 30,
+    "ResetOnKill": false
+  },
+  "lightning-cut": {
+    "Id": "lightning-cut",
+    "Name": "Golpe-rel\u00E2mpago",
+    "Cooldown": 210,
+    "CastTicks": 12,
+    "Shape": 0,
+    "Radius": 70,
+    "Effects": [
+      {
+        "Kind": 6,
+        "Power": 24,
+        "Duration": 90
+      },
+      {
+        "Kind": 0,
+        "Power": 27,
+        "Duration": 90
+      }
+    ],
+    "Trigger": "enemy",
+    "InterruptPercent": 30,
+    "ResetOnKill": true
+  },
+  "arrow-rain": {
+    "Id": "arrow-rain",
+    "Name": "Chuva de flechas",
+    "Cooldown": 210,
+    "CastTicks": 12,
+    "Shape": 3,
+    "Radius": 28,
+    "Effects": [
+      {
+        "Kind": 0,
+        "Power": 22,
+        "Duration": 90
+      },
+      {
+        "Kind": 10,
+        "Power": 3,
+        "Duration": 90
+      }
+    ],
+    "Trigger": "enemy",
+    "InterruptPercent": 30,
+    "ResetOnKill": false
+  },
+  "nova": {
+    "Id": "nova",
+    "Name": "Nova astral",
+    "Cooldown": 210,
+    "CastTicks": 12,
+    "Shape": 3,
+    "Radius": 30,
+    "Effects": [
+      {
+        "Kind": 0,
+        "Power": 25,
+        "Duration": 90
+      },
+      {
+        "Kind": 4,
+        "Power": 35,
+        "Duration": 75
+      }
+    ],
+    "Trigger": "enemy",
+    "InterruptPercent": 30,
+    "ResetOnKill": false
+  },
+  "quake": {
+    "Id": "quake",
+    "Name": "Tremor",
+    "Cooldown": 210,
+    "CastTicks": 12,
+    "Shape": 5,
+    "Radius": 35,
+    "Effects": [
+      {
+        "Kind": 0,
+        "Power": 18,
+        "Duration": 90
+      },
+      {
+        "Kind": 3,
+        "Power": 1,
+        "Duration": 24
+      },
+      {
+        "Kind": 7,
+        "Power": 1,
+        "Duration": 90
+      }
+    ],
+    "Trigger": "enemy",
+    "InterruptPercent": 30,
+    "ResetOnKill": false
+  },
+  "dagger-dance": {
+    "Id": "dagger-dance",
+    "Name": "Dan\u00E7a das adagas",
+    "Cooldown": 210,
+    "CastTicks": 12,
+    "Shape": 5,
+    "Radius": 26,
+    "Effects": [
+      {
+        "Kind": 0,
+        "Power": 10,
+        "Duration": 90
+      },
+      {
+        "Kind": 0,
+        "Power": 10,
+        "Duration": 90
+      },
+      {
+        "Kind": 0,
+        "Power": 10,
+        "Duration": 90
+      },
+      {
+        "Kind": 17,
+        "Power": 40,
+        "Duration": 60
+      }
+    ],
+    "Trigger": "enemy",
+    "InterruptPercent": 30,
+    "ResetOnKill": false
+  },
+  "blessing": {
+    "Id": "blessing",
+    "Name": "B\u00EAn\u00E7\u00E3o",
+    "Cooldown": 210,
+    "CastTicks": 12,
+    "Shape": 4,
+    "Radius": 70,
+    "Effects": [
+      {
+        "Kind": 1,
+        "Power": 26,
+        "Duration": 90
+      },
+      {
+        "Kind": 2,
+        "Power": 16,
+        "Duration": 90
+      }
+    ],
+    "Trigger": "wounded",
+    "InterruptPercent": 30,
+    "ResetOnKill": false
+  },
+  "acid": {
+    "Id": "acid",
+    "Name": "\u00C1cido vivo",
+    "Cooldown": 210,
+    "CastTicks": 12,
+    "Shape": 1,
+    "Radius": 65,
+    "Effects": [
+      {
+        "Kind": 0,
+        "Power": 18,
+        "Duration": 90
+      },
+      {
+        "Kind": 8,
+        "Power": 3,
+        "Duration": 120
+      }
+    ],
+    "Trigger": "enemy",
+    "InterruptPercent": 30,
+    "ResetOnKill": false
+  },
+  "roar": {
+    "Id": "roar",
+    "Name": "Rugido de ca\u00E7a",
+    "Cooldown": 210,
+    "CastTicks": 12,
+    "Shape": 2,
+    "Radius": 55,
+    "Effects": [
+      {
+        "Kind": 14,
+        "Power": 25,
+        "Duration": 120
+      },
+      {
+        "Kind": 6,
+        "Power": 16,
+        "Duration": 90
+      },
+      {
+        "Kind": 0,
+        "Power": 16,
+        "Duration": 90
+      }
+    ],
+    "Trigger": "enemy",
+    "InterruptPercent": 30,
+    "ResetOnKill": false
+  },
+  "breath": {
+    "Id": "breath",
+    "Name": "Sopro ancestral",
+    "Cooldown": 210,
+    "CastTicks": 12,
+    "Shape": 2,
+    "Radius": 65,
+    "Effects": [
+      {
+        "Kind": 0,
+        "Power": 23,
+        "Duration": 90
+      },
+      {
+        "Kind": 9,
+        "Power": 3,
+        "Duration": 90
+      }
+    ],
+    "Trigger": "enemy",
+    "InterruptPercent": 30,
+    "ResetOnKill": false
+  },
+  "web": {
+    "Id": "web",
+    "Name": "Teia",
+    "Cooldown": 210,
+    "CastTicks": 12,
+    "Shape": 3,
+    "Radius": 24,
+    "Effects": [
+      {
+        "Kind": 11,
+        "Power": 1,
+        "Duration": 60
+      },
+      {
+        "Kind": 0,
+        "Power": 15,
+        "Duration": 90
+      }
+    ],
+    "Trigger": "enemy",
+    "InterruptPercent": 30,
+    "ResetOnKill": false
+  },
+  "dive": {
+    "Id": "dive",
+    "Name": "Mergulho",
+    "Cooldown": 210,
+    "CastTicks": 12,
+    "Shape": 0,
+    "Radius": 80,
+    "Effects": [
+      {
+        "Kind": 6,
+        "Power": 30,
+        "Duration": 90
+      },
+      {
+        "Kind": 0,
+        "Power": 26,
+        "Duration": 90
+      },
+      {
+        "Kind": 5,
+        "Power": 7,
+        "Duration": 90
+      }
+    ],
+    "Trigger": "enemy",
+    "InterruptPercent": 30,
+    "ResetOnKill": false
+  },
+  "constrict": {
+    "Id": "constrict",
+    "Name": "Constri\u00E7\u00E3o",
+    "Cooldown": 210,
+    "CastTicks": 12,
+    "Shape": 0,
+    "Radius": 40,
+    "Effects": [
+      {
+        "Kind": 11,
+        "Power": 1,
+        "Duration": 45
+      },
+      {
+        "Kind": 8,
+        "Power": 4,
+        "Duration": 90
+      },
+      {
+        "Kind": 0,
+        "Power": 20,
+        "Duration": 90
+      }
+    ],
+    "Trigger": "enemy",
+    "InterruptPercent": 30,
+    "ResetOnKill": false
+  },
+  "water-jet": {
+    "Id": "water-jet",
+    "Name": "Jato d\u0027\u00E1gua",
+    "Cooldown": 210,
+    "CastTicks": 12,
+    "Shape": 1,
+    "Radius": 75,
+    "Effects": [
+      {
+        "Kind": 0,
+        "Power": 20,
+        "Duration": 90
+      },
+      {
+        "Kind": 5,
+        "Power": 12,
+        "Duration": 90
+      }
+    ],
+    "Trigger": "enemy",
+    "InterruptPercent": 30,
+    "ResetOnKill": false
+  },
+  "roots": {
+    "Id": "roots",
+    "Name": "Ra\u00EDzes vivas",
+    "Cooldown": 210,
+    "CastTicks": 12,
+    "Shape": 5,
+    "Radius": 38,
+    "Effects": [
+      {
+        "Kind": 11,
+        "Power": 1,
+        "Duration": 60
+      },
+      {
+        "Kind": 0,
+        "Power": 12,
+        "Duration": 90
+      },
+      {
+        "Kind": 16,
+        "Power": 5,
+        "Duration": 120
+      }
+    ],
+    "Trigger": "enemy",
+    "InterruptPercent": 30,
+    "ResetOnKill": false
+  },
+  "rally": {
+    "Id": "rally",
+    "Name": "Chamado da alcateia",
+    "Cooldown": 210,
+    "CastTicks": 12,
+    "Shape": 5,
+    "Radius": 30,
+    "Effects": [
+      {
+        "Kind": 15,
+        "Power": 1,
+        "Duration": 90
+      },
+      {
+        "Kind": 13,
+        "Power": 20,
+        "Duration": 150
+      }
+    ],
+    "Trigger": "enemy",
+    "InterruptPercent": 30,
+    "ResetOnKill": false
+  }
+}

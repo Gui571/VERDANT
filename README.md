@@ -1,16 +1,14 @@
 # VERDANT — Pixel character demo & procedural workshop
 
-**Novo: [oficina de monstros Forge](docs/MONSTROS.md) e [arena automática](docs/BATALHA.md).** Na demo, abra Oficina procedural para editar nove famílias no mesmo estilo do elenco, ou Arena para montar dois times e assistir à luta. Pausa, passo, velocidade, repetição por semente e exportação de sprites estão disponíveis. O renderer antigo fica separado em Modo legado.
+**Marco 1 de extração e guerras: [especiais e combate](docs/ESPECIAIS.md).** Os sete heróis, personagens gerados e nove famílias de monstros têm especiais. A arena oferece quatro times, obstáculos, projéteis interceptáveis, estados alterados e comandos manuais (1–6). A oficina permite trocar e visualizar especiais; abra **Guia de especiais** na arena para ver o elenco em 5×.
 
-![Monstros Forge](docs/monsters/families.png)
+![Especiais no Godot](docs/specials/gallery.gif)
 
-![Arena automática](docs/battle/battle.gif)
+**[Windows x86_64](https://github.com/Gui571/VERDANT/raw/refs/heads/extracao-e-guerras/downloads/Verdant-Windows.zip)** — extraia o ZIP inteiro e abra `Verdant.exe`. **[Linux x86_64](https://github.com/Gui571/VERDANT/raw/refs/heads/extracao-e-guerras/downloads/Verdant-Linux.zip)** — extraia e execute `Verdant.x86_64` (`chmod +x Verdant.x86_64` se necessário). Runtime .NET incluído. Linux executado; Windows exportado, ainda não executado.
 
-**[Baixar demo para Windows 64 bits](https://github.com/Gui571/VERDANT/raw/refs/heads/monstros-e-arena/downloads/Verdant-Windows.zip)** — extraia todo o ZIP e abra `Verdant.exe`. Godot e .NET já estão incluídos no pacote. A execução no Windows ainda não foi testada.
+Validação: 209.682 verificações de arte; 39 de especiais; 480 batalhas aleatórias com/sem especiais (2.440 verificações); 74 testes de UI. Zero falhas. Benchmark isolado: 42 combatentes, mediana 11,72 ms, p95 15,23 ms. [Relatório, comandos e limites](docs/ESPECIAIS.md).
 
-**[Baixar Linux x86_64](https://github.com/Gui571/VERDANT/raw/refs/heads/monstros-e-arena/downloads/Verdant-Linux.zip)** — extraia e execute `Verdant.x86_64` (se necessário: `chmod +x Verdant.x86_64`).
-
-Validação real em Godot 4.5.2 .NET / SDK 8.0.408: build sem avisos; 166.626 verificações de arte no PixelPreview e no Godot; testes separados para oficina, arena e elenco. Veja os novos relatórios de monstros e batalha. Windows não executado. [Relatório e prévias](docs/FORGE.md#revisão-validada-no-godot).
+**Nações, campanha, save, extração e guerra territorial ainda estão nos próximos marcos.** Veja [decisões e sequência de entregas](docs/DECISOES.md). A build atual é a oficina e arena jogável do marco 1.
 
 **Current roster:** seven visually distinct adventurers, now all drawn by the **Forge** pixel-art engine — chunky big-head chibi proportions, a continuous one-pixel navy outline, a contact shadow, a shared blue-team accent (headbands, scarves, capes) and hue-shifted shading — plus an unlimited **seeded generator** that produces new adventurers in exactly the same style (see [docs/FORGE.md](docs/FORGE.md)).
 
