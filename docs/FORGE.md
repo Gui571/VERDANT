@@ -72,3 +72,7 @@ Compacte a pasta inteira, com PCK e `data_Verdant_*`. `downloads/` e `tools/` s�
 ## Monstros e arena
 
 `ForgeFinish` compartilha o passe de contorno e sombra entre elenco e monstros. `Layer` mantém 32 como dimensão padrão e aceita dimensão explícita de 48 para chefes; os 42 PNGs/atlases do elenco permaneceram byte a byte iguais. `Monsters/` adiciona receitas, geração, poses e validação das nove famílias. Veja [MONSTROS.md](MONSTROS.md) e [BATALHA.md](BATALHA.md). A oficina anterior está isolada em `LegacyWorkshop.tscn`.
+
+## Atualização: marco 1 de especiais
+
+Consulte [ESPECIAIS.md](ESPECIAIS.md) para as regras atuais, movimentos Special/Cast, edição na oficina, quatro times na arena, obstáculos e validação. As métricas acima descrevem a entrega anterior; as métricas atuais e logs ficam no novo relatório.

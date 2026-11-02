@@ -3,7 +3,7 @@ using Verdant.Forge;
 namespace Verdant;
 
 public enum AdventurerKind { Duck, Rabbit, Knight, Mage, Guardian, Duelist, Healer }
-public enum AdventurerMotion { Idle, Walk, Run, Attack, Hurt }
+public enum AdventurerMotion { Idle, Walk, Run, Attack, Hurt, Special, Cast }
 
 /// <summary>Fachada estável do elenco: mantém a API usada pela demo, pelos testes e pelos exportadores,
 /// mas o desenho agora vem do motor <see cref="ForgeRenderer"/> (peças + paleta por papéis + contorno automático).

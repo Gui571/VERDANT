@@ -63,3 +63,7 @@ Pontos ainda sujeitos a revisão: aprovação artística pelo usuário, balancea
 ## Builds desta entrega
 
 ZIPs em `downloads/`, com PCK e runtime .NET incluídos. O executável Linux exportado passou 166.626 testes de arte, 8 da arena e 21 da oficina. Logs `linux-*-validation.log`. Windows foi exportado e o ZIP verificado; o `.exe` não foi executado neste ambiente. Extraia tudo e abra Verdant; entre na Arena pela demo.
+
+## Atualização: marco 1 de especiais
+
+Consulte [ESPECIAIS.md](ESPECIAIS.md) para as regras atuais, movimentos Special/Cast, edição na oficina, quatro times na arena, obstáculos e validação. As métricas acima descrevem a entrega anterior; as métricas atuais e logs ficam no novo relatório.

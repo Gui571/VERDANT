@@ -33,3 +33,7 @@ DISPLAY=:99 ./scripts/run.sh --audio-driver Dummy res://workshop/Workshop.tscn -
 ```
 
 Validação executada: 56.374 verificações de monstros (129 receitas, todas as animações, frente/costas, limites, alfa, paleta, determinismo, loops, base fixa, pixels órfãos, morte removível, ≥110/120 sementes distintas e nove silhuetas familiares distintas). Somadas às 110.252 do elenco, são 166.626. Teste real de UI: 21 verificações. Os logs estão nesta pasta em `monsters/*validation.log`. Aprovação artística final continua sendo visual, não uma conclusão dos testes.
+
+## Atualização: marco 1 de especiais
+
+Consulte [ESPECIAIS.md](ESPECIAIS.md) para as regras atuais, movimentos Special/Cast, edição na oficina, quatro times na arena, obstáculos e validação. As métricas acima descrevem a entrega anterior; as métricas atuais e logs ficam no novo relatório.
