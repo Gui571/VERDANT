@@ -40,6 +40,7 @@ public partial class PixelDemo : Control
         AddButton(actions,"Espelhar",()=>{flip=!flip;QueueRedraw();});
         AddButton(actions,"Sombra",()=>{shadow=!shadow;sprite.GroundShadow=shadow;Refresh();});
         var extra=new MenuButton{Text="Ações"};foreach(string label in new[]{"Correr","Atacar","Receber dano"})extra.GetPopup().AddItem(label);extra.GetPopup().IdPressed+=i=>PlayMotion(i==0?AdventurerMotion.Run:i==1?AdventurerMotion.Attack:AdventurerMotion.Hurt);actions.AddChild(extra);
+        AddButton(actions,"Arena",()=>GetTree().ChangeSceneToFile("res://battle/Arena.tscn"));
         AddButton(actions,"Oficina procedural",()=>GetTree().ChangeSceneToFile("res://workshop/Workshop.tscn"));
         status=new Label{Text=sprite.Description,HorizontalAlignment=HorizontalAlignment.Center};status.AddThemeColorOverride("font_color",new Color("a2b3cc"));root.AddChild(status);
         Refresh();
@@ -143,6 +144,6 @@ public partial class PixelDemo : Control
     }
     /// <summary>Regras objetivas do estilo (limites, paleta, determinismo, loops, silhuetas, pixels órfãos) para o elenco e 200 sementes.
     /// A mesma lógica roda fora do Godot em tools/PixelPreview (comando "check").</summary>
-    int ValidateSprite(){var result=ForgeValidation.Run();foreach(var failure in result.Failures)GD.PrintErr("PIXEL_FAIL "+failure);if(result.Failures.Count==0){GD.Print("PIXEL_TEST_PASS assertions="+result.Checks);return 0;}return 1;}
+    int ValidateSprite(){var heroes=ForgeValidation.Run();var monsters=MonsterValidation.Run();var result=new ForgeValidation.Result(heroes.Checks+monsters.Checks,heroes.Failures.Concat(monsters.Failures).ToArray());foreach(var failure in result.Failures)GD.PrintErr("PIXEL_FAIL "+failure);if(result.Failures.Count==0){GD.Print("PIXEL_TEST_PASS assertions="+result.Checks);return 0;}return 1;}
     public override void _ExitTree(){texture?.Dispose();terrain?.Dispose();}
 }

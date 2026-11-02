@@ -95,15 +95,17 @@ public sealed class Rng
 public sealed class Layer
 {
     public const int Size = 32;
-    public readonly Tone[] Px = new Tone[Size * Size];
+    public int Dimension { get; }
+    public readonly Tone[] Px;
+    public Layer(int dimension = Size) { Dimension = dimension; Px = new Tone[dimension * dimension]; }
     public int Clipped { get; private set; }
     public void Clear() { Array.Clear(Px); Clipped = 0; }
-    public Tone Get(int x, int y) => x < 0 || y < 0 || x >= Size || y >= Size ? Tone.None : Px[y * Size + x];
+    public Tone Get(int x, int y) => x < 0 || y < 0 || x >= Dimension || y >= Dimension ? Tone.None : Px[y * Dimension + x];
     public void Set(int x, int y, Tone t)
     {
         if (t == Tone.None) return;
-        if (x < 0 || y < 0 || x >= Size || y >= Size) { Clipped++; return; }
-        Px[y * Size + x] = t;
+        if (x < 0 || y < 0 || x >= Dimension || y >= Dimension) { Clipped++; return; }
+        Px[y * Dimension + x] = t;
     }
     public void Rect(int x, int y, int w, int h, Tone t) { for (int j = 0; j < h; j++) for (int i = 0; i < w; i++) Set(x + i, y + j, t); }
     public void HLine(int x0, int x1, int y, Tone t) { for (int x = x0; x <= x1; x++) Set(x, y, t); }
@@ -145,7 +147,7 @@ public sealed class Layer
     public void Halo(IReadOnlyCollection<(int x, int y)> filled, Tone ink = Tone.Ink)
     {
         var set = new HashSet<(int, int)>(filled);
-        foreach (var (x, y) in filled) foreach (var (nx, ny) in new[] { (x + 1, y), (x - 1, y), (x, y + 1), (x, y - 1) }) if (!set.Contains((nx, ny)) && nx >= 0 && ny >= 0 && nx < Size && ny < Size) Set(nx, ny, ink); // contorno que cairia fora da célula é descartado
+        foreach (var (x, y) in filled) foreach (var (nx, ny) in new[] { (x + 1, y), (x - 1, y), (x, y + 1), (x, y - 1) }) if (!set.Contains((nx, ny)) && nx >= 0 && ny >= 0 && nx < Dimension && ny < Dimension) Set(nx, ny, ink); // contorno que cairia fora da célula é descartado
     }
 
     /// <summary>Cola <paramref name="src"/> sobre esta camada. Com <paramref name="outline"/>, antes separa a peça do que está atrás
@@ -153,9 +155,9 @@ public sealed class Layer
     public void Composite(Layer src, bool outline = true, int dx = 0, int dy = 0)
     {
         var filled = new List<(int, int)>();
-        for (int y = 0; y < Size; y++) for (int x = 0; x < Size; x++) if (src.Px[y * Size + x] != Tone.None) filled.Add((x + dx, y + dy));
+        for (int y = 0; y < Dimension; y++) for (int x = 0; x < Dimension; x++) if (src.Px[y * Dimension + x] != Tone.None) filled.Add((x + dx, y + dy));
         if (outline) Halo(filled);
-        for (int y = 0; y < Size; y++) for (int x = 0; x < Size; x++) { var t = src.Px[y * Size + x]; if (t != Tone.None) Set(x + dx, y + dy, t); }
+        for (int y = 0; y < Dimension; y++) for (int x = 0; x < Dimension; x++) { var t = src.Px[y * Dimension + x]; if (t != Tone.None) Set(x + dx, y + dy, t); }
     }
     public bool Any() { foreach (var t in Px) if (t != Tone.None) return true; return false; }
 

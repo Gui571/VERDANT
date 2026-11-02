@@ -68,3 +68,7 @@ dotnet restore -r linux-x64 -p:SelfContained=true --source https://api.nuget.org
 ```
 
 Compacte a pasta inteira, com PCK e `data_Verdant_*`. `downloads/` e `tools/` são excluídos dos recursos exportados.
+
+## Monstros e arena
+
+`ForgeFinish` compartilha o passe de contorno e sombra entre elenco e monstros. `Layer` mantém 32 como dimensão padrão e aceita dimensão explícita de 48 para chefes; os 42 PNGs/atlases do elenco permaneceram byte a byte iguais. `Monsters/` adiciona receitas, geração, poses e validação das nove famílias. Veja [MONSTROS.md](MONSTROS.md) e [BATALHA.md](BATALHA.md). A oficina anterior está isolada em `LegacyWorkshop.tscn`.

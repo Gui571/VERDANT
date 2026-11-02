@@ -16,3 +16,14 @@ dotnet bin/Debug/net8.0/PixelPreview.dll pose iria run                 # parâme
 
 Sem acesso ao NuGet: `dotnet build -p:RestoreSources=<pasta vazia> -p:UseAppHost=false`.
 `Verdant.csproj` exclui `tools/**` da compilação do jogo.
+
+Monstros e combate (mesmas fontes do jogo):
+
+```sh
+dotnet run --project tools/PixelPreview -- monsters docs/monsters
+dotnet run --project tools/PixelPreview -- strip /tmp/slime-death.png monster:slime death 5
+dotnet run --project tools/PixelPreview -- monster-check
+dotnet run --project tools/PixelPreview -- battle
+```
+
+`check 200` agora inclui MonsterValidation. `battle` executa 240 confrontos duas vezes, compara eventos e imprime as taxas por classe/família. `battle/Sim` não depende do Godot.
