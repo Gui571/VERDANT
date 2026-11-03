@@ -1,0 +1,23 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  Verdant.Core -> /workspace/VERDANT/core/bin/Debug/net8.0/Verdant.Core.dll
+  Verdant -> /workspace/VERDANT/.godot/mono/temp/bin/Debug/Verdant.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:01.36
+Godot Engine v4.5.2.stable.mono.official.6ce3de25a - https://godotengine.org
+
+MONSTER_VARIETY Slime masks=4/32
+MONSTER_VARIETY Beast masks=8/32
+MONSTER_VARIETY Golem masks=4/32
+MONSTER_VARIETY Dragon masks=8/32
+MONSTER_VARIETY Arthropod masks=10/32
+MONSTER_VARIETY Winged masks=4/32
+MONSTER_VARIETY Serpent masks=8/32
+MONSTER_VARIETY Aquatic masks=4/32
+MONSTER_VARIETY Plant masks=10/32
+MONSTER_MASK minimum_distance=0.190 pairs=36
+PIXEL_TEST_PASS assertions=372861

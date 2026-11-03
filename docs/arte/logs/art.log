@@ -1,0 +1,11 @@
+MONSTER_VARIETY Slime masks=4/32
+MONSTER_VARIETY Beast masks=8/32
+MONSTER_VARIETY Golem masks=4/32
+MONSTER_VARIETY Dragon masks=8/32
+MONSTER_VARIETY Arthropod masks=10/32
+MONSTER_VARIETY Winged masks=4/32
+MONSTER_VARIETY Serpent masks=8/32
+MONSTER_VARIETY Aquatic masks=4/32
+MONSTER_VARIETY Plant masks=10/32
+MONSTER_MASK minimum_distance=0.190 pairs=36
+checks=372861 falhas=0

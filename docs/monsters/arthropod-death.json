@@ -1,1 +1,1 @@
-{"version":1,"recipe":{"Seed":104,"Family":4,"Element":0,"Rank":0,"Mass":0,"Head":2,"Appendages":2,"Pattern":3,"Tint":3,"Size":32,"Id":"arthropod-104"},"width":32,"height":32,"frames":6,"columns":6,"fps":8,"origin":[16,29],"state":"Death","loop":false}
+{"version":1,"recipe":{"Seed":104,"Family":4,"Element":0,"Rank":0,"Mass":0,"Head":2,"Appendages":2,"Pattern":3,"Tint":3,"SpecialId":null,"Size":32,"Id":"arthropod-104"},"width":32,"height":32,"frames":8,"columns":8,"fps":12,"origin":[16,29],"state":"Death","loop":false}

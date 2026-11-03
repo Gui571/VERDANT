@@ -1,39 +1,72 @@
-# Monstros Forge
+# Monstros Forge — revisão de arte
 
-A oficina principal agora monta monstros usando `MonsterSpec`, `Tone`, `ForgePalette`, `Layer` e o mesmo acabamento `ForgeFinish` do elenco. O renderer 192×160 permanece em **Modo legado**, com cena própria e botão de retorno; ele não participa da arena. Os 42 PNGs/atlases nativos do elenco foram comparados byte a byte e permaneceram idênticos.
+As nove famílias usam `MonsterSpec`, `Layer`, `Tone`, `ForgePalette` e `ForgeFinish`, em C# puro. Nenhum personagem foi pintado fora do Forge. A revisão altera arte e apresentação; simulação, receitas de combate, números de habilidades e efeitos de `ForgeEffects` permanecem iguais.
 
-![Nove famílias, zoom 5×](monsters/families.png)
+![Antes em cima, depois embaixo; ordem do enum de famílias](arte/antes-depois-monstros.png)
 
-Ordem da prancha: slime, besta quadrúpede, golem, dragão pequeno, artrópode, alado, serpente, aquático e planta. A família decide corpo, apoio, cabeça e apêndices naturais; só o alado recebe asas. Elementos fogo/gelo/planta/sombra/veneno mudam rampas e um adorno conectado à cabeça. A família e o elemento são independentes: um dragão pode ser de gelo.
+## Linguagem e anatomia
 
-## Receita e edição
+Contorno azul-noite `#151829`, luz superior esquerda, rampas de sombra/base/luz, alfa 0/255 e no máximo 16 cores por quadro. Detalhes são agrupados em planos, veios e manchas aderidos à superfície, sem ruído aleatório. A paleta conserva os papéis do elenco; seus sprites e atlases não mudam.
 
-`MonsterSpec` é um registro imutável com seed, família, elemento, raridade e cinco características discretas (0–3): massa, cabeça, apêndices, padrão e variação de cor. `MonsterGenerator.Generate(seed)` é determinístico. Minion/elite têm célula 32×32 e origem (16,29); chefe tem célula fixa 48×48 e origem (24,45), massa corporal e adornos adicionais desenhados em pixels nativos. Elite recebe uma pequena coroa. Não existe escala fracionária de anatomia.
+| Família | Assinatura e movimento |
+|---|---|
+| Slime | Massa contínua, brilho largo, compressão elástica e morte em poça |
+| Besta | Ombros altos, focinho, apoio alternado e queda para a frente |
+| Golem | Cabeça blocada, ombros/punhos grandes; antecipa os braços e desmonta em blocos rígidos |
+| Dragão | Cabeça elevada, pescoço alongado e cauda com atraso no movimento e na morte |
+| Artrópode | Abdômen segmentado, joelhos angulares; recolhe membros na morte |
+| Alado | Membranas e batimento secundário; cai antes de fechar as asas |
+| Serpente | Espiral com espaço negativo; cabeça desliza e espiral se abre ao cair |
+| Aquático | Nadadeiras com nervuras, cauda atrasada e corpo que murcha |
+| Planta | Copa e folhas agrupadas, ramos flexíveis; seca e se curva |
 
-A oficina oferece família, semente, Gerar/Sortear, sliders, elemento, raridade, mutação, captura do pai B, cruzamento de pais da mesma família e desfazer/refazer. `Mutate` recombina características com uma nova semente; `Cross` herda campos dos dois pais. Família, elemento e raridade continuam explícitos e editáveis. O botão Arena leva a receita atual para a primeira vaga coral.
+As cinco características 0–3 continuam na receita: massa, cabeça, apêndices, padrão e cor. Alterações em cabeça/largura dos ombros/posição da cauda corrigem a baixa variedade de slime, golem e aquático. A receita JSON não mudou e nenhuma migração é necessária. Não há promessa de 4⁵ silhuetas únicas: traços discretos podem coincidir em pixels; veja a contagem por família na auditoria.
 
-A prévia tem idle/walk/run/attack/hurt/death, frente/costas, pausa e passo. PNG e seis atlases + JSON são exportados para `user://monsters/`; metadados incluem receita, célula, origem, FPS, número de quadros, estado, loop e orientação. Arquivos com o mesmo identificador são substituídos.
+## Elementos, raridades e chefes
 
-## Movimento e estilo
+Fogo usa uma crista que oscila e veios pulsantes; gelo tem facetas e brilho alternado; planta tem folhas que abrem/fecham e musgo; veneno tem bolhas e manchas em clusters; sombra tem crista irregular e sulcos escuros. Essas camadas são calculadas junto com cada quadro do atlas, não como partículas em tempo real. Família e elemento continuam independentes; as matrizes `monsters/*-elements-ranks.png` mostram as 45 combinações, nas três raridades e na segunda fase do chefe.
 
-Pixels opacos ou transparentes; até 16 cores; tinta azul-noite `#151829`; sombra de contato; rampas com sombra fria e realce superior esquerdo. Idle respira sobre apoio fixo. Pernas alternam, asas batem e corpos sem pernas deslizam. Ataque tem seis poses de antecipação/avanço/impacto/retorno; dano usa flash branco e recuo. Morte comprime a silhueta em seis quadros e termina transparente, removível em 0,75 s. Caminhada e corrida têm oito quadros; idle tem 16; dano quatro. São animações compactas: a morte compartilha o mesmo tratamento entre famílias, e não há uma animação física diferente para cada elemento.
+Comum permanece sem armadura; elite acrescenta coroa e placas; chefe usa célula 48×48, com ombros, asas, raízes, cauda ou massa adicional conforme a família. A fase visual 1 acrescenta fissuras e sobrancelhas agressivas. A arena lê o `Fighter.Phase` que já existia; não altera o gatilho de 50% da vida nem habilidades. A oficina permite alternar a fase visual independentemente do combate.
 
-Prévias a 5×: [idle](monsters/all-idle-review.png), [walk](monsters/all-walk-review.png), [attack](monsters/all-attack-review.png), [hurt](monsters/all-hurt-review.png), [morte](monsters/all-death-review.png). Há também tiras individuais de todas as famílias, incluindo run. [Galeria por semente](monsters/generated.png) · [oficina capturada no Godot](monsters/workshop.png).
+Minion/elite: célula 32×32, origem (16,29). Chefe: 48×48, origem (24,45). Não há ampliação dos pixels para construir a anatomia do chefe.
 
-## Estender e testar
+## Animações e cache
 
-Uma nova família exige um enum, uma composição de peças em `MonsterRenderer`, comportamento em `BattleRecipes` e amostras na validação. Use as mesmas primitivas e paleta. A margem transparente ao redor da célula é testada além de `Raster.Clipped`, para detectar contornos truncados. Nenhuma verificação antiga do elenco foi reduzida.
+| Movimento | Quadros | FPS | Comportamento |
+|---|---:|---:|---|
+| Idle | 16 | 8 | Respiração, piscar, apêndices e elemento; loop |
+| Walk / Run | 8 | 8 / 12 | Apoios e movimento secundário por família; loop |
+| Attack | 6 | 8 | Antecipação, impacto e recuperação |
+| Hurt | 4 | 8 | Recuo e flash |
+| Death | 8 | 12 | Trajetória por família; quadro 7 totalmente transparente |
+| Special / Cast | 8 | 8 | Poses de ataque atualizadas, efeitos anteriores preservados |
+| Entry | 8 | 8 | Aterrissagem curta; sombra/origem fixas; termina em idle |
+
+`Entry` foi acrescentado ao fim do enum; valores antigos foram preservados. A morte cabe no período de apresentação já existente na arena (23 ticks); não foi necessário mudar a simulação. A entrada é mostrada nos primeiros 24 ticks dos chefes. O elenco mantém suas contagens e tempos anteriores.
+
+`SpriteCache` rasteriza ao construir o atlas, compartilha receitas idênticas e mantém a segunda fase apenas para chefes. A oficina usa `AtlasTexture` diretamente em escala inteira 8×; deixou de ler, ampliar e criar uma textura a cada quadro. Orçamento RGBA sem mipmaps por receita: comum/elite 256×320 = 320 KiB; chefe duas folhas 384×480 = 1.406 MiB. Quarenta receitas comuns distintas ocupam cerca de 12,5 MiB de pixels, além dos objetos e texturas da cena.
+
+## Oficina, exportação e extensão
+
+Família, semente, cinco características, elemento, raridade, mutação, cruzamento, desfazer/refazer e especiais continuam editáveis. Selecione uma animação, frente/costas, pausa/passo ou **Fase visual do chefe**. Exportar escreve PNG, nove atlases e JSON em `user://monsters/`; o JSON inclui `visualPhase`. A receita enviada à arena permanece a mesma.
+
+Ao estender arte, altere a anatomia em `MonsterRenderer` e os movimentos/camadas em `MonsterArt`; mantenha tons sem cores diretas e margens transparentes. Não acrescente regras de combate para corrigir um problema visual. Amplie a matriz de validação e revise primeiro os extremos das poses, depois elementos e chefes. Consulte a [auditoria e pendências visuais](ARTE-MONSTROS-AUDITORIA.md).
 
 ```sh
 dotnet run --project tools/PixelPreview -- monsters docs/monsters
-dotnet run --project tools/PixelPreview -- strip /tmp/slime.png monster:slime death 5
+python3 scripts/monster-art-review.py # Pillow; só compõe pixels já exportados pelo Forge
 dotnet run --project tools/PixelPreview -- check 200
+dotnet run --project tools/PixelPreview -- special-check
+dotnet run --project tools/PixelPreview -- battle
+dotnet run --project tools/PixelPreview -- battle-trace /tmp/events.json
 ./scripts/run.sh --headless -- --pixel-test
+./scripts/run.sh --headless res://battle/Arena.tscn -- --battle-validation
 DISPLAY=:99 ./scripts/run.sh --audio-driver Dummy res://workshop/Workshop.tscn -- --monster-ui-test
+DISPLAY=:99 ./scripts/run.sh --audio-driver Dummy res://battle/Arena.tscn -- --battle-ui-test
+DISPLAY=:99 ./scripts/run.sh --audio-driver Dummy res://battle/Arena.tscn -- --monster-art-capture
+DISPLAY=:99 ./scripts/run.sh --audio-driver Dummy res://battle/Arena.tscn -- --battle-benchmark
 ```
 
-Validação executada: 56.374 verificações de monstros (129 receitas, todas as animações, frente/costas, limites, alfa, paleta, determinismo, loops, base fixa, pixels órfãos, morte removível, ≥110/120 sementes distintas e nove silhuetas familiares distintas). Somadas às 110.252 do elenco, são 166.626. Teste real de UI: 21 verificações. Os logs estão nesta pasta em `monsters/*validation.log`. Aprovação artística final continua sendo visual, não uma conclusão dos testes.
+[Relatório de execução e benchmark](arte/RELATORIO.md) · [GIF real na arena](arte/arena-monstros.gif) · [Pranchas e GIFs 8×](arte/depois/) · [Leitura 2×](arte/leitura-2x.png) · [Leitura 3×](arte/leitura-3x.png).
 
-## Atualização: marco 1 de especiais
-
-Consulte [ESPECIAIS.md](ESPECIAIS.md) para as regras atuais, movimentos Special/Cast, edição na oficina, quatro times na arena, obstáculos e validação. As métricas acima descrevem a entrega anterior; as métricas atuais e logs ficam no novo relatório.
+A oficina 192×160 continua separada em Modo legado. Esta revisão não é uma entrega da run, de Android ou de web.

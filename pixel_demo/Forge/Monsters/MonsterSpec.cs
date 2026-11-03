@@ -2,7 +2,7 @@ namespace Verdant.Forge;
 public enum MonsterFamily { Slime, Beast, Golem, Dragon, Arthropod, Winged, Serpent, Aquatic, Plant }
 public enum Element { Fire, Ice, Plant, Shadow, Poison }
 public enum Rank { Minion, Elite, Boss }
-public enum MonsterMotion { Idle, Walk, Run, Attack, Hurt, Death, Special, Cast }
+public enum MonsterMotion { Idle, Walk, Run, Attack, Hurt, Death, Special, Cast, Entry }
 public sealed record MonsterSpec(ulong Seed, MonsterFamily Family, Element Element, Rank Rank, int Mass, int Head, int Appendages, int Pattern, int Tint,string? SpecialId=null)
 {
     public int Size => Rank == Rank.Boss ? 48 : 32;
