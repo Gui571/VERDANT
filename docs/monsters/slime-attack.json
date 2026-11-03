@@ -1,1 +1,1 @@
-{"version":1,"recipe":{"Seed":100,"Family":0,"Element":2,"Rank":0,"Mass":0,"Head":1,"Appendages":2,"Pattern":1,"Tint":1,"Size":32,"Id":"slime-100"},"width":32,"height":32,"frames":6,"columns":6,"fps":8,"origin":[16,29],"state":"Attack","loop":false}
+{"version":1,"recipe":{"Seed":100,"Family":0,"Element":2,"Rank":0,"Mass":0,"Head":1,"Appendages":2,"Pattern":1,"Tint":1,"SpecialId":null,"Size":32,"Id":"slime-100"},"width":32,"height":32,"frames":6,"columns":6,"fps":8,"origin":[16,29],"state":"Attack","loop":false}

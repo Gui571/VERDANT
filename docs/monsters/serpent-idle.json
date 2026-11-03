@@ -1,1 +1,1 @@
-{"version":1,"recipe":{"Seed":106,"Family":6,"Element":2,"Rank":0,"Mass":3,"Head":2,"Appendages":3,"Pattern":0,"Tint":3,"Size":32,"Id":"serpent-106"},"width":32,"height":32,"frames":16,"columns":16,"fps":8,"origin":[16,29],"state":"Idle","loop":true}
+{"version":1,"recipe":{"Seed":106,"Family":6,"Element":2,"Rank":0,"Mass":3,"Head":2,"Appendages":3,"Pattern":0,"Tint":3,"SpecialId":null,"Size":32,"Id":"serpent-106"},"width":32,"height":32,"frames":16,"columns":16,"fps":8,"origin":[16,29],"state":"Idle","loop":true}

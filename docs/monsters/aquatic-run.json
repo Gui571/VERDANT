@@ -1,1 +1,1 @@
-{"version":1,"recipe":{"Seed":107,"Family":7,"Element":3,"Rank":0,"Mass":0,"Head":0,"Appendages":1,"Pattern":0,"Tint":0,"Size":32,"Id":"aquatic-107"},"width":32,"height":32,"frames":8,"columns":8,"fps":12,"origin":[16,29],"state":"Run","loop":true}
+{"version":1,"recipe":{"Seed":107,"Family":7,"Element":3,"Rank":0,"Mass":0,"Head":0,"Appendages":1,"Pattern":0,"Tint":0,"SpecialId":null,"Size":32,"Id":"aquatic-107"},"width":32,"height":32,"frames":8,"columns":8,"fps":12,"origin":[16,29],"state":"Run","loop":true}

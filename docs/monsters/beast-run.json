@@ -1,1 +1,1 @@
-{"version":1,"recipe":{"Seed":101,"Family":1,"Element":2,"Rank":0,"Mass":3,"Head":1,"Appendages":3,"Pattern":2,"Tint":0,"Size":32,"Id":"beast-101"},"width":32,"height":32,"frames":8,"columns":8,"fps":12,"origin":[16,29],"state":"Run","loop":true}
+{"version":1,"recipe":{"Seed":101,"Family":1,"Element":2,"Rank":0,"Mass":3,"Head":1,"Appendages":3,"Pattern":2,"Tint":0,"SpecialId":null,"Size":32,"Id":"beast-101"},"width":32,"height":32,"frames":8,"columns":8,"fps":12,"origin":[16,29],"state":"Run","loop":true}

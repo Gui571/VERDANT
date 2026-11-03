@@ -1,1 +1,1 @@
-{"version":1,"recipe":{"Seed":105,"Family":5,"Element":0,"Rank":0,"Mass":3,"Head":3,"Appendages":3,"Pattern":1,"Tint":0,"Size":32,"Id":"winged-105"},"width":32,"height":32,"frames":4,"columns":4,"fps":8,"origin":[16,29],"state":"Hurt","loop":false}
+{"version":1,"recipe":{"Seed":105,"Family":5,"Element":0,"Rank":0,"Mass":3,"Head":3,"Appendages":3,"Pattern":1,"Tint":0,"SpecialId":null,"Size":32,"Id":"winged-105"},"width":32,"height":32,"frames":4,"columns":4,"fps":8,"origin":[16,29],"state":"Hurt","loop":false}

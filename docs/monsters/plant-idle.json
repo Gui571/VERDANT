@@ -1,1 +1,1 @@
-{"version":1,"recipe":{"Seed":108,"Family":8,"Element":0,"Rank":0,"Mass":2,"Head":2,"Appendages":1,"Pattern":3,"Tint":2,"Size":32,"Id":"plant-108"},"width":32,"height":32,"frames":16,"columns":16,"fps":8,"origin":[16,29],"state":"Idle","loop":true}
+{"version":1,"recipe":{"Seed":108,"Family":8,"Element":0,"Rank":0,"Mass":2,"Head":2,"Appendages":1,"Pattern":3,"Tint":2,"SpecialId":null,"Size":32,"Id":"plant-108"},"width":32,"height":32,"frames":16,"columns":16,"fps":8,"origin":[16,29],"state":"Idle","loop":true}

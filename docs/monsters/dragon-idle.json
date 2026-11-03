@@ -1,1 +1,1 @@
-{"version":1,"recipe":{"Seed":103,"Family":3,"Element":0,"Rank":0,"Mass":0,"Head":1,"Appendages":0,"Pattern":0,"Tint":2,"Size":32,"Id":"dragon-103"},"width":32,"height":32,"frames":16,"columns":16,"fps":8,"origin":[16,29],"state":"Idle","loop":true}
+{"version":1,"recipe":{"Seed":103,"Family":3,"Element":0,"Rank":0,"Mass":0,"Head":1,"Appendages":0,"Pattern":0,"Tint":2,"SpecialId":null,"Size":32,"Id":"dragon-103"},"width":32,"height":32,"frames":16,"columns":16,"fps":8,"origin":[16,29],"state":"Idle","loop":true}
