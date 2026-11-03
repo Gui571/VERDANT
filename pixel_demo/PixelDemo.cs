@@ -17,6 +17,7 @@ public partial class PixelDemo : Control
     public override void _Ready()
     {
         var args=OS.GetCmdlineUserArgs();
+        if(args.Contains("--forge-hashes")){string path=ProjectSettings.GlobalizePath("user://forge-hashes.json");ForgeHashes.Write(path);GD.Print("FORGE_HASHES "+path);GetTree().Quit();return;}
         if(args.Contains("--self-test")||args.Contains("--ui-test")||args.Contains("--gallery-capture")) { GetTree().CallDeferred(SceneTree.MethodName.ChangeSceneToFile,"res://workshop/Workshop.tscn"); return; }
         if(args.Contains("--pixel-test")){GetTree().Quit(ValidateSprite());return;}
         sprite=new CompactAdventurer(1,InitialCharacter);

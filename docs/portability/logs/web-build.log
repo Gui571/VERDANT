@@ -1,0 +1,5 @@
+  Verdant.Core -> /workspace/VERDANT/core/bin/Release/net8.0/Verdant.Core.dll
+  WebProof -> /workspace/VERDANT/tools/WebProof/bin/Release/net8.0/WebProof.dll
+  WebProof (Blazor output) -> /workspace/VERDANT/tools/WebProof/bin/Release/net8.0/wwwroot
+  Publishing without optimizations. Although it's optional for Blazor, we strongly recommend using `wasm-tools` workload! You can install it by running `dotnet workload install wasm-tools` from the command line.
+  WebProof -> /workspace/builds/web-proof/

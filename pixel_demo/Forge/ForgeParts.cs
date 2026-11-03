@@ -1,4 +1,3 @@
-using Godot;
 namespace Verdant.Forge;
 
 /// <summary>Peças do corpo: cabeça por espécie, cabeças-de-chapéu, tronco, pernas e equipamento de costas.

@@ -1,6 +1,6 @@
 # PixelPreview
 
-Compila o **mesmo código dos sprites** (`pixel_demo/Forge`, `CompactAdventurer`, `RosterCatalog`, `Raster`) sem o Godot, usando `GodotShim.cs` (apenas `Color`/`Vector2`). Serve para revisar arte e rodar a validação em CI ou numa máquina sem o motor.
+Compila o **mesmo código dos sprites** (`pixel_demo/Forge`, `CompactAdventurer`, `RosterCatalog`, `Raster`) sem o Godot, referenciando `core/Verdant.Core.csproj`, sem shim ou pacote Godot. Serve para revisar arte e rodar a validação em CI ou numa máquina sem o motor.
 
 ```bash
 cd tools/PixelPreview
@@ -27,3 +27,12 @@ dotnet run --project tools/PixelPreview -- battle
 ```
 
 `check 200` agora inclui MonsterValidation. `battle` executa 240 confrontos duas vezes, compara eventos e imprime as taxas por classe/família. `battle/Sim` não depende do Godot.
+
+Portabilidade R0:
+
+```sh
+dotnet run --project tools/PixelPreview -- pixel-verify docs/portability/atlas-sha256.json
+dotnet run --project tools/PixelPreview -- web-fixture /tmp/verdant-web-trace.json
+```
+
+`pixel-verify` compara SHA-256 de 5.058 conjuntos completos de quadros com a linha de base do Godot anterior à separação; também verifica que a biblioteca não referencia Godot. `web-fixture` executa no CLI o mesmo cenário C# usado pela prova web.

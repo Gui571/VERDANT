@@ -1,4 +1,3 @@
-using Godot;
 namespace Verdant.Forge;
 
 /// <summary>Armas e itens de mão paramétricos. Cada arma é construída com linhas perfeitas e polígonos pequenos a partir de um

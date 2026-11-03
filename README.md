@@ -1,6 +1,20 @@
-# VERDANT — Pixel character demo & procedural workshop
+# VERDANT — roguelike dos reinos (fundação R0)
 
-**Marco 1 de extração e guerras: [especiais e combate](docs/ESPECIAIS.md).** Os sete heróis, personagens gerados e nove famílias de monstros têm especiais. A arena oferece quatro times, obstáculos, projéteis interceptáveis, estados alterados e comandos manuais (1–6). A oficina permite trocar e visualizar especiais; abra **Guia de especiais** na arena para ver o elenco em 5×.
+**Nova direção:** runs com grupo de heróis e cinco reinos em ordem livre. O plano de economia nacional, extração e guerra territorial foi substituído. **Entrega atual: R0**, biblioteca sem Godot, auditoria, presets Android e prova web; a run começa a ser implementada em R1. [Visão e marcos](docs/ROGUELIKE.md) · [Reinos](docs/REINOS.md) · [Portabilidade e testes](docs/PORTABILIDADE.md).
+
+O jogo disponível agora continua sendo a arena/oficina abaixo. Abra pelo Godot com `./scripts/run.sh`; para a prova de combate no navegador, siga [WebProof](tools/WebProof/README.md). Não há menu Nova run/Continuar nesta etapa. Os ZIPs abaixo são as builds anteriores de especiais, preservadas; builds finais do roguelike pertencem a R5. APK não gerado e Android não executado.
+
+```sh
+dotnet build core/Verdant.Core.csproj
+dotnet run --project tools/PixelPreview -- pixel-verify docs/portability/atlas-sha256.json
+dotnet run --project tools/PixelPreview -- check 200
+dotnet run --project tools/PixelPreview -- special-check
+dotnet run --project tools/PixelPreview -- battle
+```
+
+R0: 5.058 hashes de animações idênticos; 209.682 verificações de arte e 39 de especiais; 1.220 de batalha; 74 de UI Godot e 10.039 do legado, zero falhas. Prova Chromium: 222 eventos iguais ao CLI e toque em três proporções. Detalhes e limitações no relatório.
+
+**Marco anterior: [especiais e combate](docs/ESPECIAIS.md).** Os sete heróis, personagens gerados e nove famílias de monstros têm especiais. A arena oferece quatro times, obstáculos, projéteis interceptáveis, estados alterados e comandos manuais (1–6). A oficina permite trocar e visualizar especiais; abra **Guia de especiais** na arena para ver o elenco em 5×.
 
 ![Especiais no Godot](docs/specials/gallery.gif)
 
@@ -8,7 +22,7 @@
 
 Validação: 209.682 verificações de arte; 39 de especiais; 480 batalhas aleatórias com/sem especiais (2.440 verificações); 74 testes de UI. Zero falhas. Benchmark isolado: 42 combatentes, mediana 11,72 ms, p95 15,23 ms. [Relatório, comandos e limites](docs/ESPECIAIS.md).
 
-**Nações, campanha, save, extração e guerra territorial ainda estão nos próximos marcos.** Veja [decisões e sequência de entregas](docs/DECISOES.md). A build atual é a oficina e arena jogável do marco 1.
+**O plano anterior de nações, extração e guerra territorial foi cancelado.** Veja [decisões](docs/DECISOES.md). Essa build é a oficina e arena do marco 1, preservada como base do roguelike.
 
 **Current roster:** seven visually distinct adventurers, now all drawn by the **Forge** pixel-art engine — chunky big-head chibi proportions, a continuous one-pixel navy outline, a contact shadow, a shared blue-team accent (headbands, scarves, capes) and hue-shifted shading — plus an unlimited **seeded generator** that produces new adventurers in exactly the same style (see [docs/FORGE.md](docs/FORGE.md)).
 

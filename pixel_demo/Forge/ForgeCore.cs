@@ -1,4 +1,3 @@
-using Godot;
 namespace Verdant.Forge;
 
 // ---------------------------------------------------------------------------------------------
@@ -24,31 +23,31 @@ public enum Tone : byte
 
 /// <summary>Paleta de um personagem: 16 cores no máximo (1 contorno + 15 papéis).</summary>
 public sealed record ForgePalette(
-    Color Ink, Color FurD, Color FurM, Color FurL, Color ClothD, Color ClothM, Color ClothL,
-    Color AccD, Color AccM, Color LeatherD, Color LeatherM, Color MetalD, Color MetalM, Color MetalL,
-    Color White, Color Pink)
+    Rgba Ink, Rgba FurD, Rgba FurM, Rgba FurL, Rgba ClothD, Rgba ClothM, Rgba ClothL,
+    Rgba AccD, Rgba AccM, Rgba LeatherD, Rgba LeatherM, Rgba MetalD, Rgba MetalM, Rgba MetalL,
+    Rgba White, Rgba Pink)
 {
-    public static readonly Color InkColor = new("151829");
-    public Color Resolve(Tone t) => t switch
+    public static readonly Rgba InkColor = new("151829");
+    public Rgba Resolve(Tone t) => t switch
     {
         Tone.Ink => Ink, Tone.FurD => FurD, Tone.FurM => FurM, Tone.FurL => FurL,
         Tone.ClothD => ClothD, Tone.ClothM => ClothM, Tone.ClothL => ClothL,
         Tone.AccD => AccD, Tone.AccM => AccM, Tone.LeatherD => LeatherD, Tone.LeatherM => LeatherM,
         Tone.MetalD => MetalD, Tone.MetalM => MetalM, Tone.MetalL => MetalL,
-        Tone.White => White, Tone.Pink => Pink, _ => new Color(0, 0, 0, 0)
+        Tone.White => White, Tone.Pink => Pink, _ => new Rgba(0, 0, 0, 0)
     };
     /// <summary>Cores do metal/branco/rosa são compartilhadas por todo o elenco (família visual).</summary>
     public static ForgePalette Make(Ramp fur, Ramp cloth, Ramp acc, Ramp leather) => new(
         InkColor, fur.D, fur.M, fur.L, cloth.D, cloth.M, cloth.L, acc.D, acc.M, leather.D, leather.M,
-        new Color("5f7b94"), new Color("829fb9"), new Color("c1dceb"), new Color("f0f0e5"), new Color("e991aa"));
+        new Rgba("5f7b94"), new Rgba("829fb9"), new Rgba("c1dceb"), new Rgba("f0f0e5"), new Rgba("e991aa"));
 }
 
 /// <summary>Rampa de três tons: sombra (desloca para o azul), base e luz (desloca para o quente).</summary>
-public readonly record struct Ramp(Color D, Color M, Color L)
+public readonly record struct Ramp(Rgba D, Rgba M, Rgba L)
 {
-    public static Ramp Of(string dark, string mid, string light) => new(new Color(dark), new Color(mid), new Color(light));
+    public static Ramp Of(string dark, string mid, string light) => new(new Rgba(dark), new Rgba(mid), new Rgba(light));
     /// <summary>Gera a rampa a partir de uma cor base, no estilo do elenco (sombras frias, luzes quentes).</summary>
-    public static Ramp From(Color m, float dark = .76f, float light = .30f)
+    public static Ramp From(Rgba m, float dark = .76f, float light = .30f)
     {
         var (h, s, v) = Hsv.From(m);
         var d = Hsv.To((h + .965f) % 1f, Math.Min(1, s * 1.08f + .04f), v * dark);
@@ -59,7 +58,7 @@ public readonly record struct Ramp(Color D, Color M, Color L)
 
 public static class Hsv
 {
-    public static (float h, float s, float v) From(Color c)
+    public static (float h, float s, float v) From(Rgba c)
     {
         float max = Math.Max(c.R, Math.Max(c.G, c.B)), min = Math.Min(c.R, Math.Min(c.G, c.B)), d = max - min, h = 0;
         if (d > 1e-5f)
@@ -69,13 +68,13 @@ public static class Hsv
         }
         return (h, max <= 0 ? 0 : d / max, max);
     }
-    public static Color To(float h, float s, float v)
+    public static Rgba To(float h, float s, float v)
     {
         h = (h % 1f + 1f) % 1f; float c = v * s, x = c * (1 - MathF.Abs(h * 6 % 2 - 1)), m = v - c; int i = (int)(h * 6);
         (float r, float g, float b) = i switch { 0 => (c, x, 0f), 1 => (x, c, 0f), 2 => (0f, c, x), 3 => (0f, x, c), 4 => (x, 0f, c), _ => (c, 0f, x) };
         // Quantiza em 8 bits para a paleta ser exata e reproduzível.
         float Q(float f) => MathF.Round(Math.Clamp(f + m, 0, 1) * 255f) / 255f;
-        return new Color(Q(r), Q(g), Q(b));
+        return new Rgba(Q(r), Q(g), Q(b));
     }
 }
 

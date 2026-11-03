@@ -1,4 +1,3 @@
-using Godot;
 namespace Verdant.Forge;
 
 /// <summary>Poses e quadros-chave por movimento. Mantém o contrato do projeto: idle de 32 quadros a 8 fps (loop de 4 s),
