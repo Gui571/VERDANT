@@ -1,3 +1,15 @@
+# Arquitetura atual — R0
+
+`core/Verdant.Core.csproj` compila Forge, Raster, catálogo, receitas e `battle/Sim` em .NET 8 sem Godot ou pacotes externos. Os arquivos continuam em suas pastas existentes e são incluídos explicitamente. `Verdant.csproj` exclui essas fontes da compilação direta e referencia a biblioteca; PixelPreview e WebProof fazem o mesmo.
+
+- **Núcleo:** bytes RGBA, `Rgba`, `PixelPoint`, System.Numerics, simulação a 30 Hz, dados de habilidades, geração por semente e validação.
+- **Adaptador:** `addons/procedural_creatures/GodotRaster.cs` cria Image e converte cores/vetores para o motor. Não contém regra de jogo.
+- **Godot:** SpriteCache agrupa quadros por receita; arena/oficina/demo recebem input e apresentam estado. Não há rasterização por frame na arena.
+- **WebProof:** camada HTML/canvas separada, com o mesmo núcleo executado em WASM. Não carrega Godot e não reproduz toda a UI.
+- **Futuro R1:** `run/Sim` entrará na biblioteca; `run/UI` fica fora. Fluxos de RNG, save atômico e transições de run ainda não existem.
+
+[Portabilidade e evidências](PORTABILIDADE.md). As regras abaixo descrevem exclusivamente o addon legado; seu passo de 60 Hz não altera os 30 Hz da batalha Forge.
+
 # Framework contracts
 
 `addons/procedural_creatures` is independent of the workshop. Copy this directory into another Godot 4.5.2 .NET project, reference the `Verdant` namespace, and instantiate `CreatureActor.tscn`. `examples/Minimal.tscn` is an executable integration scene (F6), with no workshop references.
