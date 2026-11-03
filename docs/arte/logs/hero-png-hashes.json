@@ -1,0 +1,422 @@
+[
+  {
+    "file": "docs/roster/board.png",
+    "sha256": "56a26398a9f32c71b1dcb3158560754d2f58068f4b244035dad22a882484cd1c"
+  },
+  {
+    "file": "docs/roster/boro-attack-review.png",
+    "sha256": "4e9c70a548b597c46fa92b0f81bba03aed39bdea324d5541041d7f53d69df117"
+  },
+  {
+    "file": "docs/roster/boro-attack.png",
+    "sha256": "4388a8abd5cef8f17bf4e5d5aef58a7c76987b7da9ff0c9d5eac178620332ef2"
+  },
+  {
+    "file": "docs/roster/boro-hurt-review.png",
+    "sha256": "2a4d62e7146c48f3ddd63cc16ea08a6429563d1c46b65db869da73c95fea0cad"
+  },
+  {
+    "file": "docs/roster/boro-hurt.png",
+    "sha256": "e2ad641b95fa38858d202241ec6b735ff85d0753e81dab783ae7cd7d3db29637"
+  },
+  {
+    "file": "docs/roster/boro-idle-review.png",
+    "sha256": "b611b103804a91456646fc1fe0742b818d5796decdf4db7625de76ad47a899d4"
+  },
+  {
+    "file": "docs/roster/boro-idle.png",
+    "sha256": "8ccbd5104514f6593cfca40d7c02756c05793cf64b7e7745d76ab013957ec13d"
+  },
+  {
+    "file": "docs/roster/boro-run-review.png",
+    "sha256": "0238f399fb4ad3be8f7e56fe2cf025fdf1a1f8030f50e1ebd114416a55d7d7cd"
+  },
+  {
+    "file": "docs/roster/boro-run.png",
+    "sha256": "9dc693831673474eef08a20fcb9d43f4b2aefdb60fe203f3715384b834d3d100"
+  },
+  {
+    "file": "docs/roster/boro-walk-review.png",
+    "sha256": "0683dd6b5f938cd3028c5666da3dea9984317a3f36cda028c314d04718530c56"
+  },
+  {
+    "file": "docs/roster/boro-walk.png",
+    "sha256": "b6a5996c48d82045676a2c687949e06dc82f276a9d9064801bcdc975412f0ba5"
+  },
+  {
+    "file": "docs/roster/boro.png",
+    "sha256": "96f36f7ce58d02eae42076fbba133738227b81d544343e848f96431a2d1c66a6"
+  },
+  {
+    "file": "docs/roster/bram-attack-review.png",
+    "sha256": "df4efb9fe8dba0947ffbfd79923e7b012a64083a0c7164534437db751e35217c"
+  },
+  {
+    "file": "docs/roster/bram-attack.png",
+    "sha256": "558cc342ee835337847ffeaeac1ba61180679db2cc8323e2aeef1e5547032a4a"
+  },
+  {
+    "file": "docs/roster/bram-hurt-review.png",
+    "sha256": "79619e53b178795b0e82c2735a4461b70bb7ba97e2919e97cd93b5c04453dc17"
+  },
+  {
+    "file": "docs/roster/bram-hurt.png",
+    "sha256": "c966f00a9a5ccbada96e020d3fc7510f392e1df90cbfb47c33675c7ea80d422f"
+  },
+  {
+    "file": "docs/roster/bram-idle-review.png",
+    "sha256": "1234420896ca1b016106d492960b2fabbc1a9200c951821ae415fabc73f31128"
+  },
+  {
+    "file": "docs/roster/bram-idle.png",
+    "sha256": "2ddb127cae7d7b49fca33b859d2621b084d9ae86e6141ca5a68314bfb0bdcbc1"
+  },
+  {
+    "file": "docs/roster/bram-run-review.png",
+    "sha256": "a97a333a2b2c5c968122e76cecf4a56a902b6e6bf9c4dd85f0697d98d1f9665b"
+  },
+  {
+    "file": "docs/roster/bram-run.png",
+    "sha256": "122d12e2a093c5200ae1cd70ad287316ee75178996c512ed4246732a13b5437d"
+  },
+  {
+    "file": "docs/roster/bram-walk-review.png",
+    "sha256": "541edfe8588b20a037e3658bc3efb7d7f57f6567f3eb48b67ce37823c430e246"
+  },
+  {
+    "file": "docs/roster/bram-walk.png",
+    "sha256": "7275b126c20d65e1da904005b2ccb37a25677690782877a68ffc8c040b0dd243"
+  },
+  {
+    "file": "docs/roster/bram.png",
+    "sha256": "53d8d9d0f682e4ab67c065d610f90b3ec89ab18e0f790e764098092d8c605b9c"
+  },
+  {
+    "file": "docs/roster/demo-godot.png",
+    "sha256": "f69c030a9369fd5fd55f3eb83c1c483397d188fdc0ce6e4b91229b43ad9b7402"
+  },
+  {
+    "file": "docs/roster/frames/generated-00.png",
+    "sha256": "40eaf3639e2648584e44a92f94e4d1def2b69ea7d825ed965e08eae68e02b1c0"
+  },
+  {
+    "file": "docs/roster/frames/generated-01.png",
+    "sha256": "f5739db0f61f9a91af82f5ff36dee6fb88b97248e621c94ce39448bc6098cd08"
+  },
+  {
+    "file": "docs/roster/frames/generated-02.png",
+    "sha256": "cdd6fabcb9dbb7379edac49e66019c91a75294f614eed160b4db2000b0cf0014"
+  },
+  {
+    "file": "docs/roster/frames/generated-03.png",
+    "sha256": "bf05099f839a4d2e08b6afe65569e68e70e4eda04b3b42d5f33f9dbab9a8ec79"
+  },
+  {
+    "file": "docs/roster/frames/generated-04.png",
+    "sha256": "dc9b4b643107c547a8b8b0555f7d96a30861dc6d0682472a21ce4e4da7510d85"
+  },
+  {
+    "file": "docs/roster/frames/generated-05.png",
+    "sha256": "cb7e32ead52f44d9a523223c411b54706259643fa080d31bc9493704d88e0328"
+  },
+  {
+    "file": "docs/roster/frames/generated-06.png",
+    "sha256": "3f9884f69ec12c346c7bd489691453ee1bd857bcc45a085f7360da7c3b0bf7fd"
+  },
+  {
+    "file": "docs/roster/frames/generated-07.png",
+    "sha256": "f776f73d0347f1a5d183c3952075acecda8b131c1a64b28f7285a409659f3cee"
+  },
+  {
+    "file": "docs/roster/frames/generated-08.png",
+    "sha256": "96e7a4cbe95a0ad4b9d3999e1b236e379fd11f6d206ddb1009db1338d8ce7bb7"
+  },
+  {
+    "file": "docs/roster/frames/generated-09.png",
+    "sha256": "2efca0946c87ce4047784c08ad976e523cd7047e9a273b343c645f8829f45459"
+  },
+  {
+    "file": "docs/roster/frames/generated-10.png",
+    "sha256": "a816b3eaa8d0b619da2ff39047560a2d1ba152838c28c81e9b322cc94f79990b"
+  },
+  {
+    "file": "docs/roster/frames/generated-11.png",
+    "sha256": "3247fd52b0ade32f071593930d54de7b5334cfb6bcc2dcc00033ece8ac6b4937"
+  },
+  {
+    "file": "docs/roster/frames/generated-12.png",
+    "sha256": "132ccfa74a9fa4961cb87463afc0825261c9f2a327ce614245cd2170e50f2a2e"
+  },
+  {
+    "file": "docs/roster/frames/generated-13.png",
+    "sha256": "b0ead263c3d33c5dfd6e143a052065e787cbf49a819e9d6f71ca42a54a7c7b9f"
+  },
+  {
+    "file": "docs/roster/frames/generated-14.png",
+    "sha256": "56bcc41bd7ba4baf2f3ef74e56262d3200e8cc6b1fd80a68c5c0a9ab48a5a445"
+  },
+  {
+    "file": "docs/roster/frames/generated-15.png",
+    "sha256": "76b21ae2c46d3dfcb6d29f142a36eb1a212c2b20f9ea9b155f6ef08c5eefbaea"
+  },
+  {
+    "file": "docs/roster/frames/lineup-00.png",
+    "sha256": "9393c58ce5aee755412ba40d16308edea55a85673e384dd42f89c2b42a9080e5"
+  },
+  {
+    "file": "docs/roster/frames/lineup-01.png",
+    "sha256": "e013cd5d6ae3c5a5147d13815b7a57fd78bc0c2014a9d6656e5810c0685d4117"
+  },
+  {
+    "file": "docs/roster/frames/lineup-02.png",
+    "sha256": "25eeaad17b6470a08e1d07b341c9dd49e15ac0c415d0b4dcb145e5dba07e0365"
+  },
+  {
+    "file": "docs/roster/frames/lineup-03.png",
+    "sha256": "62e1c1a182684d8c417533cbd3026b904a18dc39e288f2eecdd7186d9871c09c"
+  },
+  {
+    "file": "docs/roster/frames/lineup-04.png",
+    "sha256": "d709ef58946cddd915c12e0623712398c1dc11952ed724cc0aa85df24fa51953"
+  },
+  {
+    "file": "docs/roster/frames/lineup-05.png",
+    "sha256": "244a6aaa8d4e49883bb40dc509319a13862e237b0ffb123bbdadb7cb71b56cc2"
+  },
+  {
+    "file": "docs/roster/frames/lineup-06.png",
+    "sha256": "a3694605900ef9372dd48be2be3fc44ed30c9b389bbf154cabedcb7614413d0a"
+  },
+  {
+    "file": "docs/roster/frames/lineup-07.png",
+    "sha256": "8812ec91bc375bbe750e1fe8133c35bc0c21ac2fbcea9210f7dc79df1115ea63"
+  },
+  {
+    "file": "docs/roster/frames/lineup-08.png",
+    "sha256": "4132a6fed4be9eb1d89e076971324fa02e582b7a37659f291eed7bbd1d0f4bad"
+  },
+  {
+    "file": "docs/roster/frames/lineup-09.png",
+    "sha256": "0b9f134823be949cb4ca4c582195c103f31eaef41a7fb2f038a339d7ae03af7e"
+  },
+  {
+    "file": "docs/roster/frames/lineup-10.png",
+    "sha256": "7983a88c0906d568d6f5a70c7afa9725fe948d71804e1012ee59980478a6e9f3"
+  },
+  {
+    "file": "docs/roster/frames/lineup-11.png",
+    "sha256": "a60cbedc377aec87ba665f9a9ca2cb7b16ff0b01d77262d9d5d45d62b277a160"
+  },
+  {
+    "file": "docs/roster/frames/lineup-12.png",
+    "sha256": "6aa4acf2273aa871057800a032f6034b083bdd068e0d005f999fe64ead3df726"
+  },
+  {
+    "file": "docs/roster/frames/lineup-13.png",
+    "sha256": "c466bec1078c355a0604f804bcce2166d8094ea938fa80b348f8e2a2ef4f3d06"
+  },
+  {
+    "file": "docs/roster/frames/lineup-14.png",
+    "sha256": "50ec4c0c5811d3a59b8190941363c7624b146598b94405eacd930ec2f1d55e27"
+  },
+  {
+    "file": "docs/roster/frames/lineup-15.png",
+    "sha256": "fa6f80117e1a7e1c745047a21dfbef6557ee620c90ead21076a37bedc124d7a3"
+  },
+  {
+    "file": "docs/roster/frames/lineup-16.png",
+    "sha256": "3a228b46017f620bbd3c2918a9ae7d276e020c6fc37f3d0f37a0065c156bac2c"
+  },
+  {
+    "file": "docs/roster/frames/lineup-17.png",
+    "sha256": "93416b13cb0a4fb2f06b1d531ecb3aaac9c75a43a0757bd2c1ddf0c0233f14c8"
+  },
+  {
+    "file": "docs/roster/frames/lineup-18.png",
+    "sha256": "8d23962d56e56d628560239e9a24642f5859c6d51bd3beaf07b960a52d885cd3"
+  },
+  {
+    "file": "docs/roster/frames/lineup-19.png",
+    "sha256": "4fa00769cf7dcc176946a90eabc159e017d8f8253aa2e38552c6f8c7ea8af192"
+  },
+  {
+    "file": "docs/roster/frames/lineup-20.png",
+    "sha256": "d709ef58946cddd915c12e0623712398c1dc11952ed724cc0aa85df24fa51953"
+  },
+  {
+    "file": "docs/roster/frames/lineup-21.png",
+    "sha256": "244a6aaa8d4e49883bb40dc509319a13862e237b0ffb123bbdadb7cb71b56cc2"
+  },
+  {
+    "file": "docs/roster/frames/lineup-22.png",
+    "sha256": "a3694605900ef9372dd48be2be3fc44ed30c9b389bbf154cabedcb7614413d0a"
+  },
+  {
+    "file": "docs/roster/frames/lineup-23.png",
+    "sha256": "40cb01aa3278dee8573e68990d10687bffbb98e3109dc5d538b287b6f3e4682f"
+  },
+  {
+    "file": "docs/roster/frames/lineup-24.png",
+    "sha256": "4132a6fed4be9eb1d89e076971324fa02e582b7a37659f291eed7bbd1d0f4bad"
+  },
+  {
+    "file": "docs/roster/frames/lineup-25.png",
+    "sha256": "0b9f134823be949cb4ca4c582195c103f31eaef41a7fb2f038a339d7ae03af7e"
+  },
+  {
+    "file": "docs/roster/frames/lineup-26.png",
+    "sha256": "7983a88c0906d568d6f5a70c7afa9725fe948d71804e1012ee59980478a6e9f3"
+  },
+  {
+    "file": "docs/roster/frames/lineup-27.png",
+    "sha256": "822dba3541d1186a9edbeb4f69ca42870e9158e81cdb3aaf2c5738b6eb48773a"
+  },
+  {
+    "file": "docs/roster/frames/lineup-28.png",
+    "sha256": "6aa4acf2273aa871057800a032f6034b083bdd068e0d005f999fe64ead3df726"
+  },
+  {
+    "file": "docs/roster/frames/lineup-29.png",
+    "sha256": "c466bec1078c355a0604f804bcce2166d8094ea938fa80b348f8e2a2ef4f3d06"
+  },
+  {
+    "file": "docs/roster/frames/lineup-30.png",
+    "sha256": "50ec4c0c5811d3a59b8190941363c7624b146598b94405eacd930ec2f1d55e27"
+  },
+  {
+    "file": "docs/roster/frames/lineup-31.png",
+    "sha256": "fa6f80117e1a7e1c745047a21dfbef6557ee620c90ead21076a37bedc124d7a3"
+  },
+  {
+    "file": "docs/roster/generated.png",
+    "sha256": "5a3b18d33314e8c8f89bdf81b29fd2ad59d740908e81f5a647a8ccf4ef3dde4d"
+  },
+  {
+    "file": "docs/roster/iria-attack.png",
+    "sha256": "3a45b255ab0e8310659530ed902953652756eb53fc5002f94784179a4b8a4ade"
+  },
+  {
+    "file": "docs/roster/iria-hurt.png",
+    "sha256": "5cead2cce896f07c0adb471267e36bc9ade3194da307294567d4e64c81284427"
+  },
+  {
+    "file": "docs/roster/iria-idle.png",
+    "sha256": "0d3ad0fa78b5a7ede0d9b902a164727639f5a75ce5a7f9d35758e4f0821e9a72"
+  },
+  {
+    "file": "docs/roster/iria-run.png",
+    "sha256": "201ce347754d1cca80f042bcf6a34f48bb41f05bd5de1bce9e1477dcf0d4b11f"
+  },
+  {
+    "file": "docs/roster/iria-walk.png",
+    "sha256": "a197090bc417cc3b044fb3afd6d6ccd20d100d530e310f7225a2f43287e43392"
+  },
+  {
+    "file": "docs/roster/iria.png",
+    "sha256": "0e39d9ea36384d4ca7dbebec80a8387d6e5f462cdc01e08ff744c133a9b2b4e4"
+  },
+  {
+    "file": "docs/roster/lineup.png",
+    "sha256": "c96af4dcabba52d28a166e6a96303180fdccdaf0236b18b64dfff524e9cb246c"
+  },
+  {
+    "file": "docs/roster/mira-attack.png",
+    "sha256": "84a4c746ffd4e700ecf08a802e753e7a4399238137fc878c5de761eca7872445"
+  },
+  {
+    "file": "docs/roster/mira-hurt.png",
+    "sha256": "7c311756ebba951b00a6a88143e959359c5aed7a993cbc6762d76ec79e438816"
+  },
+  {
+    "file": "docs/roster/mira-idle.png",
+    "sha256": "e6e3d5b3c8baba066c4c9075eb6153103b7fc09d9d575385cb2a8f8d2da752f5"
+  },
+  {
+    "file": "docs/roster/mira-run.png",
+    "sha256": "374f5b51bf25daaea4e6650f08484492b5981a71de8f8d6a3158b7c63010a27c"
+  },
+  {
+    "file": "docs/roster/mira-walk.png",
+    "sha256": "7407758fd51efb740cbd3f1fae04b7596f8d09d44040867cfa804571f6fa73cb"
+  },
+  {
+    "file": "docs/roster/mira.png",
+    "sha256": "11a4aa987ad71841434e681c4e651faea7c2246a11763aa9d8d0bf1dc26b5f40"
+  },
+  {
+    "file": "docs/roster/nix-attack.png",
+    "sha256": "f3fb143f2b1761e1e0973ad9be4a83d20177f2935d5a6eccddc3de27296d1978"
+  },
+  {
+    "file": "docs/roster/nix-hurt.png",
+    "sha256": "d23fbb49319e31665f0f84f8776d65ee939a9efc0156d1461fd8d97fc86d52c5"
+  },
+  {
+    "file": "docs/roster/nix-idle.png",
+    "sha256": "f2bc0c4dcf5c88ed0b27f46abd3914fb210f35bec705ba78d0ba8c2fdaa927b8"
+  },
+  {
+    "file": "docs/roster/nix-run.png",
+    "sha256": "519832dbe89cfa6e6d064d4680c5294403eb6c05c3deef2b7337c8a39bfe26c8"
+  },
+  {
+    "file": "docs/roster/nix-walk.png",
+    "sha256": "dd097a723a45ebc23463cbdecb47c4a4b9cde44fb7bedacadb7e56d1ec164a34"
+  },
+  {
+    "file": "docs/roster/nix.png",
+    "sha256": "1e7fd31eb596dc01fea4ff1abb974d68b3aa9bcc08adce5f74d14f0db612c332"
+  },
+  {
+    "file": "docs/roster/roster-review.png",
+    "sha256": "77236d74edb649755960c4609762dea6b6fc0bcfdd79712e56511a42fe320e61"
+  },
+  {
+    "file": "docs/roster/rowan-attack.png",
+    "sha256": "5d4aeb17603d4efc5e2f76731cc2999db2a33614e90af624ab88de9713e0b384"
+  },
+  {
+    "file": "docs/roster/rowan-hurt.png",
+    "sha256": "f6618a478b0d050dde44e9c35c27faccf69d309b1c02015a59c1bcfd5fbe8310"
+  },
+  {
+    "file": "docs/roster/rowan-idle.png",
+    "sha256": "49fb954f55d6fc97c8b99a30db23998d60de44a24688fb9f7c4e9002e2104437"
+  },
+  {
+    "file": "docs/roster/rowan-run.png",
+    "sha256": "819dd2231e7bb0349710aefd727efc1aae35874f590b003343cea8924a7749a7"
+  },
+  {
+    "file": "docs/roster/rowan-walk.png",
+    "sha256": "79bddfcc1322895baf8ff0f9a133afa00ca0eaee19eb526a320873070b13a844"
+  },
+  {
+    "file": "docs/roster/rowan.png",
+    "sha256": "a081955574245a6f83c05fc96186b5df7a1857b64a6f39b0e0205ccfca0ed54e"
+  },
+  {
+    "file": "docs/roster/suri-attack.png",
+    "sha256": "46bf72b8330c1a3760e8173ca218ceed500774a6657181fbe9030f950089252c"
+  },
+  {
+    "file": "docs/roster/suri-hurt.png",
+    "sha256": "45536a0f077912fa6631828302153d78849ae1037e5952f72682b37f11918575"
+  },
+  {
+    "file": "docs/roster/suri-idle.png",
+    "sha256": "ab33756b62862928ff21ad891fb22ed8120205daeda5def21c36ee651ac4d56c"
+  },
+  {
+    "file": "docs/roster/suri-run.png",
+    "sha256": "a09244124ae58de3d84d687ab4da1691a266cf081c92a48b36323324a3f9e8d1"
+  },
+  {
+    "file": "docs/roster/suri-walk.png",
+    "sha256": "e6f9ce556f8fd751eca8a38b2b00a06572d9fddcec03901984864a0fc2efe77e"
+  },
+  {
+    "file": "docs/roster/suri.png",
+    "sha256": "34d1dd49f854d96159c8c0571c7d5e940de25b251c0a44d20bdea0f8f256a83b"
+  }
+]

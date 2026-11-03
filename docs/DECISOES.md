@@ -1,5 +1,18 @@
 # Decisões — roguelike dos reinos
 
+## Revisão de arte de monstros (2026-11-03)
+
+Base real: `roguelike-reinos` em `0b0ed469`; branch de trabalho `arte-monstros`. O branch contém R0 e os especiais; não contém uma run completa. A tarefa atual se limita à arte de monstros e aos caminhos de atlas/apresentação. Nenhum arquivo de `battle/Sim`, `BattleRecipes`, `ForgeEffects` ou do elenco foi alterado.
+
+- A auditoria e as imagens anteriores estão em [ARTE-MONSTROS-AUDITORIA.md](ARTE-MONSTROS-AUDITORIA.md). A revisão preserva células/origens e receitas, com `Entry` acrescentado ao fim do enum de movimentos.
+- Mortes passam a oito quadros a 12 FPS para caber no tempo de apresentação existente. O cache preserva seis quadros a 8 FPS para a morte dos heróis.
+- Segunda fase é exclusivamente visual e usa o `Phase` existente. Cache inclui dois atlases somente para chefes; não muda o limiar, atributos ou habilidades.
+- Adornos elementais são camadas aderidas ao corpo dentro do atlas. Sem partículas novas que possam ser confundidas com os efeitos dos especiais, que estão fora do escopo.
+- `MonsterSpec` mantém o formato; nenhum campo de gameplay novo. A exportação da oficina registra a fase visual em metadados, fora da receita.
+- Manifesto de portabilidade é atualizado intencionalmente para os monstros; os 2.898 hashes de heróis permanecem iguais. Os resultados históricos de R0 abaixo continuam descrevendo aquela entrega.
+- Não se altera IA/movimento para evitar sobreposição de sprites na arena. A captura registra essa limitação; o teste de silhuetas isoladas não mede legibilidade em aglomeração.
+
+
 ## R0: auditoria do estado real
 
 Auditado `extracao-e-guerras` em `2939397`, antes de criar `roguelike-reinos`. Leitura de ESPECIAIS, BATALHA, MONSTROS, FORGE, ARCHITECTURE, decisões, fontes de batalha/Forge/oficina e PixelPreview.

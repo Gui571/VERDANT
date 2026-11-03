@@ -4,6 +4,8 @@
 
 O jogo disponível agora continua sendo a arena/oficina abaixo. Abra pelo Godot com `./scripts/run.sh`; para a prova de combate no navegador, siga [WebProof](tools/WebProof/README.md). Não há menu Nova run/Continuar nesta etapa. Os ZIPs abaixo são as builds anteriores de especiais, preservadas; builds finais do roguelike pertencem a R5. APK não gerado e Android não executado.
 
+**Revisão de arte dos monstros:** nove famílias com anatomia e mortes próprias, detalhes elementais animados, chefes com segunda fase visual e prévia da oficina usando atlas. [Antes/depois e crítica visual](docs/ARTE-MONSTROS-AUDITORIA.md) · [Como editar e testar](docs/MONSTROS.md) · [Relatório](docs/arte/RELATORIO.md). Os downloads existentes abaixo ainda são as builds anteriores; execute pelo Godot para ver esta revisão.
+
 ```sh
 dotnet build core/Verdant.Core.csproj
 dotnet run --project tools/PixelPreview -- pixel-verify docs/portability/atlas-sha256.json
