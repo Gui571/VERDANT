@@ -2,3 +2,9 @@
 bin/
 obj/
 *.user
+
+# Credenciais e intermediários Android locais
+*.keystore
+*.jks
+.godot/export_credentials.cfg
+android/build/
