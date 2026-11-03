@@ -1,4 +1,3 @@
-using Godot;
 namespace Verdant.Forge;
 
 public enum Species { Duck, Rabbit, Human, Turtle, Fox, Owl, Mouse, Cat, Frog, Elf, Bear }

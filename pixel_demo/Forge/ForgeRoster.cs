@@ -1,4 +1,3 @@
-using Godot;
 namespace Verdant.Forge;
 
 /// <summary>As receitas do elenco fixo. Cada uma é só dados: espécie + equipamento + paleta.</summary>

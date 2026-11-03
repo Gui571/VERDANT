@@ -23,7 +23,7 @@ public static class MonsterGenerator
     }
     public static ForgePalette Palette(MonsterSpec s)
     {
-        var colors=new[]{"df8755","79bed1","94b568","a187bb","a8bd64"};var ramp=Ramp.From(new Godot.Color(colors[(int)s.Element]));
+        var colors=new[]{"df8755","79bed1","94b568","a187bb","a8bd64"};var ramp=Ramp.From(new Rgba(colors[(int)s.Element]));
         var (h,sat,v)=Hsv.From(ramp.M);ramp=Ramp.From(Hsv.To(h+(s.Tint-1)*.015f,sat,v-(s.Tint*.025f)));
         return ForgePalette.Make(ramp,ForgeLook.Blue,Ramp.Of("896348","d6ad70","efdcab"),ForgeLook.Leather);
     }

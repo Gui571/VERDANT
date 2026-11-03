@@ -10,6 +10,18 @@ public static class Program
         if(args[0]=="strip"&&args.Length>3&&args[2].StartsWith("monster:"))return MonsterPreview.Strip(args[1],Enum.Parse<Verdant.Forge.MonsterFamily>(args[2][8..],true),Enum.Parse<Verdant.Forge.MonsterMotion>(args[3],true),args.Length>4?int.Parse(args[4]):5);
         switch (args[0])
         {
+            case "web-fixture": {var proof=new WebProof.ProofScenario();proof.Advance(1800);File.WriteAllText(args[1],proof.Trace());return 0;}
+            case "pixel-verify": {
+                var expected=System.Text.Json.JsonSerializer.Deserialize<Dictionary<string,string>>(File.ReadAllText(args[1]))!;
+                var actual=Verdant.Forge.ForgeHashes.Collect();
+                int failures=expected.Count==actual.Count?0:1;
+                failures+=expected.Count(p=>!actual.TryGetValue(p.Key,out var hash)||hash!=p.Value);
+                var references=typeof(Verdant.Forge.ForgeRenderer).Assembly.GetReferencedAssemblies();
+                bool portable=references.All(r=>!r.Name!.StartsWith("Godot",StringComparison.Ordinal));
+                Console.WriteLine($"PORTABLE_CORE no_godot={portable} atlas_hashes={actual.Count} differences={failures}");
+                return failures==0&&portable?0:1;
+            }
+            case "pixel-hashes": Verdant.Forge.ForgeHashes.Write(args[1]); return 0;
             case "specials": return SpecialPreview.Export(args[1]);
             case "battle-no-specials": {var result=Verdant.Battle.BattleValidation.Run((seed,n)=>Enumerable.Range(0,n).Select(i=>(i%3==0?Verdant.Battle.ActorRecipe.FromHero((int)((seed+(ulong)i)%7)):i%3==1?Verdant.Battle.ActorRecipe.Generated(seed*31+(ulong)i):Verdant.Battle.ActorRecipe.FromMonster(seed*31+(ulong)i)).Fighter(i%2)).ToArray(),specials:false);foreach(var e in result.failures)Console.WriteLine(e);Console.WriteLine($"BATTLE checks={result.checks} failures={result.failures.Count}");return result.failures.Count==0?0:1;}
             case "special-check": {var result=Verdant.Battle.SpecialValidation.Run();foreach(var error in result.failures)Console.WriteLine(error);Console.WriteLine($"SPECIAL checks={result.checks} failures={result.failures.Count}");return result.failures.Count==0?0:1;}

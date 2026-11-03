@@ -1,4 +1,3 @@
-using Godot;
 namespace Verdant.Forge;
 
 /// <summary>Gera personagens novos no mesmo estilo do elenco a partir de uma semente. Mesma semente = mesmo personagem, sempre.

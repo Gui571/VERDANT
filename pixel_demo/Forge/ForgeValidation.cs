@@ -1,5 +1,4 @@
 using System.Security.Cryptography;
-using Godot;
 namespace Verdant.Forge;
 
 /// <summary>Regras objetivas do estilo, verificáveis sem abrir o Godot (usadas pelo --pixel-test e pela ferramenta de prévia).</summary>
