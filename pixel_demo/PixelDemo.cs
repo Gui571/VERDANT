@@ -24,7 +24,7 @@ public partial class PixelDemo : Control
         TextureFilter=TextureFilterEnum.Nearest;BuildTerrain();
 
         var root=new VBoxContainer{Position=new Vector2(60,32),Size=new Vector2(1320,896)};AddChild(root);
-        var title=new Label{Text="VERDANT  /  PEQUENOS VIAJANTES"};title.AddThemeColorOverride("font_color",new Color("ede5cb"));title.AddThemeFontSizeOverride("font_size",26);var titleRow=new HBoxContainer();root.AddChild(titleRow);title.SizeFlagsHorizontal=SizeFlags.ExpandFill;titleRow.AddChild(title);AddButton(titleRow,"Guia do elenco",()=>GetTree().ChangeSceneToFile("res://pixel_demo/RosterBoard.tscn"));
+        var title=new Label{Text="VERDANT  /  PEQUENOS VIAJANTES"};title.AddThemeColorOverride("font_color",new Color("ede5cb"));title.AddThemeFontSizeOverride("font_size",26);var titleRow=new HBoxContainer();root.AddChild(titleRow);title.SizeFlagsHorizontal=SizeFlags.ExpandFill;titleRow.AddChild(title);AddButton(titleRow,"Terrenos 2.5D",()=>GetTree().ChangeSceneToFile("res://terrain/UI/TerrainWorkshop.tscn"));AddButton(titleRow,"Guia do elenco",()=>GetTree().ChangeSceneToFile("res://pixel_demo/RosterBoard.tscn"));
         var desc=new Label{Text="Patrulha do vale     •     32 × 32 pixels     •     animação em camadas"};desc.AddThemeColorOverride("font_color",new Color("a2b3cc"));root.AddChild(desc);
         var spacer=new Control{SizeFlagsVertical=SizeFlags.ExpandFill};root.AddChild(spacer);
         var actions=new HFlowContainer{};actions.AddThemeConstantOverride("h_separation",12);actions.AddThemeConstantOverride("v_separation",8);root.AddChild(actions);

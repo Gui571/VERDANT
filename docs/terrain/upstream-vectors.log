@@ -1,0 +1,12 @@
+/workspace/cartoon-terrain-studio/src/Domain/Dungeon/Elevation.cs(129,97): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context. [/tmp/terrain-upstream/upstream.csproj]
+/workspace/cartoon-terrain-studio/src/Domain/Dungeon/Elevation.cs(133,96): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context. [/tmp/terrain-upstream/upstream.csproj]
+/workspace/cartoon-terrain-studio/src/Runtime/Js/Js.cs(77,37): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context. [/tmp/terrain-upstream/upstream.csproj]
+/workspace/cartoon-terrain-studio/src/Runtime/Js/JsConsole.cs(15,52): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context. [/tmp/terrain-upstream/upstream.csproj]
+/workspace/cartoon-terrain-studio/src/Runtime/Js/JsCollections.cs(29,18): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context. [/tmp/terrain-upstream/upstream.csproj]
+/workspace/cartoon-terrain-studio/src/Runtime/Js/JsCollections.cs(124,22): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context. [/tmp/terrain-upstream/upstream.csproj]
+/workspace/cartoon-terrain-studio/src/Runtime/Js/JsCollections.cs(154,24): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context. [/tmp/terrain-upstream/upstream.csproj]
+/workspace/cartoon-terrain-studio/src/Runtime/Js/JsArrayExtensions.cs(183,19): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context. [/tmp/terrain-upstream/upstream.csproj]
+(42, 3.5, -2): 0.5729450432820987
+(4294967295, -17.2, 99): 0.17070761852844718
+(0, 0, 0): 0.30476046703421533
+(123, 48, 32): 0.41658033764584845
