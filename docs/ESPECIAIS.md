@@ -78,3 +78,14 @@ dotnet run --project tools/PixelPreview -- specials docs/specials
 ```
 
 Os testes gráficos exigem display. O driver desta máquina avisa que não pode alterar VSync; os testes e capturas terminaram normalmente. Builds Windows e Linux incluem o runtime .NET. O executável Windows não foi executado neste ambiente Linux. Resultados da build Linux exportada ficam nos logs `linux-*`.
+
+## Camada visual dos efeitos (`battle/Fx/`)
+Apresentação pura em C#: `FxDirector` lê eventos/estado da simulação a cada tick (`Advance()`), `Collect()` produz três listas (Ground/Over/Top) de sprites de um único atlas (`FxAtlas`). Nada escreve na simulação.
+- **Quatro fases por especial:** telégrafo (0,4 s de conjuração: forma real — círculo, cone, linha — com o alcance do simulador), liberação, impacto (hit-stop de 2–3 ticks e tremor opcionais, só na arena) e resíduo.
+- **Linguagem:** dano vermelho/laranja/branco; cura verde/branco; escudo ciano; controle com ícone próprio + cor (nunca só cor). Temas: `FxTheme` (rampa de 4 tons + tinta).
+- **Estados:** ícone 9×9 (até 3 por unidade, prioridade em `StatusIcons.Priority`) e camada no corpo.
+- **Pixel art:** alfa 0/255, ≤16 cores por quadro, sem escala fracionária; atlas gerado uma vez e cacheado.
+- **Orçamento:** 200 partículas e 420 pontos de forma por quadro. Cheio, a nova partícula troca a mais antiga de prioridade menor (decoração < impacto < informação), senão é descartada.
+- **Controles:** botões "Efeitos" e "Tremor" na arena.
+- **Criar um efeito novo:** registrar sprites em `FxAtlas.Build`, escrever o caso em `FxScripts.Release` (e telégrafo em `DrawTele`), rodar `fx-check`.
+- Validação: `dotnet PixelPreview.dll fx-check`.
