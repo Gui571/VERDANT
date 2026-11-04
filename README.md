@@ -6,6 +6,8 @@ O jogo disponível agora continua sendo a arena/oficina abaixo. Abra pelo Godot 
 
 **Revisão de arte dos monstros:** nove famílias com anatomia e mortes próprias, detalhes elementais animados, chefes com segunda fase visual e prévia da oficina usando atlas. [Antes/depois e crítica visual](docs/ARTE-MONSTROS-AUDITORIA.md) · [Como editar e testar](docs/MONSTROS.md) · [Relatório](docs/arte/RELATORIO.md). Os downloads existentes abaixo ainda são as builds anteriores; execute pelo Godot para ver esta revisão.
 
+**Terrenos generativos 2.5D:** abra **Terrenos 2.5D** no elenco/oficina/arena. Gere por semente, ajuste relevo/água/vegetação e use o mapa na arena. Base MIT [Cartoon Terrain Studio](https://github.com/idlerunner00/cartoon-terrain-studio), adaptada para Godot 4.5.2. [Guia, capturas e testes](docs/TERRENOS.md).
+
 ```sh
 dotnet build core/Verdant.Core.csproj
 dotnet run --project tools/PixelPreview -- pixel-verify docs/portability/atlas-sha256.json

@@ -1,0 +1,2 @@
+TERRAIN cases=400 unique_seeds=100/100 upstream_vectors=4
+TERRAIN checks=1186441 failures=0

@@ -1,4 +1,4 @@
 <Project Sdk="Godot.NET.Sdk/4.5.2">
   <PropertyGroup><TargetFramework>net8.0</TargetFramework><EnableDynamicLoading>true</EnableDynamicLoading><Nullable>enable</Nullable><ImplicitUsings>enable</ImplicitUsings></PropertyGroup>
-  <ItemGroup><Compile Remove="tools/**;core/**;battle/Sim/**;battle/BattleRecipes.cs;pixel_demo/Forge/**;pixel_demo/CompactAdventurer.cs;pixel_demo/RosterCatalog.cs;addons/procedural_creatures/Raster.cs;addons/procedural_creatures/Rgba.cs" /><ProjectReference Include="core/Verdant.Core.csproj" /></ItemGroup>
+  <ItemGroup><Compile Remove="tools/**;core/**;terrain/Sim/**;third_party/**;battle/Sim/**;battle/BattleRecipes.cs;pixel_demo/Forge/**;pixel_demo/CompactAdventurer.cs;pixel_demo/RosterCatalog.cs;addons/procedural_creatures/Raster.cs;addons/procedural_creatures/Rgba.cs" /><ProjectReference Include="core/Verdant.Core.csproj" /></ItemGroup>
 </Project>

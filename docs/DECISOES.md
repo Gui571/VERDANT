@@ -1,5 +1,14 @@
 # Decisões — roguelike dos reinos
 
+## Terreno generativo 2.5D (2026-11-03)
+
+Branch `terreno-generativo-25d`, base `arte-monstros`. A tarefa de terreno usa o núcleo de ruído/elevação MIT do Cartoon Terrain Studio, fixado em `7aa76ad5`, com renderer novo Compatibility para manter Godot 4.5.2. Não se migra o projeto para 4.7.2 nem se importa todo o editor Forward+.
+
+Mapa finito 48×32, patamares em blocos 2×2, quatro paletas, rio e trilha com pontes. Cenário de arena mantém clareira plana para não criar obstáculos visuais no espaço caminhável. A câmera muda a apresentação: projeção/inversa são compartilhadas por unidades, efeitos, seleção e ordens. Sem alterações na simulação ou nos dados de combate. Terreno decorativo não habilita navegação vertical, água transitável ou combate em alturas diferentes.
+
+O RNG da batalha não consome valores da geração do terreno. O movimento da água é só shader e não faz parte do estado determinístico. Receitas JSON versionadas são locais; não são saves de run ou mapas completos do Studio. [Escopo, atribuição e resultados](TERRENOS.md).
+
+
 ## Revisão de arte de monstros (2026-11-03)
 
 Base real: `roguelike-reinos` em `0b0ed469`; branch de trabalho `arte-monstros`. O branch contém R0 e os especiais; não contém uma run completa. A tarefa atual se limita à arte de monstros e aos caminhos de atlas/apresentação. Nenhum arquivo de `battle/Sim`, `BattleRecipes`, `ForgeEffects` ou do elenco foi alterado.
