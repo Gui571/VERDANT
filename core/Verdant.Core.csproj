@@ -7,6 +7,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="*.cs" />
+    <Compile Include="../terrain/Sim/*.cs;../third_party/cartoon-terrain-studio/*.cs" />
     <Compile Include="../battle/Sim/*.cs;../battle/BattleRecipes.cs" />
     <Compile Include="../addons/procedural_creatures/Raster.cs;../addons/procedural_creatures/Rgba.cs" />
     <Compile Include="../pixel_demo/CompactAdventurer.cs;../pixel_demo/RosterCatalog.cs;../pixel_demo/Forge/**/*.cs" />
