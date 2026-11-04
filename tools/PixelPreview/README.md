@@ -27,3 +27,7 @@ dotnet run --project tools/PixelPreview -- battle
 ```
 
 `check 200` agora inclui MonsterValidation. `battle` executa 240 confrontos duas vezes, compara eventos e imprime as taxas por classe/família. `battle/Sim` não depende do Godot.
+
+## Efeitos especiais
+- `fx-sprites <dir> [zoom]` — atlas dos efeitos; `fx <dir> [frames]` — folhas "depois" (e quadros para GIF); `fx-before <dir>` — folhas "antes".
+- `fx-check` — validação da camada de efeitos (sprites, determinismo, fases, orçamento, fim limpo, simulação intacta, estresse de 40 unidades).

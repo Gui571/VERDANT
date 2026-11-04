@@ -24,3 +24,9 @@ Branch `extracao-e-guerras`, base e destino do PR `monstros-e-arena`. Este PR en
 **Marco 5 — integração:** ciclo planejar→extrair→defender→crescer, balanceamento, testes ponta a ponta e save→load→continuar, documentação NACOES/EXTRACAO/GUERRA e builds finais. Sem rede, conta, microtransações ou progressão infinita. Áudio opcional com licença conhecida.
 
 Números de economia e duração de campanha serão definidos no marco correspondente, com simulações completas e registro da justificativa. Esta lista registra a direção aprovada, não funcionalidades disponíveis nesta build.
+
+## Efeitos especiais (arte-efeitos-especiais)
+- Efeitos ficam fora de `pixel_demo/Forge` (atlases do elenco/monstros byte-idênticos, verificado por diff do `export`/`monsters`); só os ícones 16×16 foram redesenhados (limite de cores 3→5).
+- Atlas único + três camadas, sem rasterizar por quadro; RNG por evento (semente da simulação + índice) para determinismo.
+- Hit-stop e tremor são só da arena, nunca da simulação; tremor tem botão de desligar.
+- Sem sprite-fantasma translúcido (alfa só 0/255): o rastro do Nix usa eco de faíscas.

@@ -11,7 +11,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="*.cs" />
-    <Compile Include="../../battle/Sim/*.cs;../../battle/BattleRecipes.cs" />
+    <Compile Include="../../battle/Sim/*.cs;../../battle/BattleRecipes.cs;../../battle/Fx/*.cs" />
     <Compile Include="../../addons/procedural_creatures/Raster.cs" />
     <Compile Include="../../pixel_demo/CompactAdventurer.cs;../../pixel_demo/RosterCatalog.cs;../../pixel_demo/Forge/**/*.cs" />
   </ItemGroup>
