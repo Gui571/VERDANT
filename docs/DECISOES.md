@@ -1,5 +1,16 @@
 # Decisões — roguelike dos reinos
 
+## M1 — materiais/luz opcionais (2026-11-07)
+
+`estilo-v2-m1-cor-luz` parte de M0. A flag continua desligada por padrão; nova página Materiais v2 e alternância na arena. O cache incorpora estilo e equipe à chave visual. Trocar o estilo durante a luta só troca atlas, sem reiniciar simulação. Nenhum arquivo de `battle/Sim` ou dado de habilidades foi alterado.
+
+Reutilização de Layer/Tone, sem redesenhar o elenco nesta etapa. Os tons legados viram identificadores de material, depois cinco níveis de luz. As rampas OKLCH são geradas offline em tabelas sRGB; cor escrita em bytes, com luz por vizinhança inteira. Materiais futuros têm tabelas, mas terreno, construções e bestas não foram convertidos nesta entrega. Efeitos existentes de Special/Cast são preservados.
+
+Limite de 32 cores no v2 (31 observadas). Comparação de cores-base Fur/TEAM usa distância RGB ao quadrado mínima de 625, complementada por contorno e revisão visual; não é uma alegação WCAG. As rampas de equipe usam base um pouco mais escura para separar verde do sapo/tartaruga e equipe lima. A máscara antiga toca as bordas em algumas poses; M1 conserva isso e M2 terá de redesenhar para garantir margens.
+
+M0/M1 são a primeira entrega desta sequência. M2–M8 continuam pendentes; não há anúncio de 45 espécies, 20 classes, bestas, heráldica ou mundo completo. Priorizar em seguida as 11 espécies com fluxos independentes e margem antes de ampliar o catálogo.
+
+
 ## Estilo unificado v2 — M0 (2026-11-07)
 
 Base real `terreno-generativo-25d` em `e2e96e3`; auditoria em [DIRECAO-ESTILO-V2.md](DIRECAO-ESTILO-V2.md). Referência autorizada apenas como inspiração; nenhuma imagem extraída é distribuída como asset. O arquivo recebido tem 1024×576 e os tempos dos slides diferem do índice textual.

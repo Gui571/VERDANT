@@ -1,0 +1,15 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  Verdant.Core -> /workspace/VERDANT/core/bin/Debug/net8.0/Verdant.Core.dll
+  Verdant -> /workspace/VERDANT/.godot/mono/temp/bin/Debug/Verdant.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:00.95
+Godot Engine v4.5.2.stable.mono.official.6ce3de25a - https://godotengine.org
+
+STYLE_CONTRAST metric=rgb_squared minimum=1985 required=625 pairs=66
+STYLE_V2 checks=44415 failures=0 max_colors=31 teams=6 inherited_border_frames=3035
+GODOT_STYLE_V2 checks=44415 failures=0
