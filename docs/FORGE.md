@@ -76,3 +76,23 @@ Compacte a pasta inteira, com PCK e `data_Verdant_*`. `downloads/` e `tools/` s�
 ## Atualização: marco 1 de especiais
 
 Consulte [ESPECIAIS.md](ESPECIAIS.md) para as regras atuais, movimentos Special/Cast, edição na oficina, quatro times na arena, obstáculos e validação. As métricas acima descrevem a entrega anterior; as métricas atuais e logs ficam no novo relatório.
+
+## Estilo v2 — entrega M1: materiais e luz
+
+O novo pipeline é **opcional**, em `StyleV2/`. Não substitui anatomia, receitas, RNG ou animações do elenco. `ForgeRenderer.Style == null` e `MonsterRenderer.Style == null` seguem o caminho anterior; o manifesto de regressão é `docs/arte/estilo-v2/antes/atlas-sha256.json`. A opção começa desligada. Abra **Materiais v2** no elenco/oficina para comparar; na arena, **Estilo v2** reconstrói só os atlases, preservando o tick e os eventos da luta.
+
+`Tone` e `Layer` continuam como entrada. `MaterialLighting.Identify` traduz os tons existentes para Fur, TEAM, acento, couro, metal, marfim e rosa. A luz superior/esquerda é calculada com vizinhança de material e índices inteiros; não depende da cor da equipe. O resultado mantém exatamente a máscara atual. A geometria ainda agrupa madeira/couro e pele/pelo; a separação dessas peças fica para M2/M6. As tabelas já incluem madeira, pedra, folha, pano, ouro e osso para esses consumidores futuros; isso não significa que construções/terrenos já foram convertidos.
+
+Rampas de cinco tons são geradas **offline em OKLCH**, por `scripts/generate-style-v2-palettes.py`, com redução de croma para o gamut sRGB e arredondamento explícito para bytes. `MaterialRamps.g.cs` contém somente constantes RGB. Sombras aproximam-se do matiz frio; realces aproximam-se do quente. Pelagem clara tem luminosidade própria para não transformar coelhos/corujas em cinza. A rasterização escreve os bytes diretamente; não converte OKLCH durante a apresentação.
+
+Seis rampas TEAM: rosa, brasa, lima, jade, azul e violeta. Alterar TEAM conserva todos os outros materiais e a máscara. Na arena os quatro times usam azul/rosa/jade/violeta. Cores de indicadores e efeitos de especiais permanecem as existentes. Limite v2: **32 cores opacas por quadro**, até cinco por rampa (máximo observado nesta entrega: 31). O legado conserva o limite de 16. As mesmas dimensões e quantidades de quadros mantêm o tamanho dos atlases.
+
+O estúdio de materiais é a primeira página de prova, **não o estúdio completo M8**. Ele usa `SpriteCache`; animação em `_Process` apenas troca a região do atlas. As três provas superiores são estáticas; as seis equipes usam os clipes atuais. Não há quatro direções novas ou morte nova de herói nesta entrega.
+
+### Exportação M1
+
+`style-v2 <pasta>` exporta provas, atlas PNG e JSON de cada clipe frontal atual. JSON v1 contém `style`, `recipe`, `atlas`, `cell`, `columns`, `pivot`, `clip`, `direction`, `loop`, `frames` (índice, x/y, duração em ms), `palettes` e `tags`. `catalog.json` registra limites úteis reais por herói; `palettes.json` registra as rampas RGB. IDs de material são expostos pelo renderer para validar isolamento; não integram a receita de batalha. Mapas binários, profundidade por pixel e o consumidor genérico de todas as categorias ficam para M7/M8.
+
+As caixas úteis medidas estão no catálogo. A margem transparente completa ainda não existe em alguns quadros antigos (3.035 amostras da matriz M1 tocam uma borda). M1 não altera máscaras para esconder isso; M2 deve redesenhar equipamento/poses antes de exigir margem para os sprites novos. Os testes anteriores de recorte não foram removidos ou relaxados.
+
+[Direção e auditoria](DIRECAO-ESTILO-V2.md) · [Folha cor/luz](arte/estilo-v2/m1-cor-luz.png) · [Antes/depois](arte/estilo-v2/m1-antes-depois.png) · [Relatório M1](arte/estilo-v2/RELATORIO-M1.md).

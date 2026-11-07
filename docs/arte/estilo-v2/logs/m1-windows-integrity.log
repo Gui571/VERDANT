@@ -1,0 +1,2 @@
+WINDOWS_EXPORT architecture=x86_64 PE=True runtime=True studio_scene=True zip_crc=True files=190 bytes=68645696
+EXE_EXECUTED=False (Linux, sem Wine ou Windows)

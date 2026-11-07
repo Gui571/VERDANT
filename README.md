@@ -8,6 +8,8 @@ O jogo disponível agora continua sendo a arena/oficina abaixo. Abra pelo Godot 
 
 **Terrenos generativos 2.5D:** abra **Terrenos 2.5D** no elenco/oficina/arena. Gere por semente, ajuste relevo/água/vegetação e use o mapa na arena. Base MIT [Cartoon Terrain Studio](https://github.com/idlerunner00/cartoon-terrain-studio), adaptada para Godot 4.5.2. [Guia, capturas e testes](docs/TERRENOS.md).
 
+**Forge v2 — M0/M1:** auditoria e pipeline opcional de materiais/luz, cinco tons OKLCH e seis equipes. Abra **Materiais v2** no elenco/oficina; ative **Estilo v2** na arena. O padrão anterior continua preservado. [Antes/depois](docs/arte/estilo-v2/m1-antes-depois.png) · [Direção](docs/DIRECAO-ESTILO-V2.md) · [Relatório e limites](docs/arte/estilo-v2/RELATORIO-M1.md). [Windows atualizado M1](https://github.com/Gui571/VERDANT/raw/refs/heads/estilo-v2-m1-cor-luz/downloads/Verdant-Windows.zip): extraia tudo e abra `Verdant.exe`; exportado e verificado por integridade, EXE ainda não executado neste Linux. M2–M8 continuam pendentes.
+
 ```sh
 dotnet build core/Verdant.Core.csproj
 dotnet run --project tools/PixelPreview -- pixel-verify docs/portability/atlas-sha256.json

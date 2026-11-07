@@ -2,6 +2,8 @@ namespace Verdant.Forge;
 public sealed partial class MonsterRenderer
 {
     public MonsterSpec Spec {get;}
+    public StyleV2.MaterialStyle? Style {get;set;}
+    public byte[]? MaterialIds {get;private set;}
     public Raster Buffer {get;}
     readonly Layer layer;
     public int VisualPhase {get;set;}
@@ -87,6 +89,7 @@ public sealed partial class MonsterRenderer
         ox=c-16;oy=g-29;if(entryLift==0)Rect(12,28,8,1,Tone.FurD);
         AnimateAnatomy(motion,f,c,g);
         ForgeFinish.Outline(layer);for(int x=c-7;x<=c+7;x++)layer.Set(x,g,Tone.Ink);if(GroundShadow)ForgeFinish.Shadow(layer,c,g,7);
+        if(Style!=null){MaterialIds ??= new byte[Spec.Size*Spec.Size];StyleV2.MaterialLighting.Paint(layer,Buffer,Style,motion==MonsterMotion.Hurt&&f==0,MaterialIds);for(int i=0;i<layer.Clipped;i++)Buffer.Pixel(-1,-1,default);return Buffer;}
         var pal=MonsterGenerator.Palette(Spec);for(int y=0;y<size;y++)for(int x=0;x<size;x++){var t=layer.Get(x,y);if(t!=Tone.None)Buffer.Pixel(x,y,pal.Resolve(motion==MonsterMotion.Hurt&&f==0&&t!=Tone.Ink?Tone.White:t));}
         for(int i=0;i<layer.Clipped;i++)Buffer.Pixel(-1,-1,default);return Buffer;
     }

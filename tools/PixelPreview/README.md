@@ -36,3 +36,18 @@ dotnet run --project tools/PixelPreview -- web-fixture /tmp/verdant-web-trace.js
 ```
 
 `pixel-verify` compara SHA-256 de 5.058 conjuntos completos de quadros com a linha de base do Godot anterior à separação; também verifica que a biblioteca não referencia Godot. `web-fixture` executa no CLI o mesmo cenário C# usado pela prova web.
+
+Estilo v2 (M1, formas atuais):
+
+```sh
+dotnet run --project tools/PixelPreview -- style-v2 docs/arte/estilo-v2/m1
+python3 scripts/style-v2-review.py # Pillow; apenas compõe PNGs gerados em C#
+dotnet run --project tools/PixelPreview -- style-v2-check
+dotnet run --project tools/PixelPreview -- pixel-verify docs/arte/estilo-v2/antes/atlas-sha256.json
+python3 scripts/generate-style-v2-palettes.py # regeneração offline OKLCH, biblioteca padrão Python
+./scripts/run.sh --headless -- --style-v2-test
+DISPLAY=:99 ./scripts/run.sh --audio-driver Dummy res://studio/MaterialStudio.tscn -- --material-ui-test
+DISPLAY=:99 ./scripts/run.sh --audio-driver Dummy res://battle/Arena.tscn -- --style-v2 --battle-benchmark
+```
+
+Os comandos são executados da raiz do repositório. O limite novo é 32 cores, sem alterar o limite de 16 dos testes do estilo antigo. `style-v2-check` mede máscara, repetição, alfa, paleta, recorte, contraste-base de 66 pares espécie/time e isolamento de TEAM. Não testa independência de peças (M2), novas direções (M3) ou geração de mundo (M7). [Esquema de exportação e limites](../../docs/FORGE.md).

@@ -1,0 +1,139 @@
+{
+  "version": 1,
+  "stage": "M1",
+  "characters": [
+    {
+      "Id": "bram",
+      "cell": [
+        32,
+        32
+      ],
+      "pivot": [
+        16,
+        29
+      ],
+      "bounds": [
+        0,
+        5,
+        31,
+        31
+      ],
+      "team": 4,
+      "species": "Duck"
+    },
+    {
+      "Id": "nix",
+      "cell": [
+        32,
+        32
+      ],
+      "pivot": [
+        16,
+        29
+      ],
+      "bounds": [
+        2,
+        1,
+        31,
+        30
+      ],
+      "team": 4,
+      "species": "Rabbit"
+    },
+    {
+      "Id": "rowan",
+      "cell": [
+        32,
+        32
+      ],
+      "pivot": [
+        16,
+        29
+      ],
+      "bounds": [
+        5,
+        3,
+        32,
+        32
+      ],
+      "team": 4,
+      "species": "Human"
+    },
+    {
+      "Id": "iria",
+      "cell": [
+        32,
+        32
+      ],
+      "pivot": [
+        16,
+        29
+      ],
+      "bounds": [
+        2,
+        0,
+        28,
+        32
+      ],
+      "team": 4,
+      "species": "Human"
+    },
+    {
+      "Id": "boro",
+      "cell": [
+        32,
+        32
+      ],
+      "pivot": [
+        16,
+        29
+      ],
+      "bounds": [
+        0,
+        5,
+        29,
+        30
+      ],
+      "team": 4,
+      "species": "Turtle"
+    },
+    {
+      "Id": "suri",
+      "cell": [
+        32,
+        32
+      ],
+      "pivot": [
+        16,
+        29
+      ],
+      "bounds": [
+        0,
+        3,
+        32,
+        30
+      ],
+      "team": 4,
+      "species": "Fox"
+    },
+    {
+      "Id": "mira",
+      "cell": [
+        32,
+        32
+      ],
+      "pivot": [
+        16,
+        29
+      ],
+      "bounds": [
+        6,
+        1,
+        30,
+        32
+      ],
+      "team": 4,
+      "species": "Owl"
+    }
+  ]
+}

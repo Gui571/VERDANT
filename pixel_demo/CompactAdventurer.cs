@@ -13,6 +13,7 @@ public sealed class CompactAdventurer
     public const int Size = 32;
     readonly ForgeRenderer renderer;
     public Raster Buffer => renderer.Buffer;
+    public Forge.StyleV2.MaterialStyle? Style { get=>renderer.Style; set=>renderer.Style=value; }
     public AdventurerKind Kind { get; }
     public ForgeSpec Spec => renderer.Spec;
     public string Name => Spec.Name + " · " + Spec.Class.ToLowerInvariant();

@@ -1,0 +1,2 @@
+STYLE_CONTRAST metric=rgb_squared minimum=1985 required=625 pairs=66
+STYLE_V2 checks=44415 failures=0 max_colors=31 teams=6 inherited_border_frames=3035
