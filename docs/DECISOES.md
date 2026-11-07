@@ -1,5 +1,14 @@
 # Decisões — roguelike dos reinos
 
+## Correção artística após M1 — elenco compacto (2026-11-07)
+
+O autor rejeitou a entrega apenas de cor e pediu maior proximidade com a referência. O foco desta revisão é mudar desenho/proporções dos sete heróis e das onze espécies atuais, sem anunciar a expansão inteira de M2–M8. Novo renderer de anatomia em C# reutiliza receitas, Layer/Tone e rampas. Cabeça 13×10, tronco 8×5, olhos mínimos, formas/armas separadas e cores próprias por herói. Sem extrair sprites da referência.
+
+Após comparar as pranchas, a nova arte passa a ser a apresentação inicial da galeria, prévia e arena; há botão de comparação com o legado. A nova cena principal mostra o elenco imediatamente. O núcleo/exportadores antigos continuam com flag desligada e hashes preservados. Argumentos antigos de teste são encaminhados à cena anterior. Não alteramos battle/Sim, stats, especiais ou geração de encontros.
+
+Quatro vistas para estudo/galeria; a arena conserva seleção lateral de direção existente. Oeste espelha o desenho, norte retira o rosto e constrói costas/capa. Não é a conclusão completa do marco M3. Peças ainda usam a receita atual e o RNG existente; fluxos independentes, 45 espécies/20 classes, bestas e mundo continuam no plano seguinte.
+
+
 ## M1 — materiais/luz opcionais (2026-11-07)
 
 `estilo-v2-m1-cor-luz` parte de M0. A flag continua desligada por padrão; nova página Materiais v2 e alternância na arena. O cache incorpora estilo e equipe à chave visual. Trocar o estilo durante a luta só troca atlas, sem reiniciar simulação. Nenhum arquivo de `battle/Sim` ou dado de habilidades foi alterado.

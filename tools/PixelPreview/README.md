@@ -51,3 +51,13 @@ DISPLAY=:99 ./scripts/run.sh --audio-driver Dummy res://battle/Arena.tscn -- --s
 ```
 
 Os comandos são executados da raiz do repositório. O limite novo é 32 cores, sem alterar o limite de 16 dos testes do estilo antigo. `style-v2-check` mede máscara, repetição, alfa, paleta, recorte, contraste-base de 66 pares espécie/time e isolamento de TEAM. Não testa independência de peças (M2), novas direções (M3) ou geração de mundo (M7). [Esquema de exportação e limites](../../docs/FORGE.md).
+
+Redesenho compacto (geometria nova, mantendo a opção anterior):
+
+```sh
+dotnet run --project tools/PixelPreview -- chibi docs/arte/compactos/atlas
+dotnet run --project tools/PixelPreview -- chibi-check
+python3 scripts/chibi-review.py
+```
+
+`chibi` exporta sete heróis com tiras dos clipes e JSON de tempo/origem, queda lateral, quatro vistas, as onze espécies existentes e 24 sementes. A galeria do jogo usa os mesmos renderers. Os comandos de hash/check anteriores continuam validando o caminho legado.

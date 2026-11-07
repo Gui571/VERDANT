@@ -1,7 +1,7 @@
 config_version=5
 [application]
 config/name="Verdant — Procedural Creature Workshop"
-run/main_scene="res://pixel_demo/PixelDemo.tscn"
+run/main_scene="res://studio/CompactGallery.tscn"
 [display]
 window/size/viewport_width=1440
 window/size/viewport_height=960
