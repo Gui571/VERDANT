@@ -1,5 +1,12 @@
 # Decisões — roguelike dos reinos
 
+## Estilo unificado v2 — M0 (2026-11-07)
+
+Base real `terreno-generativo-25d` em `e2e96e3`; auditoria em [DIRECAO-ESTILO-V2.md](DIRECAO-ESTILO-V2.md). Referência autorizada apenas como inspiração; nenhuma imagem extraída é distribuída como asset. O arquivo recebido tem 1024×576 e os tempos dos slides diferem do índice textual.
+
+Entregar por marcos/PRs em ordem. M0 documenta; M1 introduz material/cor/luz em opção desligada por padrão; redesenho/fluxos por peça pertencem a M2. Cinco tons em tabelas OKLCH calculadas offline; 32 cores opacas no v2, 16 no legado. Células 32×32, origem (16,29), sem mudar a simulação. Terreno 3D anterior preservado, alternativa pintada por chunks fica em M7.
+
+
 ## Terreno generativo 2.5D (2026-11-03)
 
 Branch `terreno-generativo-25d`, base `arte-monstros`. A tarefa de terreno usa o núcleo de ruído/elevação MIT do Cartoon Terrain Studio, fixado em `7aa76ad5`, com renderer novo Compatibility para manter Godot 4.5.2. Não se migra o projeto para 4.7.2 nem se importa todo o editor Forward+.
