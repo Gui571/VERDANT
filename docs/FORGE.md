@@ -96,3 +96,22 @@ O estúdio de materiais é a primeira página de prova, **não o estúdio comple
 As caixas úteis medidas estão no catálogo. A margem transparente completa ainda não existe em alguns quadros antigos (3.035 amostras da matriz M1 tocam uma borda). M1 não altera máscaras para esconder isso; M2 deve redesenhar equipamento/poses antes de exigir margem para os sprites novos. Os testes anteriores de recorte não foram removidos ou relaxados.
 
 [Direção e auditoria](DIRECAO-ESTILO-V2.md) · [Folha cor/luz](arte/estilo-v2/m1-cor-luz.png) · [Antes/depois](arte/estilo-v2/m1-antes-depois.png) · [Relatório M1](arte/estilo-v2/RELATORIO-M1.md).
+
+## Redesenho compacto do elenco
+
+A revisão após M1 altera a **geometria**, em `Compact/ChibiRenderer.cs`: cabeça 13×10, tronco-base 8×5, pés de dois pixels, equipamentos em camadas e posições inteiras. O contorno final respeita as peças já contornadas para não duplicar a espessura. Bram tem pelagem clara; os heróis mantêm azul, verde, violeta, bronze, vinho e jade como identidades próprias. Uma cor de equipe explícita pode substituir o tecido na arena/estudo de materiais.
+
+A nova entrada é `studio/CompactGallery.tscn`: sete heróis, quatro vistas, ações e geração por semente. As quatro vistas têm rosto frontal/lateral e costas com capa/capuz; oeste espelha a geometria. Célula 32×32 e origem (16,29) preservadas. A animação tem respiração, piscar, orelha/capa atrasadas, passada curta, antecipação/golpe/recuperação e queda lateral na morte. As durações seguem os clipes atuais; não é a entrega completa de animação/direções M3.
+
+`SpriteCache` aceita a variante `compact`; galeria, arena e prévia usam atlas e não rasterizam a cada quadro. O caminho antigo continua acessível por **Arte nova** na galeria e **Arte compacta** na arena. `CompactAdventurer.Compact` começa false no núcleo para preservar exportadores/hash legados; as cenas de apresentação escolhem explicitamente a arte nova. As nove famílias de monstros não foram redesenhadas nesta revisão.
+
+```sh
+dotnet run --project tools/PixelPreview -- chibi docs/arte/compactos/atlas
+dotnet run --project tools/PixelPreview -- chibi-check
+python3 scripts/chibi-review.py
+./scripts/run.sh --headless -- --chibi-test
+DISPLAY=:99 ./scripts/run.sh --audio-driver Dummy -- --compact-ui-test
+DISPLAY=:99 ./scripts/run.sh --audio-driver Dummy -- --compact-capture
+```
+
+[Prancha nova](arte/compactos/elenco.png) · [Comparação](arte/compactos/comparacao.png) · [Galeria real](arte/compactos/galeria.gif) · [Relatório](arte/compactos/RELATORIO.md).

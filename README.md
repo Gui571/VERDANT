@@ -1,5 +1,8 @@
 # VERDANT — roguelike dos reinos (fundação R0)
 
+
+**Novo desenho do elenco:** sete heróis reconstruídos com cabeça dominante, corpo curto, olhos mínimos e equipamentos separados. O executável abre na galeria, com animações e geração por semente. [Ver o resultado](docs/arte/compactos/galeria.png) · [Antes/depois](docs/arte/compactos/comparacao.png) · [Baixar Windows atualizado](https://github.com/Gui571/VERDANT/raw/refs/heads/arte-personagens-compactos/downloads/Verdant-Windows.zip). Extraia tudo e abra `Verdant.exe`. Build Linux equivalente executada; EXE Windows exportado e conferido por integridade, ainda não executado neste Linux. [Validação e limitações](docs/arte/compactos/RELATORIO.md).
+
 **Nova direção:** runs com grupo de heróis e cinco reinos em ordem livre. O plano de economia nacional, extração e guerra territorial foi substituído. **Entrega atual: R0**, biblioteca sem Godot, auditoria, presets Android e prova web; a run começa a ser implementada em R1. [Visão e marcos](docs/ROGUELIKE.md) · [Reinos](docs/REINOS.md) · [Portabilidade e testes](docs/PORTABILIDADE.md).
 
 O jogo disponível agora continua sendo a arena/oficina abaixo. Abra pelo Godot com `./scripts/run.sh`; para a prova de combate no navegador, siga [WebProof](tools/WebProof/README.md). Não há menu Nova run/Continuar nesta etapa. Os ZIPs abaixo são as builds anteriores de especiais, preservadas; builds finais do roguelike pertencem a R5. APK não gerado e Android não executado.
