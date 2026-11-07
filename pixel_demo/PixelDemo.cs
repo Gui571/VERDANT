@@ -6,7 +6,8 @@ public partial class PixelDemo : Control
 {
     public static AdventurerKind InitialCharacter {get;set;}=AdventurerKind.Duck;
     CompactAdventurer sprite = new();
-    ImageTexture? texture, terrain;
+    Texture2D? texture;ImageTexture? terrain;
+    Battle.SpriteCache? previewCache;ForgeSpec? previewRecipe;bool cacheBack,cacheShadow;bool compactArt=true;
     double time, accumulator;
     bool paused, back, landscape=true, flip, shadow=true;
     SpinBox seedBox=null!;
@@ -17,19 +18,21 @@ public partial class PixelDemo : Control
     public override void _Ready()
     {
         var args=OS.GetCmdlineUserArgs();
+        if(args.Contains("--chibi-test")){var r=Forge.Compact.ChibiValidation.Run();foreach(var e in r.Failures)GD.PrintErr(e);GD.Print($"GODOT_CHIBI checks={r.Checks} failures={r.Failures.Count}");GetTree().Quit(r.Failures.Count==0?0:1);return;}
         if(args.Contains("--style-v2-test")){var r=Verdant.Forge.StyleV2.StyleValidation.Run();foreach(var e in r.Failures)GD.PrintErr(e);GD.Print($"GODOT_STYLE_V2 checks={r.Checks} failures={r.Failures.Count}");GetTree().Quit(r.Failures.Count==0?0:1);return;}
         if(args.Contains("--forge-hashes")){string path=ProjectSettings.GlobalizePath("user://forge-hashes.json");ForgeHashes.Write(path);GD.Print("FORGE_HASHES "+path);GetTree().Quit();return;}
         if(args.Contains("--self-test")||args.Contains("--ui-test")||args.Contains("--gallery-capture")) { GetTree().CallDeferred(SceneTree.MethodName.ChangeSceneToFile,"res://workshop/Workshop.tscn"); return; }
         if(args.Contains("--pixel-test")){GetTree().Quit(ValidateSprite());return;}
-        sprite=new CompactAdventurer(1,InitialCharacter);
+        sprite=new CompactAdventurer(1,InitialCharacter){Compact=compactArt};
         TextureFilter=TextureFilterEnum.Nearest;BuildTerrain();
 
         var root=new VBoxContainer{Position=new Vector2(60,32),Size=new Vector2(1320,896)};AddChild(root);
-        var title=new Label{Text="VERDANT  /  PEQUENOS VIAJANTES"};title.AddThemeColorOverride("font_color",new Color("ede5cb"));title.AddThemeFontSizeOverride("font_size",26);var titleRow=new HBoxContainer();root.AddChild(titleRow);title.SizeFlagsHorizontal=SizeFlags.ExpandFill;titleRow.AddChild(title);AddButton(titleRow,"Materiais v2",()=>GetTree().ChangeSceneToFile("res://studio/MaterialStudio.tscn"));AddButton(titleRow,"Terrenos 2.5D",()=>GetTree().ChangeSceneToFile("res://terrain/UI/TerrainWorkshop.tscn"));AddButton(titleRow,"Guia do elenco",()=>GetTree().ChangeSceneToFile("res://pixel_demo/RosterBoard.tscn"));
+        var title=new Label{Text="VERDANT  /  PEQUENOS VIAJANTES"};title.AddThemeColorOverride("font_color",new Color("ede5cb"));title.AddThemeFontSizeOverride("font_size",26);var titleRow=new HBoxContainer();root.AddChild(titleRow);title.SizeFlagsHorizontal=SizeFlags.ExpandFill;titleRow.AddChild(title);AddButton(titleRow,"Novo elenco",()=>GetTree().ChangeSceneToFile("res://studio/CompactGallery.tscn"));AddButton(titleRow,"Terrenos 2.5D",()=>GetTree().ChangeSceneToFile("res://terrain/UI/TerrainWorkshop.tscn"));AddButton(titleRow,"Guia do elenco",()=>GetTree().ChangeSceneToFile("res://pixel_demo/RosterBoard.tscn"));
         var desc=new Label{Text="Patrulha do vale     •     32 × 32 pixels     •     animação em camadas"};desc.AddThemeColorOverride("font_color",new Color("a2b3cc"));root.AddChild(desc);
         var spacer=new Control{SizeFlagsVertical=SizeFlags.ExpandFill};root.AddChild(spacer);
         var actions=new HFlowContainer{};actions.AddThemeConstantOverride("h_separation",12);actions.AddThemeConstantOverride("v_separation",8);root.AddChild(actions);
         var choose=new OptionButton{FitToLongestItem=false,CustomMinimumSize=new Vector2(170,0)};choose.AddThemeFontSizeOverride("font_size",14);foreach(var entry in RosterCatalog.All)choose.AddItem(entry.Name+" · "+entry.Class,(int)entry.Kind);choose.Select(choose.GetItemIndex((int)InitialCharacter));choose.ItemSelected+=i=>{InitialCharacter=(AdventurerKind)choose.GetItemId((int)i);sprite=new CompactAdventurer(1,InitialCharacter);Use(new CompactAdventurer(1,InitialCharacter));};actions.AddChild(choose);
+        AddButton(actions,"Arte nova / anterior",()=>{compactArt=!compactArt;sprite.Compact=compactArt;Refresh();});
         AddButton(actions,"Pausar / animar",()=>paused=!paused);
         AddButton(actions,"Parado / caminhar",()=>PlayMotion(motion==AdventurerMotion.Walk?AdventurerMotion.Idle:AdventurerMotion.Walk));
         AddButton(actions,"Frente / costas",()=>{back=!back;Refresh();});
@@ -90,10 +93,14 @@ public partial class PixelDemo : Control
         using var img=r.Image();terrain=ImageTexture.CreateFromImage(img);
     }
     void AddButton(Container parent,string text,Action action){var b=new Button{Text=text};b.AddThemeStyleboxOverride("normal",new StyleBoxFlat{BgColor=new Color("28354b"),ContentMarginLeft=10,ContentMarginRight=10,ContentMarginTop=14,ContentMarginBottom=14,CornerRadiusTopLeft=6,CornerRadiusTopRight=6,CornerRadiusBottomLeft=6,CornerRadiusBottomRight=6});b.Pressed+=action;parent.AddChild(b);}
-    void Use(CompactAdventurer next){sprite=next;sprite.GroundShadow=shadow;status.Text=sprite.Name+" — "+sprite.Description;Refresh();}
+    void Use(CompactAdventurer next){sprite=next;sprite.Compact=compactArt;sprite.GroundShadow=shadow;status.Text=sprite.Name+" — "+sprite.Description;Refresh();}
     void PlayMotion(AdventurerMotion next){motion=next;motionStarted=time;Refresh();}
     double PoseTime=>motion is AdventurerMotion.Attack or AdventurerMotion.Hurt or AdventurerMotion.Special or AdventurerMotion.Cast?time-motionStarted:time;
-    void Refresh(){using var img=sprite.Render(PoseTime,motion,back).Image();if(texture==null)texture=ImageTexture.CreateFromImage(img);else texture.Update(img);QueueRedraw();}
+    void Refresh(){
+        if(compactArt){if(texture is ImageTexture oldTexture)oldTexture.Dispose();if(previewCache==null||previewRecipe!=sprite.Spec||cacheBack!=back||cacheShadow!=shadow){previewCache?.Dispose();previewCache=new(new(sprite.Spec.Id,sprite.Spec,null),back,compact:true,shadow:shadow);previewRecipe=sprite.Spec;cacheBack=back;cacheShadow=shadow;}texture=previewCache.Get(motion==AdventurerMotion.Special?Forge.MonsterMotion.Special:motion==AdventurerMotion.Cast?Forge.MonsterMotion.Cast:(Forge.MonsterMotion)motion,PoseTime);}
+        else {using var img=sprite.Render(PoseTime,motion,back).Image();if(texture is ImageTexture existing)existing.Update(img);else texture=ImageTexture.CreateFromImage(img);}
+        QueueRedraw();
+    }
     public override void _Process(double delta){if(texture==null||paused)return;time+=delta;if((motion==AdventurerMotion.Attack&&PoseTime>=.75)||(motion==AdventurerMotion.Hurt&&PoseTime>=.5)||((motion is AdventurerMotion.Special or AdventurerMotion.Cast)&&PoseTime>=1))motion=AdventurerMotion.Idle;accumulator+=delta;if(accumulator>=.125){accumulator%=.125;Refresh();}}
     public override void _Draw(){DrawRect(new Rect2(Vector2.Zero,Size),new Color("1c2031"));if(texture==null)return;var rect=new Rect2(new Vector2(80,135),new Vector2(1280,640));DrawStyleBox(new StyleBoxFlat{BgColor=Colors.White,CornerRadiusTopLeft=16,CornerRadiusTopRight=16,CornerRadiusBottomLeft=16,CornerRadiusBottomRight=16},rect);if(landscape&&terrain!=null){if(zoom>=4)DrawTextureRectRegion(terrain,rect,new Rect2(160-640/zoom,120-480/zoom,1280/zoom,640/zoom));else DrawTextureRect(terrain,new Rect2(rect.Position+new Vector2(640-160*zoom,480-120*zoom),new Vector2(320,160)*zoom),false);}var size=new Vector2(32,32)*zoom;var origin=landscape?new Vector2(rect.GetCenter().X-16*zoom,rect.Position.Y+480-29*zoom):rect.GetCenter()-size/2;DrawTextureRect(texture,flip?new Rect2(origin+new Vector2(size.X,0),new Vector2(-size.X,size.Y)):new Rect2(origin,size),false);}
     void Export(){string path=ProjectSettings.GlobalizePath("user://compact-"+sprite.Spec.Id+".png");using var img=sprite.Render(PoseTime,motion,back).Image();if(flip)img.FlipX();var error=img.SavePng(path);status.Text=error==Error.Ok?"PNG transparente salvo em: "+path:"Falha ao exportar: "+error;}
@@ -147,5 +154,5 @@ public partial class PixelDemo : Control
     /// <summary>Regras objetivas do estilo (limites, paleta, determinismo, loops, silhuetas, pixels órfãos) para o elenco e 200 sementes.
     /// A mesma lógica roda fora do Godot em tools/PixelPreview (comando "check").</summary>
     int ValidateSprite(){var heroes=ForgeValidation.Run();var monsters=MonsterValidation.Run();var icons=ForgeEffects.ValidateIcons(Verdant.Battle.Abilities.All.Keys);var result=new ForgeValidation.Result(heroes.Checks+monsters.Checks+icons.Checks,heroes.Failures.Concat(monsters.Failures).Concat(icons.Failures).ToArray());foreach(var failure in result.Failures)GD.PrintErr("PIXEL_FAIL "+failure);if(result.Failures.Count==0){GD.Print("PIXEL_TEST_PASS assertions="+result.Checks);return 0;}return 1;}
-    public override void _ExitTree(){texture?.Dispose();terrain?.Dispose();}
+    public override void _ExitTree(){if(texture is ImageTexture)texture.Dispose();previewCache?.Dispose();terrain?.Dispose();}
 }
