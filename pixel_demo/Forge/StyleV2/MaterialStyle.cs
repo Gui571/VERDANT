@@ -8,12 +8,12 @@ public enum Material { Empty, Ink, Fur, Team, Accent, Leather, Metal, Ivory, Blu
 public enum ProofPass { Lit, Silhouette, Materials }
 
 // Cor e apresentação são opções da renderização; nenhuma entra no estado do combate.
-public sealed record MaterialStyle(Ramp5 Fur, int Team=4, ProofPass Pass=ProofPass.Lit, Ramp5? Accent=null)
+public sealed record MaterialStyle(Ramp5 Fur, int Team=4, ProofPass Pass=ProofPass.Lit, Ramp5? Accent=null, Ramp5? TeamRamp=null)
 {
     public const uint Ink=0x151829;
     public const int MaxColors=32;
     public Ramp5 Ramp(Material material)=>material switch {
-        Material.Fur=>Fur, Material.Team=>MaterialRamps.Teams[Team], Material.Accent=>Accent??MaterialRamps.Gold,
+        Material.Fur=>Fur, Material.Team=>TeamRamp??MaterialRamps.Teams[Team], Material.Accent=>Accent??MaterialRamps.Gold,
         Material.Leather=>MaterialRamps.Leather, Material.Metal=>MaterialRamps.Metal,
         Material.Ivory=>MaterialRamps.Bone, Material.Blush=>MaterialRamps.Rose,
         _=>throw new ArgumentOutOfRangeException(nameof(material)) };
