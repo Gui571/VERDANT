@@ -16,6 +16,8 @@ public sealed class ForgeRenderer
     public const int Size = 32;
     public readonly Raster Buffer = new(Size, Size);
     public ForgeSpec Spec { get; }
+    public StyleV2.MaterialStyle? Style { get; set; }
+    public byte[]? MaterialIds { get; private set; }
     /// <summary>Sombra de contato opaca (mesma tinta do contorno), como nas referências.</summary>
     public bool GroundShadow { get; set; } = true;
     readonly Layer L = new(), T = new();
@@ -156,6 +158,7 @@ public sealed class ForgeRenderer
         ForgeFinish.Outline(L);
         if (GroundShadow) ForgeFinish.Shadow(L,16,29,7);
 
+        if (Style != null) { MaterialIds ??= new byte[Size*Size]; StyleV2.MaterialLighting.Paint(L, Buffer, Style, p.Flash, MaterialIds); for(int i=0;i<L.Clipped;i++)Buffer.Pixel(-1,-1,default); return Buffer; }
         var pal = s.Palette;
         for (int y = 0; y < Size; y++) for (int x = 0; x < Size; x++)
         {
