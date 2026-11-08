@@ -12,7 +12,8 @@ profiles = {
  'Fox':(50,.105), 'Owl':(85,.027), 'Mouse':(45,.023), 'Cat':(260,.012),
  'Frog':(135,.09), 'Elf':(120,.07), 'Bear':(60,.07),
  'Amber':(65,.12), 'Ivory':(85,.028), 'Jewel':(335,.08),
- 'Fire':(40,.12), 'Ice':(220,.07), 'Plant':(135,.09), 'Shadow':(300,.065), 'Poison':(110,.1)
+ 'Fire':(40,.12), 'Ice':(220,.07), 'Plant':(135,.09), 'Shadow':(300,.065), 'Poison':(110,.1),
+ 'Cornflower':(267,.145)
 }
 def linear(L,C,h):
  a=C*math.cos(math.radians(h));b=C*math.sin(math.radians(h))
@@ -33,7 +34,8 @@ for name,(h,c) in profiles.items():
  levels = {
   'Rabbit': [.48,.66,.88,.94,.99], 'Human':[.37,.55,.78,.87,.95], 'Duck':[.36,.53,.78,.87,.95],
   'Owl':[.42,.61,.84,.91,.97], 'Ivory':[.42,.61,.84,.91,.97], 'Bone':[.42,.61,.84,.91,.97],
-  'Fox':[.3,.46,.7,.82,.93], 'Mouse':[.3,.43,.64,.77,.9], 'Cat':[.33,.49,.76,.87,.95]
+  'Fox':[.3,.46,.7,.82,.93], 'Mouse':[.3,.43,.64,.77,.9], 'Cat':[.33,.49,.76,.87,.95],
+  'Cornflower':[.30,.46,.69,.83,.96]
  }.get(name,[.31,.46,.67,.81,.94])
  if name in ['Rose','Ember','Lime','Jade','Azure','Violet']: levels=[.28,.4,.60,.77,.94]
  ramp=[color(L,c*k,hue(h,target,t)) for L,(k,target,t) in zip(levels,[(.65,270,.28),(.85,270,.12),(1,h,0),(.8,75,.08),(.45,75,.2)])]

@@ -12,11 +12,11 @@ public sealed class ChibiRenderer
     public MaterialStyle? Style {get;set;}
     public bool GroundShadow {get;set;}=true;
     public byte[] MaterialIds {get;}=new byte[1024];
-    public static int DefaultTeam(ForgeSpec spec)=>spec.Id switch{"rowan"=>2,"iria"=>5,"boro"=>1,"suri"=>0,"mira"=>3,_=>4};
+    public static int DefaultTeam(ForgeSpec spec)=>4;
     public static MaterialStyle Look(ForgeSpec spec,int? team=null){
         var look=MaterialStyle.For(spec,team??DefaultTeam(spec));
-        if(team==null&&spec.Id=="boro")look=look with{TeamRamp=MaterialRamps.Gold};
-        return spec.Species is Species.Duck or Species.Rabbit?look with{Fur=MaterialRamps.Rabbit}:look;
+        if((team??4)==4)look=look with{TeamRamp=MaterialRamps.Cornflower};
+        return spec.Species==Species.Duck?look with{Fur=MaterialRamps.Rabbit}:look;
     }
     public ChibiRenderer(ForgeSpec spec){Spec=spec;}
     int bx,by,hy,flutter,hand,attack=-1;bool back,blink;
@@ -29,25 +29,17 @@ public sealed class ChibiRenderer
         int step=0;
         if(motion==AdventurerMotion.Idle){frame%=32;by=frame is >=10 and <=15?-1:0;flutter=frame is >=12 and <=17?1:0;blink=frame==26;}
         if(motion is AdventurerMotion.Walk or AdventurerMotion.Run){frame%=8;step=Stride[frame];by=frame is 2 or 3 or 6?-1:0;flutter=frame is 3 or 4 or 5?1:0;}
-        if(motion==AdventurerMotion.Attack){attack=Math.Min(5,frame);bx=new[]{-1,-1,1,1,0,0}[attack];by=attack==0?1:0;hand=new[]{0,-2,-1,0,1,0}[attack];flutter=attack is 2 or 3?1:0;}
+        if(motion==AdventurerMotion.Attack){attack=Math.Min(5,frame);bx=new[]{-1,-1,2,1,0,0}[attack];by=new[]{1,0,1,0,-1,0}[attack];hand=new[]{0,-2,-1,0,1,0}[attack];flutter=attack is 3 or 4?1:0;}
         if(motion is AdventurerMotion.Special or AdventurerMotion.Cast){frame=Math.Min(7,frame);attack=Math.Clamp(frame-1,0,5);bx=frame is 3 or 4?1:0;hand=frame is >=1 and <=5?-2:0;flutter=frame is 3 or 4?1:0;}
         if(motion==AdventurerMotion.Hurt){frame=Math.Min(3,frame);bx=frame<2?-1:0;by=frame==0?1:0;blink=true;}
-        hy=12+by;
+        hy=14+by;
         DrawBack();
-        // Pés de 2 px, corpo de 5 px e cabeça de 12×10: não há pescoço.
-        Parts.Rect(12+step,27-(step<0?1:0),3,2,Tone.ClothD);Parts.Rect(12+step,27-(step<0?1:0),2,1,Tone.MetalL);
-        Parts.Rect(17-step,27-(step>0?1:0),3,2,Tone.ClothD);Parts.Rect(17-step,27-(step>0?1:0),2,1,Tone.MetalL);
-        var body=new Layer();body.Rect(12+bx,22+by,8,5,Tone.ClothM);body.Rect(12+bx,22+by,2,4,Tone.ClothL);body.Rect(19+bx,23+by,1,4,Tone.ClothD);
-        if(Spec.Outfit==Outfit.Robe){body.Rect(11+bx,25+by,10,2,Tone.ClothM);body.Rect(12+bx,26+by,7,1,Tone.ClothD);}
-        if(Spec.Outfit==Outfit.Plate){body.Rect(13+bx,23+by,6,2,Tone.MetalM);body.Rect(13+bx,23+by,4,1,Tone.MetalL);}
-        else {body.Rect(14+bx,23+by,3,2,Tone.White);body.Set(17+bx,24+by,Tone.MetalL);}
-        body.Rect(13+bx,26+by,6,1,Tone.LeatherM);body.Set(16+bx,26+by,Tone.AccM);
-        Parts.Composite(body,false);
+        DrawBody(step);
         DrawOffhand();DrawHead(facing);DrawHat();
         // Lenço curto e uma ponta móvel deixam o peito legível.
-        if(Spec.Scarf){Parts.Rect(11+bx,22+by,9,1,Spec.Id=="suri"?Tone.ClothL:Tone.AccM);Parts.Rect(9+bx-flutter,23+by,3,1,Tone.ClothM);}
+        if(Spec.Scarf){Parts.Rect(13+bx,22+by,7,1,Tone.White);Parts.Rect(17+bx,23+by,3,1,Tone.MetalL);Parts.Rect(8+bx-flutter,23+by,4,2,Tone.ClothL);}
         DrawWeapon();
-        Parts.Rect((attack is 2 or 3?16:21)+bx,(attack is 2 or 3?22:24)+by+hand,2,2,Tone.FurM);
+        Parts.Rect((attack is 2 or 3?18:22)+bx,(attack is 2 or 3?23:24)+by+hand,2,2,Tone.FurM);
         if(back&&Spec.Back==BackGear.Cape){Parts.Rect(12+bx,23+by,8,4,Tone.ClothM);Parts.Rect(12+bx,23+by,2,3,Tone.ClothL);Parts.Rect(18+bx,25+by,2,2,Tone.ClothD);}
         Outline();
         if(GroundShadow)ForgeFinish.Shadow(Parts,16,29,5);
@@ -71,27 +63,55 @@ public sealed class ChibiRenderer
         if(f>1){Parts.Line(19,27,27,27,Tone.MetalM);Parts.Line(17,27,19,27,Tone.LeatherM);Parts.Set(26,26,Tone.MetalL);}
         Outline();if(GroundShadow)ForgeFinish.Shadow(Parts,16,29,10);Paint(false);return Buffer;
     }
+    void DrawBody(int step)
+    {
+        // A massa da roupa é larga; a perna distante fica sob a bainha, sem listras na cintura.
+        Parts.Rect(11+step,26-(step<0?1:0),4,2,Tone.ClothD);
+        Parts.Rect(17-step,27-(step>0?1:0),5,2,Tone.ClothD);
+        Parts.Rect(18-step,27-(step>0?1:0),3,1,Tone.MetalM);
+        int x=bx,y=by;
+        Parts.Poly(Tone.ClothM,(11+x,21+y),(19+x,21+y),(22+x,25+y),(20+x,27),(13+x,27),(9+x,25+y));
+        Parts.Poly(Tone.ClothD,(19+x,22+y),(22+x,25+y),(20+x,27),(16+x,27),(18+x,26+y));
+        Parts.Rect(10+x,23+y,3,3,Tone.ClothL);
+        // Gola curta: os claros unem rosto e ombro sem fatiar o tronco.
+        if(Spec.Weapon==Weapon.Bow){Parts.Line(12+x,22+y,18+x,26+y,Tone.LeatherM);Parts.Set(16+x,25+y,Tone.AccM);}
+        else if(Spec.Weapon==Weapon.Staff){Parts.Rect(12+x,22+y,2,4,Tone.MetalL);Parts.Set(15+x,23+y,Tone.AccM);}
+        else if(Spec.Weapon==Weapon.Crook){Parts.Line(12+x,22+y,16+x,25+y,Tone.MetalL);Parts.Line(16+x,25+y,20+x,22+y,Tone.MetalL);}
+        else {Parts.Rect(13+x,22+y,5,2,Tone.MetalL);Parts.Rect(15+x,24+y,3,1,Tone.White);}
+        if(Spec.Outfit==Outfit.Plate){Parts.Rect(14+x,24+y,5,3,Tone.MetalM);Parts.Rect(14+x,24+y,3,2,Tone.MetalL);}
+        if(Spec.Outfit==Outfit.Robe){Parts.Poly(Tone.ClothM,(12+x,25+y),(20+x,25+y),(21+x,28),(11+x,28));Parts.Line(12+x,26,12+x,27,Tone.ClothL);Parts.Line(19+x,26,20+x,27,Tone.ClothD);}
+        if(Spec.Offhand==Offhand.None){
+            int lift=Spec.Weapon==Weapon.Crook&&attack is >=1 and <=3?3:0;
+            Parts.Rect(9+x,23+y-lift,3,2,Tone.MetalL);Parts.Rect(10+x,25+y-lift,2,2,Tone.FurM);
+        }
+    }
     void DrawHead(Facing facing)
     {
-        // Escada curta nos cantos, planos largos e apenas dois olhos: o rosto não vira uma grade.
-        var spans=new[]{(3,9),(1,11),(0,12),(0,12),(0,12),(0,12),(0,12),(1,11),(2,10),(3,9)};
         DrawEars();
+        // Planos em 3/4: bochecha avançada, crânio arredondado e sombra lateral.
+        (int,int)[] spans=Spec.Species switch {
+            Species.Fox=>new[]{(3,9),(1,11),(0,12),(0,12),(1,12),(2,13),(3,13),(4,12),(5,10)},
+            Species.Owl=>new[]{(3,9),(1,11),(0,12),(0,12),(0,12),(1,11),(2,10),(3,9),(5,8)},
+            Species.Turtle=>new[]{(3,9),(1,11),(0,12),(0,13),(0,13),(1,14),(2,14),(3,12),(5,10)},
+            _=>new[]{(3,9),(1,11),(0,12),(0,13),(0,13),(1,13),(1,12),(2,11),(4,9)}
+        };
         for(int y=0;y<spans.Length;y++)for(int x=spans[y].Item1;x<=spans[y].Item2;x++){
-            var tone=y>=8||x>=12?Tone.FurD:y<=1&&x<=8||x==0&&y<5?Tone.FurL:Tone.FurM;
-            Parts.Set(9+bx+x,hy+y,tone);
+            Tone t=x<=3||y>=7?Tone.FurD:y<=1&&x<9?Tone.FurL:Tone.FurM;
+            Parts.Set(9+bx+x,hy+y,t);
         }
-        if(back){Parts.Rect(12+bx,hy+3,2,2,Tone.FurL);return;}
-        if(Spec.Species is Species.Human or Species.Elf){Parts.Rect(10+bx,hy+2,2,5,Tone.LeatherD);Parts.Rect(12+bx,hy+1,5,1,Tone.LeatherM);Parts.Rect(12+bx,hy+2,2,1,Tone.LeatherM);}
-        int eye=facing==Facing.South?13:15;
-        if(Spec.Species!=Species.Frog){Parts.Rect(eye+bx,hy+5,1,blink?1:2,Tone.Ink);Parts.Rect(eye+4+bx,hy+5,1,blink?1:2,Tone.Ink);}
+        if(back){Parts.Rect(11+bx,hy+2,3,3,Tone.FurL);return;}
+        if(Spec.Species is Species.Human or Species.Elf){Parts.Rect(9+bx,hy+1,3,5,Tone.LeatherD);Parts.Rect(12+bx,hy+1,3,2,Tone.LeatherM);Parts.Rect(11+bx,hy+5,2,2,Tone.FurL);}
+        int eye=facing==Facing.South?13:16;
+        if(Spec.Species is not (Species.Frog or Species.Owl)){Parts.Rect(eye+bx,hy+4,1,blink||facing is Facing.East or Facing.West?1:2,Tone.Ink);Parts.Rect(eye+4+bx,hy+4,1,blink?1:2,Tone.Ink);}
         switch(Spec.Species){
-            case Species.Duck:Parts.Rect(19+bx,hy+7,5,1,Tone.AccM);Parts.Rect(20+bx,hy+8,3,1,Tone.AccD);break;
-            case Species.Fox:Parts.Rect(16+bx,hy+7,6,2,Tone.White);Parts.Set(22+bx,hy+7,Tone.Ink);break;
+            case Species.Duck:Parts.Rect(19+bx,hy+6,5,2,Tone.AccM);Parts.Rect(20+bx,hy+7,4,1,Tone.AccD);break;
+            case Species.Fox:Parts.Rect(18+bx,hy+6,5,2,Tone.White);Parts.Rect(15+bx,hy+7,4,1,Tone.White);Parts.Set(23+bx,hy+6,Tone.Ink);break;
             case Species.Owl:
-                Parts.Rect(11+bx,hy+3,4,4,Tone.White);Parts.Rect(17+bx,hy+3,4,4,Tone.White);Parts.Rect(13+bx,hy+5,1,blink?1:2,Tone.Ink);Parts.Rect(18+bx,hy+5,1,blink?1:2,Tone.Ink);Parts.Set(16+bx,hy+7,Tone.AccM);break;
-            case Species.Turtle:Parts.Rect(19+bx,hy+7,5,2,Tone.FurL);Parts.Set(23+bx,hy+8,Tone.FurD);break;
-            case Species.Frog:Parts.Rect(10+bx,hy-1,3,3,Tone.FurL);Parts.Rect(18+bx,hy-1,3,3,Tone.FurL);Parts.Rect(11+bx,hy,1,blink?1:2,Tone.Ink);Parts.Rect(19+bx,hy,1,blink?1:2,Tone.Ink);break;
-            case Species.Rabbit:case Species.Mouse:case Species.Cat:Parts.Set(20+bx,hy+7,Tone.Pink);Parts.Rect(17+bx,hy+8,4,1,Tone.FurL);break;
+                Parts.Rect(12+bx,hy+2,3,4,Tone.White);Parts.Rect(18+bx,hy+2,3,4,Tone.White);Parts.Rect(14+bx,hy+4,1,blink?1:2,Tone.Ink);Parts.Rect(19+bx,hy+4,1,blink?1:2,Tone.Ink);Parts.Set(17+bx,hy+6,Tone.AccM);break;
+            case Species.Turtle:Parts.Rect(20+bx,hy+6,4,1,Tone.FurL);break;
+            case Species.Frog:Parts.Rect(10+bx,hy-1,3,3,Tone.FurL);Parts.Rect(19+bx,hy-1,3,3,Tone.FurL);Parts.Rect(12+bx,hy,1,blink?1:2,Tone.Ink);Parts.Rect(20+bx,hy,1,blink?1:2,Tone.Ink);break;
+            case Species.Rabbit:case Species.Mouse:case Species.Cat:Parts.Set(21+bx,hy+6,Tone.Pink);Parts.Rect(18+bx,hy+7,3,1,Tone.FurL);break;
+            case Species.Bear:Parts.Rect(18+bx,hy+5,4,3,Tone.FurL);Parts.Rect(21+bx,hy+5,2,1,Tone.Ink);break;
         }
     }
     void DrawEars()
@@ -118,22 +138,28 @@ public sealed class ChibiRenderer
         int x=bx,y=hy;
         switch(Spec.Headwear){
             case Headwear.Headband:
-                Parts.Rect(9+x,y+1,13,2,Tone.ClothM);Parts.Rect(10+x,y+1,8,1,Tone.ClothL);Parts.Rect(7+x,y+2,2,2,Tone.ClothD);Parts.Rect(6+x-flutter,y+4,3,1,Tone.ClothM);break;
+                Parts.Rect(9+x,y,13,2,Tone.ClothM);Parts.Rect(11+x,y,9,1,Tone.ClothL);Parts.Rect(7+x,y+1,3,2,Tone.ClothD);Parts.Rect(6+x-flutter,y+3,3,1,Tone.ClothM);break;
             case Headwear.IceHelm:
-                Parts.Rect(10+x,y-3,11,5,Tone.ClothM);Parts.Rect(10+x,y-3,8,1,Tone.ClothL);
-                Parts.Line(10+x,y-3,10+x,y-6,Tone.MetalL);Parts.Line(20+x,y-3,21+x,y-6,Tone.MetalL);Parts.Set(11+x,y-4,Tone.Pink);
-                Parts.Rect(8+x,y+1,16,2,Tone.MetalM);Parts.Rect(9+x,y+1,12,1,Tone.MetalL);Parts.Rect(9+x,y+3,2,3,Tone.ClothD);break;
+                Parts.Poly(Tone.MetalM,(9+x,y),(10+x,y-4),(13+x,y-6),(19+x,y-5),(22+x,y-2),(22+x,y+1));
+                Parts.Poly(Tone.MetalL,(10+x,y-2),(13+x,y-5),(17+x,y-4),(19+x,y-2));
+                Parts.Rect(10+x,y-2,11,2,Tone.ClothM);Parts.Rect(11+x,y-2,7,1,Tone.ClothL);
+                Parts.Line(10+x,y-4,8+x,y-7,Tone.MetalL);Parts.Line(20+x,y-4,22+x,y-7,Tone.MetalM);
+                Parts.Rect(8+x,y,16,2,Tone.MetalM);Parts.Rect(9+x,y,13,1,Tone.MetalL);
+                Parts.Rect(9+x,y+2,3,5,Tone.MetalM);Parts.Rect(9+x,y+2,2,3,Tone.MetalL);break;
             case Headwear.WizardHat:
-                Parts.Poly(Tone.ClothM,(10+x,y),(14+x,y-8),(18+x,y-7),(17+x,y-5),(21+x,y));
-                Parts.Line(11+x,y-1,14+x,y-6,Tone.ClothL);Parts.Rect(10+x,y-1,11,1,Tone.White);
+                Parts.Poly(Tone.ClothM,(10+x,y),(13+x,y-8),(19+x,y-9),(17+x,y-7),(19+x,y-5),(22+x,y));
+                Parts.Poly(Tone.ClothL,(11+x,y-2),(14+x,y-7),(17+x,y-7),(16+x,y-5));
+                Parts.Rect(11+x,y-1,10,1,Tone.MetalL);
                 Parts.Rect(7+x,y+1,17,1,Tone.ClothM);Parts.Rect(8+x,y+2,15,1,Tone.ClothD);break;
             case Headwear.Hood:case Headwear.Cowl:
-                // Capuz enquadra o rosto; o topo pequeno deixa a cabeça dominar a leitura.
-                Tone light=Spec.Headwear==Headwear.Cowl?Tone.White:Tone.ClothL;
-                Parts.Rect(10+x,y-2,11,2,Tone.ClothM);Parts.Rect(12+x,y-3,6,1,light);Parts.Rect(9+x,y,2,8,Tone.ClothM);Parts.Rect(9+x,y,1,5,light);Parts.Rect(21+x,y+1,2,8,Tone.ClothD);
-                if(back){Parts.Rect(11+x,y,10,8,Tone.ClothM);Parts.Rect(12+x,y,2,5,light);Parts.Line(18+x,y+2,19+x,y+7,Tone.ClothD);}break;
+                Parts.Poly(Tone.ClothM,(8+x,y+6),(8+x,y),(11+x,y-4),(17+x,y-5),(22+x,y-1),(23+x,y+6),(21+x,y+8),(20+x,y+1),(12+x,y+1),(11+x,y+8));
+                Parts.Line(9+x,y-1,12+x,y-3,Tone.ClothL);Parts.Line(12+x,y-3,17+x,y-3,Tone.ClothL);
+                Parts.Rect(8+x,y+1,2,5,Tone.ClothD);Parts.Rect(22+x,y+2,1,5,Tone.ClothD);
+                if(Spec.Headwear==Headwear.Cowl){Parts.Line(11+x,y+1,13+x,y,Tone.White);Parts.Line(13+x,y,20+x,y,Tone.MetalL);Parts.Line(21+x,y+1,21+x,y+6,Tone.MetalL);}
+                if(back){Parts.Rect(10+x,y,12,7,Tone.ClothM);Parts.Rect(10+x,y,2,4,Tone.ClothL);Parts.Line(18+x,y+1,20+x,y+7,Tone.ClothD);}break;
             case Headwear.WideHat:
-                Parts.Rect(10+x,y-2,10,3,Tone.ClothM);Parts.Rect(11+x,y-3,8,1,Tone.ClothL);Parts.Rect(7+x,y+1,17,1,Tone.ClothL);Parts.Rect(9+x,y+2,14,1,Tone.ClothD);break;
+                Parts.Poly(Tone.ClothM,(10+x,y),(12+x,y-4),(18+x,y-4),(21+x,y));Parts.Rect(12+x,y-4,6,1,Tone.ClothL);
+                Parts.Rect(7+x,y,18,1,Tone.MetalL);Parts.Rect(8+x,y+1,16,1,Tone.ClothD);break;
             case Headwear.Beret:
                 Parts.Rect(10+x,y-2,11,2,Tone.ClothM);Parts.Rect(13+x,y-3,6,1,Tone.ClothL);Parts.Rect(10+x,y,12,1,Tone.ClothD);break;
             case Headwear.Crown:
@@ -154,14 +180,14 @@ public sealed class ChibiRenderer
     void DrawOffhand()
     {
         var shield=new Layer();int x=bx,y=by;
-        if(Spec.Offhand==Offhand.RoundShield){shield.Poly(Tone.MetalM,(7+x,20+y),(11+x,20+y),(13+x,22+y),(12+x,26+y),(9+x,27+y),(6+x,24+y));shield.Line(7+x,21+y,10+x,20+y,Tone.MetalL);shield.Rect(8+x,22+y,3,3,Tone.ClothM);shield.Set(9+x,23+y,Tone.MetalL);}
-        if(Spec.Offhand==Offhand.TowerShield){shield.Rect(6+x,19+y,6,9,Tone.AccM);shield.Rect(7+x,20+y,4,6,Tone.ClothM);shield.Line(7+x,20+y,10+x,20+y,Tone.MetalL);shield.Line(9+x,21+y,9+x,25+y,Tone.MetalM);}
-        if(Spec.Offhand==Offhand.Tome){shield.Rect(6+x,23+y,6,4,Tone.ClothD);shield.Rect(7+x,23+y,4,2,Tone.White);shield.Line(9+x,23+y,9+x,25+y,Tone.AccM);}
+        if(Spec.Offhand==Offhand.RoundShield){shield.Poly(Tone.MetalM,(6+x,21+y),(10+x,20+y),(13+x,22+y),(12+x,26+y),(9+x,28+y),(6+x,25+y));shield.Line(6+x,22+y,9+x,21+y,Tone.MetalL);shield.Rect(7+x,22+y,4,3,Tone.ClothM);shield.Rect(7+x,22+y,1,3,Tone.ClothL);shield.Rect(9+x,23+y,2,2,Tone.MetalL);}
+        if(Spec.Offhand==Offhand.TowerShield){shield.Poly(Tone.MetalM,(5+x,20+y),(11+x,19+y),(12+x,26+y),(9+x,28+y),(6+x,26+y));shield.Poly(Tone.ClothM,(6+x,21+y),(10+x,20+y),(11+x,26+y),(9+x,27+y),(7+x,26+y));shield.Line(6+x,21+y,9+x,20+y,Tone.MetalL);shield.Line(8+x,22+y,9+x,25+y,Tone.MetalM);}
+        if(Spec.Offhand==Offhand.Tome){int lift=attack is >=1 and <=3?2:0;shield.Rect(6+x,23+y-lift,6,4,Tone.ClothD);shield.Rect(7+x,23+y-lift,4,2,Tone.White);shield.Line(9+x,23+y-lift,9+x,25+y-lift,Tone.AccM);}
         Parts.Composite(shield,true);
     }
     void DrawWeapon()
     {
-        var w=new Layer();int x=bx,y=by+hand;
+        var w=new Layer();int x=bx,y=by+(Spec.Weapon==Weapon.Bow?0:hand);
         bool striking=attack is 2 or 3;
         int mode=striking?2:attack==1?1:0;
         int hx=(mode==2?15:23)+x,hy=(mode==2?23:25)+y;
@@ -170,10 +196,13 @@ public sealed class ChibiRenderer
         void Rect(int u0,int v0,int u1,int v1,Tone t){var a=Point(u0,v0);var b=Point(u1,v0);var c=Point(u1,v1);var d=Point(u0,v1);w.Poly(t,a,b,c,d);}
         switch(Spec.Weapon){
             case Weapon.Sword:case Weapon.Daggers:
-                Line(-1,0,2,0,Tone.LeatherM);Line(2,-2,2,2,Tone.AccM);Rect(3,-1,11,2,Tone.MetalM);Line(4,-1,11,-1,Tone.MetalL);Line(11,0,13,0,Tone.MetalL);Line(12,0,13,0,Tone.White);
+                int blade=Spec.Weapon==Weapon.Daggers?8:11;
+                Line(-1,0,2,0,Tone.LeatherM);Line(2,-2,2,2,Tone.AccM);Rect(3,-1,blade,2,Tone.MetalM);Line(4,-1,blade,-1,Tone.MetalL);Line(blade,0,blade+2,0,Tone.MetalL);Line(blade+1,0,blade+2,0,Tone.White);
                 if(Spec.Weapon==Weapon.Daggers){w.Line(7+x,24+y,4+x,19+y,Tone.MetalL);w.Line(7+x,25+y,5+x,22+y,Tone.LeatherM);}break;
             case Weapon.Axe:
-                Line(-1,0,14,0,Tone.LeatherM);Rect(8,-1,13,4,Tone.MetalM);Line(9,4,13,4,Tone.MetalL);Line(13,1,13,3,Tone.MetalL);break;
+                Line(-1,0,13,0,Tone.LeatherM);
+                Rect(8,0,12,2,Tone.MetalM);Rect(7,2,13,3,Tone.MetalM);Rect(8,3,12,4,Tone.MetalL);
+                Line(9,4,11,4,Tone.White);Line(12,-2,12,0,Tone.MetalL);break;
             case Weapon.Hammer:
                 Line(-1,0,12,0,Tone.LeatherM);Rect(10,-3,14,4,Tone.MetalM);Line(14,-3,14,3,Tone.MetalL);Line(11,-3,14,-3,Tone.MetalL);break;
             case Weapon.Staff:case Weapon.Crook:
@@ -182,7 +211,9 @@ public sealed class ChibiRenderer
                 if(Spec.Weapon==Weapon.Staff){w.Poly(Tone.AccM,(24+x,5+y),(27+x,8+y),(24+x,11+y),(22+x,8+y));w.Line(24+x,6+y,23+x,8+y,Tone.White);}
                 else {w.Line(22+x,7+y,26+x,7+y,Tone.AccM);w.Line(26+x,7+y,27+x,9+y,Tone.AccM);w.Line(27+x,9+y,25+x,11+y,Tone.AccM);w.Line(22+x,7+y,21+x,9+y,Tone.White);w.Line(21+x,9+y,23+x,11+y,Tone.White);}break;
             case Weapon.Bow:
-                w.Line(24+x,15+y,27+x,18+y,Tone.LeatherM);w.Line(27+x,18+y,27+x,23+y,Tone.LeatherM);w.Line(27+x,23+y,24+x,26+y,Tone.LeatherM);w.Line(24+x,15+y,24+x,26+y,Tone.White);w.Line(21+x,21+y,29+x,21+y,Tone.MetalM);w.Set(29+x,21+y,Tone.MetalL);break;
+                w.Line(24+x,15+y,27+x,18+y,Tone.LeatherM);w.Line(27+x,18+y,27+x,23+y,Tone.LeatherM);w.Line(27+x,23+y,24+x,26+y,Tone.LeatherM);
+                int pull=attack==1?2:0;w.Line(24+x,15+y,24+x-pull,21+y,Tone.White);w.Line(24+x-pull,21+y,24+x,26+y,Tone.White);
+                if(!striking){w.Line(21+x-pull,21+y,29+x-pull,21+y,Tone.MetalM);w.Set(29+x-pull,21+y,Tone.MetalL);}break;
             case Weapon.Spear:
                 Line(-1,0,15,0,Tone.LeatherM);Line(15,0,19,0,Tone.MetalM);Line(17,-1,17,1,Tone.MetalL);break;
         }
@@ -202,7 +233,8 @@ public sealed class ChibiRenderer
         for(int y=0;y<32;y++)for(int x=0;x<32;x++){
             var tone=Parts.Get(x,y);var material=MaterialLighting.Identify(tone);MaterialIds[y*32+x]=(byte)material;if(tone==Tone.None)continue;
             int level=tone switch{Tone.FurD or Tone.ClothD or Tone.AccD or Tone.LeatherD or Tone.MetalD=>1,Tone.FurL or Tone.ClothL or Tone.MetalL=>3,Tone.White=>4,_=>2};
-            if(pale&&material==Material.Fur)level=tone==Tone.FurD?2:tone==Tone.FurL?4:3;
+            if(pale&&material==Material.Fur)level=tone==Tone.FurD?1:tone==Tone.FurL?4:3;
+            if(material==Material.Metal)level=tone==Tone.MetalD?1:tone==Tone.MetalM?3:4;
             uint color=style.Pass==ProofPass.Silhouette?0x8CC6B6:material==Material.Ink?MaterialStyle.Ink:flash?MaterialRamps.Bone.Shine:style.Ramp(material)[style.Pass==ProofPass.Materials?2:level];
             int i=(y*32+x)*4;Buffer.Pixels[i]=(byte)(color>>16);Buffer.Pixels[i+1]=(byte)(color>>8);Buffer.Pixels[i+2]=(byte)color;Buffer.Pixels[i+3]=255;
         }
