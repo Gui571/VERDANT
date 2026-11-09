@@ -1,5 +1,16 @@
 # Decisões — roguelike dos reinos
 
+## Revisão pela referência em vídeo (2026-11-08)
+
+A versão compacta anterior também foi rejeitada pelo autor. A comparação com o vídeo identificou pose frontal rígida, rosto quadrado repetido, roupa dividida em faixas e equipamento sem volume. Esta revisão corrige a construção: cabeça-base de nove linhas com perfis por espécie, rosto deslocado em três quartos, tronco mais largo e baixo, pés assimétricos, elmo com coroa/aba, capuzes envolventes, escudos em perspectiva e machado em cunha. A roupa passa a ter alça diagonal no arqueiro, painel lateral na maga e gola em V na curandeira. Ataque desloca mais o peso e atrasa a capa; arco mostra puxada e liberação da corda.
+
+A apresentação nova usa **equipe azul** como padrão, com rampa `Cornflower` gerada offline pelo pipeline OKLCH. **Cores do herói** permanece uma opção da galeria. A identidade vem também de espécie, arma e adereço, e não apenas de cores individuais. A nova rampa não substitui as tabelas anteriores. Célula 32×32, origem (16,29), receitas e tempos de clipe permanecem. `ChibiValidation` agora exige no máximo 16 cores por quadro; a matriz executada observou 15.
+
+Tudo continua gerado por C# com `Layer`/`Tone` e cacheado antes da animação. O caminho legado conserva 5.328 hashes idênticos; a simulação e os efeitos de especiais não foram alterados. O escopo é o elenco existente de sete heróis e onze espécies. Quatro vistas continuam sendo estudo: norte simples, oeste espelhado e passada lateral compartilhada. Monstros, terreno, expansão de classes/espécies e demais marcos M2–M8 não estão concluídos por esta revisão.
+
+[Comparação e evidências](arte/revisao-referencia/RELATORIO.md). As imagens documentam o resultado; não há declaração de equivalência exata ao vídeo nem de aprovação do autor.
+
+
 ## Correção artística após M1 — elenco compacto (2026-11-07)
 
 O autor rejeitou a entrega apenas de cor e pediu maior proximidade com a referência. O foco desta revisão é mudar desenho/proporções dos sete heróis e das onze espécies atuais, sem anunciar a expansão inteira de M2–M8. Novo renderer de anatomia em C# reutiliza receitas, Layer/Tone e rampas. Cabeça 13×10, tronco 8×5, olhos mínimos, formas/armas separadas e cores próprias por herói. Sem extrair sprites da referência.

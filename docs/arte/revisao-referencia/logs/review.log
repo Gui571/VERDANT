@@ -1,0 +1,5 @@
+/workspace/VERDANT/scripts/reference-review.py:92: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  colors = sorted({pixel for frame in frames for pixel in frame.getdata()})
+/workspace/VERDANT/scripts/reference-review.py:102: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  result.putdata([lookup[pixel] for pixel in frame.getdata()])
+REVIEW boards=3 portraits=7 gifs=14 attack_strips=7 source=Forge nearest=True

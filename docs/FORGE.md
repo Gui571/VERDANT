@@ -115,3 +115,19 @@ DISPLAY=:99 ./scripts/run.sh --audio-driver Dummy -- --compact-capture
 ```
 
 [Prancha nova](arte/compactos/elenco.png) · [Comparação](arte/compactos/comparacao.png) · [Galeria real](arte/compactos/galeria.gif) · [Relatório](arte/compactos/RELATORIO.md).
+
+
+## Revisão visual de 2026-11-08
+
+A variante compacta atual substitui a construção descrita na seção anterior: cabeça-base de nove linhas, perfis diferentes de mandíbula para raposa/coruja/tartaruga, plano lateral de sombra e olhos deslocados em três quartos. O corpo é uma massa poligonal larga, com pé dianteiro dominante e pé distante parcialmente coberto. Não há cinto horizontal comum a todos. As golas e alças dependem do equipamento; elmos/capuzes, escudos e a lâmina do machado foram reconstruídos. No ataque, o corpo avança dois pixels no impacto e a capa acompanha depois; o arco tem corda tensionada e desaparecimento da flecha na liberação. Célula/origem e duração dos clipes continuam 32×32/(16,29) e os valores anteriores.
+
+`ChibiRenderer.Look` usa equipe azul por padrão, com `MaterialRamps.Cornflower`, produzida pelo mesmo gerador OKLCH offline. Trocas de equipe explícitas continuam alterando apenas TEAM. Na galeria, **Equipe azul / Cores do herói** seleciona a apresentação; 1×/2×/3× compartilham a textura já cacheada. Desligar **Arte nova** restaura o renderer legado. A validação da variante compacta exige **≤16 cores**, com máximo observado de 15 nesta revisão. O limite geral do pipeline M1 não muda.
+
+```sh
+dotnet run --project tools/PixelPreview -- chibi docs/arte/revisao-referencia/atlas
+python3 scripts/reference-review.py
+dotnet run --project tools/PixelPreview -- chibi-check
+DISPLAY=:99 ./scripts/run.sh --audio-driver Dummy -- --compact-ui-test
+```
+
+O script de revisão apenas compõe PNGs exportados pela Forge em pranchas/GIFs, sem retocar os sprites. [Prancha em fundos claro/escuro](arte/revisao-referencia/elenco.png) · [Antes/depois](arte/revisao-referencia/comparacao.png) · [Relatório atual](arte/revisao-referencia/RELATORIO.md).
