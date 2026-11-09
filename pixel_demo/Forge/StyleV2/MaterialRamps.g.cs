@@ -38,5 +38,6 @@ public static class MaterialRamps
     public static readonly Ramp5 Plant = new(0x023A2D, 0x356442, 0x7DA269, 0xB1CB9A, 0xE6F0D3);
     public static readonly Ramp5 Shadow = new(0x302C44, 0x5B5274, 0x9B8DB8, 0xCCB8DA, 0xF6E5F6);
     public static readonly Ramp5 Poison = new(0x0E3A21, 0x49612B, 0x999B4E, 0xC6C588, 0xF0EDCB);
+    public static readonly Ramp5 Cornflower = new(0x1A295C, 0x3A539C, 0x7396F5, 0xBCC2FE, 0xF4EFFE);
     public static readonly IReadOnlyList<Ramp5> Teams = Array.AsReadOnly(new[] { Rose, Ember, Lime, Jade, Azure, Violet });
 }

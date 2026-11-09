@@ -1,0 +1,110 @@
+Godot Engine v4.5.2.stable.mono.official.6ce3de25a - https://godotengine.org
+
+Unable to open Android 'build-tools' directory.
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Started Project initialization (5 steps)[39m[0m
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Scanning file structure...[39m[0m
+[  16% ] [90m[1mfirst_scan_filesystem[22m | Loading global class names...[39m[0m
+[  33% ] [90m[1mfirst_scan_filesystem[22m | Verifying GDExtensions...[39m[0m
+[  50% ] [90m[1mfirst_scan_filesystem[22m | Creating autoload scripts...[39m[0m
+[  66% ] [90m[1mfirst_scan_filesystem[22m | Initializing plugins...[39m[0m
+[  83% ] [90m[1mfirst_scan_filesystem[22m | Starting file scan...[39m[0m
+[92m[ DONE ][39m [1mfirst_scan_filesystem[22m
+[0m
+[   0% ] [90m[1mdotnet_publish_project[22m | Started Publishing .NET project... (1 steps)[39m[0m
+[   0% ] [90m[1mdotnet_publish_project[22m | Running dotnet publish[39m[0m
+[92m[ DONE ][39m [1mdotnet_publish_project[22m
+[0m
+[   0% ] [90m[1msavepack[22m | Started Packing (102 steps)[39m[0m
+[   1% ] [90m[1msavepack[22m | Storing File: res://addons/procedural_creatures/CreatureActor.cs[39m[0m
+[   2% ] [90m[1msavepack[22m | Storing File: res://.godot/exported/133200997/export-aa90edb3b523f056b92a063136c7889e-CreatureActor.scn[39m[0m
+[   3% ] [90m[1msavepack[22m | Storing File: res://addons/procedural_creatures/CreatureRenderer.cs[39m[0m
+[   5% ] [90m[1msavepack[22m | Storing File: res://addons/procedural_creatures/Exporter.cs[39m[0m
+[   6% ] [90m[1msavepack[22m | Storing File: res://addons/procedural_creatures/GenerationQueue.cs[39m[0m
+[   7% ] [90m[1msavepack[22m | Storing File: res://addons/procedural_creatures/Genome.cs[39m[0m
+[   9% ] [90m[1msavepack[22m | Storing File: res://addons/procedural_creatures/GodotRaster.cs[39m[0m
+[  10% ] [90m[1msavepack[22m | Storing File: res://addons/procedural_creatures/Raster.cs[39m[0m
+[  11% ] [90m[1msavepack[22m | Storing File: res://addons/procedural_creatures/Rgba.cs[39m[0m
+[  13% ] [90m[1msavepack[22m | Storing File: res://battle/Sim/Abilities.cs[39m[0m
+[  14% ] [90m[1msavepack[22m | Storing File: res://battle/Sim/BattleInputs.cs[39m[0m
+[  15% ] [90m[1msavepack[22m | Storing File: res://battle/Sim/BattleSimulation.cs[39m[0m
+[  17% ] [90m[1msavepack[22m | Storing File: res://battle/Sim/BattleValidation.cs[39m[0m
+[  18% ] [90m[1msavepack[22m | Storing File: res://battle/Sim/SpecialCombat.cs[39m[0m
+[  19% ] [90m[1msavepack[22m | Storing File: res://battle/Sim/SpecialValidation.cs[39m[0m
+[  21% ] [90m[1msavepack[22m | Storing File: res://battle/Arena.cs[39m[0m
+[  22% ] [90m[1msavepack[22m | Storing File: res://.godot/exported/133200997/export-812b256883b54a30dd87ea8afa98aade-Arena.scn[39m[0m
+[  23% ] [90m[1msavepack[22m | Storing File: res://battle/BattleRecipes.cs[39m[0m
+[  25% ] [90m[1msavepack[22m | Storing File: res://battle/SpecialGallery.cs[39m[0m
+[  26% ] [90m[1msavepack[22m | Storing File: res://.godot/exported/133200997/export-9d35eab57640b30ab41e5c59951584c6-SpecialGallery.scn[39m[0m
+[  27% ] [90m[1msavepack[22m | Storing File: res://battle/SpriteCache.cs[39m[0m
+[  29% ] [90m[1msavepack[22m | Storing File: res://third_party/cartoon-terrain-studio/NumericCompatibility.cs[39m[0m
+[  30% ] [90m[1msavepack[22m | Storing File: res://tests/SelfTests.cs[39m[0m
+[  31% ] [90m[1msavepack[22m | Storing File: res://examples/Minimal.cs[39m[0m
+[  33% ] [90m[1msavepack[22m | Storing File: res://workshop/GalleryCapture.cs[39m[0m
+[  33% ] [90m[1msavepack[22m | Storing File: res://terrain/UI/TerrainStage.cs[39m[0m
+[  34% ] [90m[1msavepack[22m | Storing File: res://pixel_demo/RosterCatalog.cs[39m[0m
+[  36% ] [90m[1msavepack[22m | Storing File: res://.godot/exported/133200997/export-f5fd75bd82fc69ab4aa34379bfa80de9-Workshop.scn[39m[0m
+[  37% ] [90m[1msavepack[22m | Storing File: res://pixel_demo/Forge/Monsters/MonsterValidation.cs[39m[0m
+[  38% ] [90m[1msavepack[22m | Storing File: res://terrain/Sim/TerrainSave.cs[39m[0m
+[  40% ] [90m[1msavepack[22m | Storing File: res://pixel_demo/AzureSprite.cs[39m[0m
+[  41% ] [90m[1msavepack[22m | Storing File: res://global.json[39m[0m
+[  42% ] [90m[1msavepack[22m | Storing File: res://pixel_demo/Forge/ForgeEffects.cs[39m[0m
+[  44% ] [90m[1msavepack[22m | Storing File: res://pixel_demo/Forge/StyleV2/MaterialRamps.g.cs[39m[0m
+[  45% ] [90m[1msavepack[22m | Storing File: res://pixel_demo/Forge/Monsters/MonsterRenderer.cs[39m[0m
+[  46% ] [90m[1msavepack[22m | Storing File: res://third_party/cartoon-terrain-studio/README.md[39m[0m
+[  48% ] [90m[1msavepack[22m | Storing File: res://terrain/Sim/TerrainValidation.cs[39m[0m
+[  49% ] [90m[1msavepack[22m | Storing File: res://third_party/cartoon-terrain-studio/Elevation.cs[39m[0m
+[  50% ] [90m[1msavepack[22m | Storing File: res://third_party/cartoon-terrain-studio/Scalar.cs[39m[0m
+[  52% ] [90m[1msavepack[22m | Storing File: res://studio/CompactGallery.cs[39m[0m
+[  53% ] [90m[1msavepack[22m | Storing File: res://pixel_demo/Forge/ForgeRoster.cs[39m[0m
+[  54% ] [90m[1msavepack[22m | Storing File: res://pixel_demo/Forge/ForgeRenderer.cs[39m[0m
+[  56% ] [90m[1msavepack[22m | Storing File: res://pixel_demo/Forge/Monsters/MonsterSpec.cs[39m[0m
+[  57% ] [90m[1msavepack[22m | Storing File: res://.godot/exported/133200997/export-00cd08c228cc75074b660161aa0a285a-RosterBoard.scn[39m[0m
+[  58% ] [90m[1msavepack[22m | Storing File: res://.godot/exported/133200997/export-8a1beb54a6214e158cf77706db5ea095-Minimal.scn[39m[0m
+[  60% ] [90m[1msavepack[22m | Storing File: res://workshop/LegacyWorkshop.cs[39m[0m
+[  61% ] [90m[1msavepack[22m | Storing File: res://workshop/WorldView.cs[39m[0m
+[  62% ] [90m[1msavepack[22m | Storing File: res://pixel_demo/Forge/ForgeParts.cs[39m[0m
+[  64% ] [90m[1msavepack[22m | Storing File: res://pixel_demo/Forge/Monsters/MonsterArt.cs[39m[0m
+[  65% ] [90m[1msavepack[22m | Storing File: res://.godot/exported/133200997/export-4547d26cf06932b0b8f6b88e6a2a4bba-LegacyWorkshop.scn[39m[0m
+[  66% ] [90m[1msavepack[22m | Storing File: res://pixel_demo/Forge/Compact/ChibiRenderer.cs[39m[0m
+[  67% ] [90m[1msavepack[22m | Storing File: res://pixel_demo/Forge/ForgeValidation.cs[39m[0m
+[  68% ] [90m[1msavepack[22m | Storing File: res://pixel_demo/Forge/ForgeGear.cs[39m[0m
+[  69% ] [90m[1msavepack[22m | Storing File: res://.godot/exported/133200997/export-e9c9984fc2ea4b238618feee721b2759-MaterialStudio.scn[39m[0m
+[  71% ] [90m[1msavepack[22m | Storing File: res://third_party/cartoon-terrain-studio/THIRD_PARTY_NOTICES.md[39m[0m
+[  72% ] [90m[1msavepack[22m | Storing File: res://pixel_demo/Forge/Compact/ChibiValidation.cs[39m[0m
+[  73% ] [90m[1msavepack[22m | Storing File: res://pixel_demo/Forge/ForgeSpec.cs[39m[0m
+[  75% ] [90m[1msavepack[22m | Storing File: res://terrain/UI/TerrainWorkshop.cs[39m[0m
+[  76% ] [90m[1msavepack[22m | Storing File: res://pixel_demo/Forge/ForgeHashes.cs[39m[0m
+[  77% ] [90m[1msavepack[22m | Storing File: res://studio/MaterialStudio.cs[39m[0m
+[  79% ] [90m[1msavepack[22m | Storing File: res://workshop/Workshop.cs[39m[0m
+[  80% ] [90m[1msavepack[22m | Storing File: res://.godot/exported/133200997/export-3cdfc358ac11239ad4ecf0d248f2bd9f-PixelDemo.scn[39m[0m
+[  81% ] [90m[1msavepack[22m | Storing File: res://terrain/Sim/TerrainMap.cs[39m[0m
+[  83% ] [90m[1msavepack[22m | Storing File: res://third_party/cartoon-terrain-studio/LICENSE[39m[0m
+[  84% ] [90m[1msavepack[22m | Storing File: res://pixel_demo/RosterBoard.cs[39m[0m
+[  85% ] [90m[1msavepack[22m | Storing File: res://.godot/exported/133200997/export-ff8b82fa7945233d02af59da5f1d52a0-TerrainWorkshop.scn[39m[0m
+[  87% ] [90m[1msavepack[22m | Storing File: res://pixel_demo/CompactAdventurer.cs[39m[0m
+[  88% ] [90m[1msavepack[22m | Storing File: res://pixel_demo/Forge/ForgeFinish.cs[39m[0m
+[  89% ] [90m[1msavepack[22m | Storing File: res://pixel_demo/Forge/ForgeCore.cs[39m[0m
+[  91% ] [90m[1msavepack[22m | Storing File: res://.godot/exported/133200997/export-e037a642e93ac16f40d9a92c1a4afcbf-CompactGallery.scn[39m[0m
+[  92% ] [90m[1msavepack[22m | Storing File: res://pixel_demo/Forge/ForgeGenerator.cs[39m[0m
+[  93% ] [90m[1msavepack[22m | Storing File: res://pixel_demo/Forge/StyleV2/StyleValidation.cs[39m[0m
+[  95% ] [90m[1msavepack[22m | Storing File: res://pixel_demo/PixelDemo.cs[39m[0m
+[  96% ] [90m[1msavepack[22m | Storing File: res://pixel_demo/Forge/StyleV2/MaterialStyle.cs[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://pixel_demo/FrogSprite.cs[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://addons/procedural_creatures/CreatureActor.tscn.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://battle/Arena.tscn.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://battle/SpecialGallery.tscn.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://workshop/Workshop.tscn.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://pixel_demo/RosterBoard.tscn.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://examples/Minimal.tscn.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://workshop/LegacyWorkshop.tscn.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://studio/MaterialStudio.tscn.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://pixel_demo/PixelDemo.tscn.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://terrain/UI/TerrainWorkshop.tscn.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://studio/CompactGallery.tscn.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://.godot/global_script_class_cache.cfg[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://.godot/uid_cache.bin[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://project.binary[39m[0m
+[92m[ DONE ][39m [1msavepack[22m
+[0m
+ERROR: Condition "!EditorSettings::get_singleton() || !EditorSettings::get_singleton()->has_setting(p_setting)" is true. Returning: Variant()
+   at: _EDITOR_GET (editor/settings/editor_settings.cpp:1514)
