@@ -8,7 +8,7 @@ public static class ChibiValidation
         var specs=ForgeRoster.All.Concat(Enumerable.Range(1,seeds).Select(i=>ForgeGenerator.Generate((ulong)i)));
         foreach(var spec in specs){var a=new ChibiRenderer(spec);var b=new ChibiRenderer(spec);
             foreach(var motion in Enum.GetValues<AdventurerMotion>())foreach(var facing in Enum.GetValues<Facing>()){
-                int count=motion switch{AdventurerMotion.Idle=>32,AdventurerMotion.Attack=>6,AdventurerMotion.Hurt=>4,_=>8};int fps=motion==AdventurerMotion.Run?12:8;
+                int count=ChibiRenderer.Frames(motion);int fps=ChibiRenderer.Fps(motion);
                 for(int f=0;f<count;f++){
                     var px=a.Render(f/(double)fps,motion,facing);var color=new HashSet<uint>();bool alpha=true,margin=true;
                     for(int i=0;i<1024;i++){alpha&=px.Pixels[i*4+3] is 0 or 255;if(px.Pixels[i*4+3]!=0){color.Add(BitConverter.ToUInt32(px.Pixels,i*4));if(i%32==0||i%32==31||i/32==0||i/32==31)margin=false;}}

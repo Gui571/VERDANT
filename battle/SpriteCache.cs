@@ -7,13 +7,13 @@ public sealed class SpriteCache : IDisposable
     readonly Dictionary<(MonsterMotion,int),AtlasTexture> frames=new();
     readonly ImageTexture atlas;
     readonly SpriteCache? enraged;
-    readonly bool heroRecipe;
+    readonly bool heroRecipe,compactHero;
     public int Size {get;}
-    int Count(MonsterMotion m)=>heroRecipe&&m==MonsterMotion.Entry?0:heroRecipe&&m==MonsterMotion.Idle?32:heroRecipe&&m==MonsterMotion.Death?6:MonsterRenderer.Frames(m);
-    int Fps(MonsterMotion m)=>heroRecipe&&m==MonsterMotion.Death?8:MonsterRenderer.Fps(m);
+    int Count(MonsterMotion m)=>compactHero&&m==MonsterMotion.Attack?Verdant.Forge.Compact.ChibiRenderer.Frames(AdventurerMotion.Attack):heroRecipe&&m==MonsterMotion.Entry?0:heroRecipe&&m==MonsterMotion.Idle?32:heroRecipe&&m==MonsterMotion.Death?6:MonsterRenderer.Frames(m);
+    int Fps(MonsterMotion m)=>compactHero&&m==MonsterMotion.Attack?Verdant.Forge.Compact.ChibiRenderer.Fps(AdventurerMotion.Attack):heroRecipe&&m==MonsterMotion.Death?8:MonsterRenderer.Fps(m);
     public SpriteCache(ActorRecipe recipe,bool back=false,int visualPhase=0,bool styleV2=false,int team=4,bool compact=false,bool shadow=true,Verdant.Forge.Compact.Facing? direction=null)
     {
-        Size=recipe.Monster?.Size??32;heroRecipe=recipe.Hero!=null;
+        Size=recipe.Monster?.Size??32;heroRecipe=recipe.Hero!=null;compactHero=compact&&recipe.Hero!=null;
         var monster=recipe.Monster==null?null:new MonsterRenderer(recipe.Monster){VisualPhase=visualPhase};var hero=recipe.Hero==null?null:new CompactAdventurer(recipe.Hero);
         if(styleV2){if(monster!=null)monster.Style=Verdant.Forge.StyleV2.MaterialStyle.For(recipe.Monster!.Element,team);if(hero!=null)hero.Style=Verdant.Forge.StyleV2.MaterialStyle.For(recipe.Hero!,team);}
         var chibi=!compact||recipe.Hero==null?null:new Verdant.Forge.Compact.ChibiRenderer(recipe.Hero){GroundShadow=shadow,Style=styleV2?Verdant.Forge.Compact.ChibiRenderer.Look(recipe.Hero,team):null};

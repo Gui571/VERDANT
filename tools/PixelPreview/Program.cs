@@ -10,8 +10,10 @@ public static class Program
         if(args[0]=="strip"&&args.Length>3&&args[2].StartsWith("monster:"))return MonsterPreview.Strip(args[1],Enum.Parse<Verdant.Forge.MonsterFamily>(args[2][8..],true),Enum.Parse<Verdant.Forge.MonsterMotion>(args[3],true),args.Length>4?int.Parse(args[4]):5);
         switch (args[0])
         {
+            case "cast-check": {var r=Verdant.Forge.Compact.CastValidation.Run();foreach(var e in r.Failures)Console.WriteLine(e);return r.Failures.Count==0?0:1;}
             case "chibi-check": {var r=Verdant.Forge.Compact.ChibiValidation.Run();foreach(var e in r.Failures)Console.WriteLine(e);return r.Failures.Count==0?0:1;}
             case "chibi": return ChibiPreview.Export(args[1]);
+            case "cast": return CastPreview.Export(args[1]);
             case "style-v2": return StyleV2Preview.Export(args[1]);
             case "style-v2-check": {var r=Verdant.Forge.StyleV2.StyleValidation.Run();foreach(var e in r.Failures)Console.WriteLine(e);return r.Failures.Count==0?0:1;}
             case "terrain-check": {var r=Verdant.Terrain.TerrainValidation.Run();foreach(var error in r.Failures)Console.WriteLine(error);Console.WriteLine($"TERRAIN checks={r.Checks} failures={r.Failures.Count}");return r.Failures.Count==0?0:1;}

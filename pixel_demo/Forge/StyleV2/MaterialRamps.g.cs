@@ -39,5 +39,18 @@ public static class MaterialRamps
     public static readonly Ramp5 Shadow = new(0x302C44, 0x5B5274, 0x9B8DB8, 0xCCB8DA, 0xF6E5F6);
     public static readonly Ramp5 Poison = new(0x0E3A21, 0x49612B, 0x999B4E, 0xC6C588, 0xF0EDCB);
     public static readonly Ramp5 Cornflower = new(0x1A295C, 0x3A539C, 0x7396F5, 0xBCC2FE, 0xF4EFFE);
+    public static readonly Ramp5 Wolf = new(0x32363A, 0x5C6168, 0xABB2BB, 0xCED5DB, 0xEAF0F1);
+    public static readonly Ramp5 Dog = new(0x472526, 0x784B39, 0xBA8A62, 0xE0B897, 0xFDE7D3);
+    public static readonly Ramp5 Panda = new(0x5C5E61, 0x909296, 0xD4D8DD, 0xEAEBF0, 0xFCFBFE);
+    public static readonly Ramp5 Boar = new(0x3D262D, 0x674645, 0xAB8176, 0xCEABA0, 0xEDD9D1);
+    public static readonly Ramp5 Pig = new(0x5D3B51, 0x9F677A, 0xF8ACB7, 0xFDD1D3, 0xFFF2F1);
+    public static readonly Ramp5 Goat = new(0x574A45, 0x8E8173, 0xD2CAB5, 0xE8E1D0, 0xF9F5EB);
+    public static readonly Ramp5 Deer = new(0x4A2323, 0x7B4A32, 0xBC8A58, 0xE2B890, 0xFEE7CF);
+    public static readonly Ramp5 Raccoon = new(0x2A2E34, 0x4A5059, 0x848D98, 0xACB6BE, 0xD8DFE2);
+    public static readonly Ramp5 Monkey = new(0x44262C, 0x764B45, 0xBA8872, 0xE0B7A2, 0xFEE6D9);
+    public static readonly Ramp5 Orc = new(0x053A2B, 0x39643E, 0x83A165, 0xB6CA97, 0xE8F0D1);
+    public static readonly Ramp5 Goblin = new(0x013A28, 0x386435, 0x86A156, 0xB9CA8C, 0xEAF0CC);
+    public static readonly Ramp5 Lizard = new(0x02383A, 0x13665B, 0x56A78D, 0x97D0B3, 0xD9F3DE);
+    public static readonly Ramp5 Dwarf = new(0x593339, 0x976256, 0xE4A886, 0xF9C8AC, 0xFEEADD);
     public static readonly IReadOnlyList<Ramp5> Teams = Array.AsReadOnly(new[] { Rose, Ember, Lime, Jade, Azure, Violet });
 }

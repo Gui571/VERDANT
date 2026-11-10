@@ -25,7 +25,7 @@ public static class StyleV2Preview
             metadata.Add(new{spec.Id,cell=new[]{32,32},pivot=new[]{16,29},bounds=new[]{occupied.Min(i=>i%32),occupied.Min(i=>i/32),occupied.Max(i=>i%32)+1,occupied.Max(i=>i/32)+1},team=4,species=spec.Species.ToString()});
             // Atlas prova da cor nos clipes atuais; direções novas pertencem a M3.
             foreach(var motion in Enum.GetValues<AdventurerMotion>()){
-                int n=motion switch{AdventurerMotion.Idle=>32,AdventurerMotion.Attack=>6,AdventurerMotion.Hurt=>4,_=>8};int fps=motion==AdventurerMotion.Run?12:8;
+                int n=Verdant.Forge.Compact.ChibiRenderer.Frames(motion);int fps=Verdant.Forge.Compact.ChibiRenderer.Fps(motion);
                 var atlas=new Canvas(32*8,32*((n+7)/8),0);Array.Clear(atlas.Data);
                 for(int f=0;f<n;f++)atlas.Blit(renderer.Render(f/(double)fps,motion),f%8*32,f/8*32,1);
                 atlas.Save(Path.Combine(dir,$"{spec.Id}-{motion}.png"));

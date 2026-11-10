@@ -126,3 +126,10 @@ Branch `extracao-e-guerras`, base e destino do PR `monstros-e-arena`. Este PR en
 **Marco 5 — integração:** ciclo planejar→extrair→defender→crescer, balanceamento, testes ponta a ponta e save→load→continuar, documentação NACOES/EXTRACAO/GUERRA e builds finais. Sem rede, conta, microtransações ou progressão infinita. Áudio opcional com licença conhecida.
 
 Números de economia e duração de campanha serão definidos no marco correspondente, com simulações completas e registro da justificativa. Esta lista registra a direção aprovada, não funcionalidades disponíveis nesta build.
+
+## Estilo v2 do vídeo (arte-estilo-v2-claude)
+- Espécies novas só no `ChibiRenderer`; o `ForgeRenderer` antigo as trata como humanos. `ForgeGenerator.Generate` continua com as 11 originais (`LegacySpecies`).
+- Classes e patentes são visuais: não criam papéis nem mudam atributos da simulação; `ClassDef.Role` apenas indica o papel de combate existente com que combina.
+- RNG por slot via FNV-1a do nome do slot (nunca `string.GetHashCode`, que varia por execução).
+- Golpe: 12 quadros a 16 fps mantém os 0,75 s; durações por pose vêm repetindo quadros (`AttackPose`), sem tocar no tempo da simulação.
+- Ramps novas foram adicionadas pelo script `scripts/generate-style-v2-palettes.py` (ramps antigas intactas).
