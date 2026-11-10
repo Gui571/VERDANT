@@ -12,7 +12,7 @@ public static class ChibiPreview
             var px=renderer.Render(0);Png.Save(Path.Combine(dir,spec.Id+".png"),32,32,px.Pixels);
             if(!ForgeRoster.All.Contains(spec))continue;
             foreach(var motion in Enum.GetValues<AdventurerMotion>()){
-                int frames=motion switch{AdventurerMotion.Idle=>32,AdventurerMotion.Attack=>6,AdventurerMotion.Hurt=>4,_=>8};int fps=motion==AdventurerMotion.Run?12:8;
+                int frames=Verdant.Forge.Compact.ChibiRenderer.Frames(motion);int fps=Verdant.Forge.Compact.ChibiRenderer.Fps(motion);
                 var c=new Canvas(32*frames,32,0);Array.Clear(c.Data);for(int f=0;f<frames;f++)c.Blit(renderer.Render(f/(double)fps,motion),f*32,0,1);c.Save(Path.Combine(dir,spec.Id+"-"+motion+".png"));
                 File.WriteAllText(Path.Combine(dir,spec.Id+"-"+motion+".json"),System.Text.Json.JsonSerializer.Serialize(new{version=1,style="compact",recipe=spec.Id,species=spec.Species.ToString(),cell=new[]{32,32},origin=new[]{16,29},direction="East",clip=motion.ToString(),loop=motion<=AdventurerMotion.Run,frames=Enumerable.Range(0,frames).Select(i=>new{index=i,x=i*32,y=0,durationMs=1000.0/fps})}));
             }

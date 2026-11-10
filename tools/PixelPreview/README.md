@@ -61,3 +61,7 @@ python3 scripts/chibi-review.py
 ```
 
 `chibi` exporta sete heróis com tiras dos clipes e JSON de tempo/origem, queda lateral, quatro vistas, as onze espécies existentes e 24 sementes. A galeria do jogo usa os mesmos renderers. Os comandos de hash/check anteriores continuam validando o caminho legado.
+
+## Elenco v2 (estilo do vídeo)
+- `cast <dir>` exporta sprites (espécies, classes, patentes, slots, direções, tiras de movimento); `scripts/compose-cast-sheets.py <dir> <saída>` compõe as folhas rotuladas.
+- `cast-check` valida o elenco v2.
