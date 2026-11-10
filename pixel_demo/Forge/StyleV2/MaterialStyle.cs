@@ -22,7 +22,10 @@ public sealed record MaterialStyle(Ramp5 Fur, int Team=4, ProofPass Pass=ProofPa
         Species.Duck=>MaterialRamps.Duck, Species.Rabbit=>MaterialRamps.Rabbit, Species.Human=>MaterialRamps.Human,
         Species.Turtle=>MaterialRamps.Turtle, Species.Fox=>MaterialRamps.Fox, Species.Owl=>MaterialRamps.Owl,
         Species.Mouse=>MaterialRamps.Mouse, Species.Cat=>MaterialRamps.Cat, Species.Frog=>MaterialRamps.Frog,
-        Species.Elf=>MaterialRamps.Elf, Species.Bear=>MaterialRamps.Bear, _=>throw new ArgumentOutOfRangeException(nameof(species)) },team);
+        Species.Elf=>MaterialRamps.Elf, Species.Bear=>MaterialRamps.Bear,
+        Species.Wolf=>MaterialRamps.Wolf, Species.Dog=>MaterialRamps.Dog, Species.Panda=>MaterialRamps.Panda, Species.Boar=>MaterialRamps.Boar, Species.Pig=>MaterialRamps.Pig,
+        Species.Goat=>MaterialRamps.Goat, Species.Deer=>MaterialRamps.Deer, Species.Raccoon=>MaterialRamps.Raccoon, Species.Monkey=>MaterialRamps.Monkey, Species.Orc=>MaterialRamps.Orc,
+        Species.Goblin=>MaterialRamps.Goblin, Species.Lizard=>MaterialRamps.Lizard, Species.Skeleton=>MaterialRamps.Bone, Species.Dwarf=>MaterialRamps.Dwarf, _=>throw new ArgumentOutOfRangeException(nameof(species)) },team);
     public static MaterialStyle For(Element element,int team=4)=>new(element switch {
         Element.Fire=>MaterialRamps.Fire,Element.Ice=>MaterialRamps.Ice,Element.Plant=>MaterialRamps.Plant,
         Element.Shadow=>MaterialRamps.Shadow,Element.Poison=>MaterialRamps.Poison,_=>throw new ArgumentOutOfRangeException(nameof(element)) },team);

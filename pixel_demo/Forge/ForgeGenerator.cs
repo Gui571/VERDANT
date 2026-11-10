@@ -20,6 +20,7 @@ public static class ForgeGenerator
     };
 
     // Espécies com orelhas altas só aceitam adornos que não as cobrem, para a silhueta continuar legível.
+    const int LegacySpecies = 11;
     static Headwear[] Allowed(Species sp, Headwear[] hats)
     {
         Headwear[] safe = sp switch
@@ -58,7 +59,7 @@ public static class ForgeGenerator
         var r = new Rng(seed);
         var cls = r.Pick(Classes);
         // 1) espécie sorteada; 2) chapéu escolhido entre os da classe que a espécie aceita.
-        var sp = (Species)r.Int(0, Enum.GetValues<Species>().Length);
+        var sp = (Species)r.Int(0, LegacySpecies);                 // as 11 espécies originais: sementes antigas continuam idênticas
         var hat = r.Pick(Allowed(sp, cls.Hats));
         var weapon = r.Pick(cls.Weapons); var off = r.Pick(cls.Offhands); var back = r.Pick(cls.Backs); var outfit = r.Pick(cls.Outfits);
         if (weapon is Weapon.Bow or Weapon.Daggers) off = Offhand.None;                 // mãos ocupadas
